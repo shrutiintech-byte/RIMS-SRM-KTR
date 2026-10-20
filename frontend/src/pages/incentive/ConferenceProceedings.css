@@ -1,0 +1,1385 @@
+
+/* =========================================================
+   CONFERENCE PROCEEDINGS
+   Consistent with Journal Publication / Patent / Book Chapter
+   Theme: Navy + Gold | Light + Dark | Responsive
+========================================================= */
+
+.conference-page {
+  --conference-navy: var(--primary-color, #0b2345);
+  --conference-navy-hover: var(--primary-dark, #071a34);
+  --conference-gold: var(--accent-color, #d9ad4c);
+  --conference-text: var(--text-primary, #102a43);
+  --conference-muted: var(--text-secondary, #60758a);
+  --conference-subtle: var(--text-tertiary, #829ab1);
+  --conference-border: var(--border-color, #d9e1ea);
+  --conference-border-light: var(--border-light, #e8edf3);
+  --conference-surface: var(--surface, #ffffff);
+  --conference-surface-soft: var(--background-secondary, #f8fafc);
+  --conference-page-bg: var(--background-color, #f5f7fa);
+  --conference-font: var(
+    --font-family,
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif
+  );
+
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4px 0 32px;
+  color: var(--conference-text);
+  font-family: var(--conference-font);
+  font-size: 14px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.conference-page *,
+.conference-page *::before,
+.conference-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.conference-header {
+  margin-bottom: 22px;
+}
+
+.conference-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  margin-bottom: 14px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--conference-muted);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.conference-back:hover {
+  color: var(--conference-navy);
+  transform: translateX(-2px);
+}
+
+.conference-back:focus-visible {
+  outline: 2px solid var(--conference-gold);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.conference-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.conference-eyebrow {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: var(--conference-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.conference-heading h1 {
+  margin: 0;
+  color: var(--conference-navy);
+  font-family: var(--conference-font);
+  font-size: clamp(24px, 2.5vw, 29px);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.conference-heading p {
+  max-width: 760px;
+  margin: 8px 0 0;
+  color: var(--conference-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.conference-success-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  border: 1px solid #c9e4d4;
+  border-left: 4px solid #39845d;
+  border-radius: 8px;
+  background: #f1faf4;
+  color: #286744;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.conference-success-message svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  color: #39845d;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.conference-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.conference-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--conference-border);
+  border-radius: 12px;
+  background: var(--conference-surface);
+  box-shadow: 0 3px 12px rgba(11, 35, 69, 0.045);
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.conference-section-header {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--conference-border-light);
+  background: var(--conference-surface-soft);
+}
+
+.conference-section-icon {
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(217, 173, 76, 0.45);
+  border-radius: 9px;
+  background: rgba(217, 173, 76, 0.13);
+  color: var(--conference-navy);
+}
+
+.conference-section-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.conference-section-header h2 {
+  margin: 0;
+  color: var(--conference-text);
+  font-family: var(--conference-font);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.conference-section-header p {
+  margin: 3px 0 0;
+  color: var(--conference-muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.conference-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 22px;
+  padding: 24px 22px;
+}
+
+.conference-field {
+  min-width: 0;
+}
+
+.conference-field-full {
+  grid-column: 1 / -1;
+}
+
+.conference-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--conference-text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.conference-field label span {
+  margin-left: 3px;
+  color: #bd4b47;
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.conference-field input,
+.conference-field select,
+.conference-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--conference-border);
+  border-radius: 8px;
+  outline: none;
+  background: var(--conference-surface);
+  color: var(--conference-text);
+  font-family: var(--conference-font);
+  font-size: 14px;
+  font-weight: 400;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.conference-field input,
+.conference-field select {
+  height: 44px;
+  padding: 0 12px;
+}
+
+.conference-field select {
+  cursor: pointer;
+}
+
+.conference-field textarea {
+  min-height: 110px;
+  padding: 11px 12px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.conference-field input::placeholder,
+.conference-field textarea::placeholder {
+  color: var(--conference-subtle);
+  opacity: 0.85;
+}
+
+.conference-field input:hover,
+.conference-field select:hover,
+.conference-field textarea:hover {
+  border-color: #aebfd0;
+}
+
+.conference-field input:focus,
+.conference-field select:focus,
+.conference-field textarea:focus {
+  border-color: var(--conference-gold);
+  box-shadow: 0 0 0 3px rgba(217, 173, 76, 0.19);
+}
+
+.conference-field input:disabled,
+.conference-field select:disabled,
+.conference-field textarea:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.conference-field small {
+  display: block;
+  margin-top: 6px;
+  color: var(--conference-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   INPUT WITH ICON
+========================================================= */
+
+.conference-input-icon {
+  position: relative;
+  min-width: 0;
+}
+
+.conference-input-icon > svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  z-index: 1;
+  width: 17px;
+  height: 17px;
+  color: var(--conference-muted);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.conference-input-icon input {
+  padding-left: 39px;
+}
+
+/* =========================================================
+   ERRORS
+========================================================= */
+
+.conference-error {
+  margin: 6px 0 0;
+  color: #b93832;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.conference-field:has(.conference-error) input,
+.conference-field:has(.conference-error) select,
+.conference-field:has(.conference-error) textarea {
+  border-color: #cf7772;
+}
+
+.conference-field:has(.conference-error) input:focus,
+.conference-field:has(.conference-error) select:focus,
+.conference-field:has(.conference-error) textarea:focus {
+  box-shadow: 0 0 0 3px rgba(185, 56, 50, 0.1);
+}
+
+/* =========================================================
+   SUBSECTION
+========================================================= */
+
+.conference-subsection {
+  margin: 0 22px 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--conference-border-light);
+}
+
+.conference-subsection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.conference-subsection-header h3 {
+  margin: 0;
+  color: var(--conference-text);
+  font-family: var(--conference-font);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.conference-subsection-header p {
+  margin: 4px 0 0;
+  color: var(--conference-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.conference-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--conference-border);
+  border-radius: 8px;
+  background: var(--conference-surface);
+  color: var(--conference-navy);
+  font-family: var(--conference-font);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.conference-secondary-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.conference-secondary-button:hover {
+  border-color: var(--conference-gold);
+  background: rgba(217, 173, 76, 0.1);
+  color: var(--conference-navy);
+}
+
+.conference-secondary-button:focus-visible,
+.conference-upload-button:focus-visible,
+.conference-delete-button:focus-visible,
+.conference-draft-button:focus-visible,
+.conference-submit-button:focus-visible {
+  outline: 2px solid var(--conference-gold);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   AUTHOR LIST
+========================================================= */
+
+.conference-author-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.conference-author-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 36px;
+  gap: 14px;
+  align-items: start;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--conference-border-light);
+  border-radius: 10px;
+  background: var(--conference-surface-soft);
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.conference-author-row:hover {
+  border-color: var(--conference-border);
+}
+
+.conference-author-number {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(217, 173, 76, 0.5);
+  border-radius: 50%;
+  background: rgba(217, 173, 76, 0.14);
+  color: var(--conference-navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.conference-author-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  min-width: 0;
+}
+
+.conference-delete-button {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5c7c4;
+  border-radius: 8px;
+  background: #fff8f7;
+  color: #b93832;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.conference-delete-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.conference-delete-button:hover {
+  border-color: #d99b96;
+  background: #ffefed;
+  color: #982e29;
+}
+
+.conference-author-error {
+  grid-column: 2 / -1;
+}
+
+/* =========================================================
+   CURRENCY INPUT
+========================================================= */
+
+.conference-currency-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  overflow: hidden;
+  border: 1px solid var(--conference-border);
+  border-radius: 8px;
+  background: var(--conference-surface);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.conference-currency-input:focus-within {
+  border-color: var(--conference-gold);
+  box-shadow: 0 0 0 3px rgba(217, 173, 76, 0.19);
+}
+
+.conference-currency-input > span {
+  width: 42px;
+  min-width: 42px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--conference-border);
+  background: var(--conference-surface-soft);
+  color: var(--conference-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.conference-currency-input input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--conference-text);
+  font-family: var(--conference-font);
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.conference-currency-input input:focus {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   SUPPORTING DOCUMENTS
+========================================================= */
+
+.conference-document-list {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 22px 22px 0;
+  border: 1px solid var(--conference-border);
+  border-radius: 10px;
+  background: var(--conference-surface);
+}
+
+.conference-document {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  min-height: 94px;
+  padding: 17px 18px;
+  border-bottom: 1px solid var(--conference-border-light);
+  background: var(--conference-surface);
+  transition: background 160ms ease;
+}
+
+.conference-document:last-child {
+  border-bottom: 0;
+}
+
+.conference-document:hover {
+  background: var(--conference-surface-soft);
+}
+
+.conference-document-information {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  min-width: 0;
+}
+
+.conference-document-icon {
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(217, 173, 76, 0.4);
+  border-radius: 9px;
+  background: rgba(217, 173, 76, 0.12);
+  color: var(--conference-navy);
+}
+
+.conference-document-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.conference-document-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.conference-document-title strong {
+  color: var(--conference-text);
+  font-family: var(--conference-font);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.conference-document-required {
+  display: inline-flex;
+  align-items: center;
+  min-height: 21px;
+  padding: 2px 7px;
+  border: 1px solid rgba(217, 173, 76, 0.6);
+  border-radius: 5px;
+  background: rgba(217, 173, 76, 0.13);
+  color: #8a641b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.conference-document-information p {
+  max-width: 760px;
+  margin: 5px 0 0;
+  color: var(--conference-muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   UPLOADED DOCUMENT
+========================================================= */
+
+.conference-uploaded-document {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+  margin-top: 9px;
+  color: #28734c;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.conference-uploaded-document svg {
+  flex-shrink: 0;
+}
+
+.conference-uploaded-document span {
+  min-width: 0;
+  max-width: 620px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.conference-uploaded-document button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: #b93832;
+  font-family: var(--conference-font);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.conference-uploaded-document button:hover {
+  color: #982e29;
+  text-decoration: underline;
+}
+
+.conference-uploaded-document button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   UPLOAD BUTTON
+========================================================= */
+
+.conference-upload-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 126px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--conference-border);
+  border-radius: 8px;
+  background: var(--conference-surface);
+  color: var(--conference-navy);
+  font-family: var(--conference-font);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.conference-upload-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.conference-upload-button:hover {
+  border-color: var(--conference-gold);
+  background: rgba(217, 173, 76, 0.1);
+  color: var(--conference-navy);
+  box-shadow: 0 2px 6px rgba(11, 35, 69, 0.06);
+}
+
+.conference-upload-button input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================================================
+   SELECTED FILE
+========================================================= */
+
+.conference-selected-file {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin-top: 0;
+  padding: 10px 12px;
+  overflow: hidden;
+  border: 1px solid #cce4d5;
+  border-radius: 8px;
+  background: #f1faf4;
+  color: #286744;
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.conference-selected-file::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #d8efdf;
+  color: #286744;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.conference-document-error {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   DOCUMENT NOTE
+========================================================= */
+
+.conference-document-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 14px 22px 22px;
+  color: var(--conference-muted);
+}
+
+.conference-document-note svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  color: var(--conference-gold);
+}
+
+.conference-document-note p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   DECLARATION
+========================================================= */
+
+.conference-declaration-card {
+  padding: 20px 22px;
+}
+
+.conference-checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.conference-checkbox-wrapper input {
+  width: 17px;
+  min-width: 17px;
+  height: 17px;
+  margin: 3px 0 0;
+  accent-color: var(--conference-navy);
+  cursor: pointer;
+}
+
+.conference-checkbox-wrapper label {
+  color: var(--conference-text);
+  font-family: var(--conference-font);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+  cursor: pointer;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.conference-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 2px 0 20px;
+}
+
+.conference-draft-button,
+.conference-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-family: var(--conference-font);
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.conference-draft-button {
+  border: 1px solid var(--conference-border);
+  background: var(--conference-surface);
+  color: var(--conference-navy);
+}
+
+.conference-draft-button:hover {
+  border-color: var(--conference-gold);
+  background: rgba(217, 173, 76, 0.1);
+}
+
+.conference-submit-button {
+  border: 1px solid var(--conference-navy);
+  background: var(--conference-navy);
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(11, 35, 69, 0.12);
+}
+
+.conference-submit-button:hover {
+  border-color: var(--conference-navy-hover);
+  background: var(--conference-navy-hover);
+  box-shadow: 0 4px 12px rgba(11, 35, 69, 0.18);
+}
+
+.conference-draft-button:disabled,
+.conference-submit-button:disabled,
+.conference-secondary-button:disabled,
+.conference-upload-button:has(input:disabled) {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.conference-submit-button:active,
+.conference-draft-button:active,
+.conference-secondary-button:active {
+  transform: translateY(1px);
+}
+
+/* =========================================================
+   DARK MODE
+   Supports data-theme on html, body or an ancestor.
+========================================================= */
+
+[data-theme="dark"] .conference-page {
+  --conference-navy: #e4bd63;
+  --conference-navy-hover: #f0ce7d;
+  --conference-gold: #e4bd63;
+  --conference-text: #f1f5f9;
+  --conference-muted: #b8c5d3;
+  --conference-subtle: #8fa1b5;
+  --conference-border: #344359;
+  --conference-border-light: #29384d;
+  --conference-surface: #172235;
+  --conference-surface-soft: #1d2a3d;
+  --conference-page-bg: #0f1724;
+}
+
+[data-theme="dark"] .conference-card {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .conference-heading h1,
+[data-theme="dark"] .conference-section-icon,
+[data-theme="dark"] .conference-document-icon,
+[data-theme="dark"] .conference-author-number,
+[data-theme="dark"] .conference-secondary-button,
+[data-theme="dark"] .conference-upload-button,
+[data-theme="dark"] .conference-draft-button {
+  color: var(--conference-text);
+}
+
+[data-theme="dark"] .conference-section-icon,
+[data-theme="dark"] .conference-document-icon,
+[data-theme="dark"] .conference-author-number {
+  border-color: #5a4b2e;
+  background: #302a20;
+  color: #e4bd63;
+}
+
+[data-theme="dark"] .conference-field input,
+[data-theme="dark"] .conference-field select,
+[data-theme="dark"] .conference-field textarea,
+[data-theme="dark"] .conference-currency-input,
+[data-theme="dark"] .conference-currency-input input {
+  background: var(--conference-surface);
+  color: var(--conference-text);
+}
+
+[data-theme="dark"] .conference-field input::placeholder,
+[data-theme="dark"] .conference-field textarea::placeholder {
+  color: var(--conference-subtle);
+}
+
+[data-theme="dark"] .conference-field input:hover,
+[data-theme="dark"] .conference-field select:hover,
+[data-theme="dark"] .conference-field textarea:hover {
+  border-color: #53657c;
+}
+
+[data-theme="dark"] .conference-field input:focus,
+[data-theme="dark"] .conference-field select:focus,
+[data-theme="dark"] .conference-field textarea:focus,
+[data-theme="dark"] .conference-currency-input:focus-within {
+  border-color: var(--conference-gold);
+}
+
+[data-theme="dark"] .conference-secondary-button,
+[data-theme="dark"] .conference-upload-button,
+[data-theme="dark"] .conference-draft-button {
+  border-color: var(--conference-border);
+  background: var(--conference-surface);
+}
+
+[data-theme="dark"] .conference-secondary-button:hover,
+[data-theme="dark"] .conference-upload-button:hover,
+[data-theme="dark"] .conference-draft-button:hover {
+  border-color: var(--conference-gold);
+  background: #273448;
+}
+
+[data-theme="dark"] .conference-document-required {
+  border-color: #6d5730;
+  background: #332b1d;
+  color: #f0ce7d;
+}
+
+[data-theme="dark"] .conference-success-message {
+  border-color: #285641;
+  border-left-color: #59b782;
+  background: #172e27;
+  color: #a6e4bf;
+}
+
+[data-theme="dark"] .conference-success-message svg,
+[data-theme="dark"] .conference-uploaded-document {
+  color: #8ed9ac;
+}
+
+[data-theme="dark"] .conference-selected-file {
+  border-color: #285641;
+  background: #172e27;
+  color: #a6e4bf;
+}
+
+[data-theme="dark"] .conference-selected-file::before {
+  background: #285641;
+  color: #baf0cc;
+}
+
+[data-theme="dark"] .conference-uploaded-document button,
+[data-theme="dark"] .conference-error {
+  color: #ffaaa5;
+}
+
+[data-theme="dark"] .conference-delete-button {
+  border-color: #633c40;
+  background: #302126;
+  color: #ffaaa5;
+}
+
+[data-theme="dark"] .conference-delete-button:hover {
+  border-color: #895052;
+  background: #40252b;
+}
+
+[data-theme="dark"] .conference-submit-button {
+  border-color: #e4bd63;
+  background: #e4bd63;
+  color: #172235;
+}
+
+[data-theme="dark"] .conference-submit-button:hover {
+  border-color: #f0ce7d;
+  background: #f0ce7d;
+}
+
+[data-theme="dark"] .conference-field label span {
+  color: #ffaaa5;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .conference-author-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .conference-author-fields > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .conference-page {
+    padding: 4px 16px 28px;
+  }
+
+  .conference-header {
+    margin-bottom: 18px;
+  }
+
+  .conference-heading h1 {
+    font-size: 24px;
+  }
+
+  .conference-heading p {
+    font-size: 13px;
+  }
+
+  .conference-form {
+    gap: 15px;
+  }
+
+  .conference-section-header {
+    min-height: 62px;
+    padding: 13px 16px;
+  }
+
+  .conference-form-grid {
+    gap: 17px;
+    padding: 20px 16px;
+  }
+
+  .conference-subsection {
+    margin: 0 16px 20px;
+  }
+
+  .conference-author-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .conference-author-fields > :last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .conference-document-list {
+    margin: 18px 16px 0;
+  }
+
+  .conference-document {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .conference-upload-button {
+    width: fit-content;
+  }
+
+  .conference-document-note {
+    margin: 13px 16px 18px;
+  }
+
+  .conference-declaration-card {
+    padding: 18px 16px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .conference-page {
+    padding: 2px 10px 24px;
+    font-size: 14px;
+  }
+
+  .conference-heading h1 {
+    font-size: 22px;
+  }
+
+  .conference-heading p {
+    font-size: 13px;
+  }
+
+  .conference-back {
+    margin-bottom: 10px;
+  }
+
+  .conference-eyebrow {
+    font-size: 11px;
+  }
+
+  .conference-section-header {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 13px 12px;
+  }
+
+  .conference-section-icon {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+  }
+
+  .conference-section-header h2 {
+    font-size: 15px;
+  }
+
+  .conference-section-header p {
+    font-size: 12px;
+  }
+
+  .conference-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    padding: 17px 12px;
+  }
+
+  .conference-field-full {
+    grid-column: auto;
+  }
+
+  .conference-field label {
+    font-size: 13px;
+  }
+
+  .conference-field input,
+  .conference-field select {
+    height: 44px;
+  }
+
+  .conference-field textarea {
+    min-height: 100px;
+  }
+
+  .conference-subsection {
+    margin: 0 12px 16px;
+    padding-top: 16px;
+  }
+
+  .conference-subsection-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .conference-secondary-button {
+    width: 100%;
+  }
+
+  .conference-author-row {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .conference-author-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .conference-delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .conference-author-error {
+    grid-column: 1 / -1;
+  }
+
+  .conference-document-list {
+    margin: 15px 12px 0;
+  }
+
+  .conference-document {
+    gap: 12px;
+    padding: 14px 12px;
+  }
+
+  .conference-document-information {
+    gap: 10px;
+  }
+
+  .conference-document-icon {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+  }
+
+  .conference-document-title strong {
+    font-size: 13px;
+  }
+
+  .conference-document-information p {
+    font-size: 12px;
+  }
+
+  .conference-upload-button {
+    width: 100%;
+  }
+
+  .conference-selected-file {
+    font-size: 12px;
+  }
+
+  .conference-document-note {
+    margin: 12px 12px 16px;
+  }
+
+  .conference-declaration-card {
+    padding: 16px 12px;
+  }
+
+  .conference-checkbox-wrapper {
+    gap: 9px;
+  }
+
+  .conference-checkbox-wrapper label {
+    font-size: 12px;
+  }
+
+  .conference-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
+    padding-bottom: 12px;
+  }
+
+  .conference-draft-button,
+  .conference-submit-button {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .conference-uploaded-document {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .conference-uploaded-document span {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .conference-page *,
+  .conference-page *::before,
+  .conference-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,1354 @@
+
+/* =========================================================
+   RIMS — FACULTY PORTAL
+   Premium university design
+   File: frontend/src/pages/auth/Login.css
+   ========================================================= */
+
+.login-page {
+  --rims-navy: #123654;
+  --rims-navy-deep: #09263d;
+  --rims-blue: #20557c;
+  --rims-blue-light: #eaf2f8;
+  --rims-gold: #e8b955;
+  --rims-gold-light: #f8dfa0;
+  --rims-text: #213b52;
+  --rims-muted: #7b8fa2;
+  --rims-border: #dce6ee;
+  --rims-white: #ffffff;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  color: var(--rims-text);
+  background: var(--rims-navy-deep);
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================================================
+   CAMPUS BACKGROUND
+   ========================================================= */
+
+.campus-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #102f47;
+}
+
+.campus-background-image {
+  position: absolute;
+  inset: -8px;
+  background-image: url("/images/campus.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(2px);
+  transform: scale(1.025);
+  opacity: 0.92;
+}
+
+.campus-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      100deg,
+      rgba(5, 29, 43, 0.80) 0%,
+      rgba(11, 43, 64, 0.65) 43%,
+      rgba(12, 38, 57, 0.60) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(5, 26, 42, 0.48) 0%,
+      rgba(5, 26, 42, 0.06) 55%,
+      rgba(5, 26, 42, 0.26) 100%
+    );
+}
+
+/* Decorative light accents */
+
+.login-page::before {
+  content: "";
+  position: fixed;
+  top: -210px;
+  left: 30%;
+  z-index: 0;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: rgba(231, 185, 85, 0.08);
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.login-page::after {
+  content: "";
+  position: fixed;
+  right: -170px;
+  bottom: -220px;
+  z-index: 0;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: rgba(80, 154, 196, 0.13);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* =========================================================
+   MAIN PAGE GRID
+   ========================================================= */
+
+.login-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(370px, 430px);
+  align-items: center;
+  gap: clamp(38px, 6vw, 88px);
+  width: min(1380px, calc(100% - 88px));
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 34px 0;
+}
+
+/* =========================================================
+   LEFT BRANDING
+   ========================================================= */
+
+.rims-branding {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: stretch;
+  min-width: 0;
+  padding-top: 8px;
+  color: var(--rims-white);
+}
+
+.university-brand {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.srm-logo-wrapper {
+  display: flex;
+  flex: 0 0 76px;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow:
+    0 12px 32px rgba(2, 17, 28, 0.20),
+    inset 0 0 0 5px rgba(255, 255, 255, 0.35);
+}
+
+.srm-logo {
+  display: block;
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+}
+
+.university-details {
+  min-width: 0;
+}
+
+.university-name {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.6;
+  letter-spacing: 0.015em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.20);
+}
+
+.campus-name {
+  margin: 5px 0 0;
+  color: var(--rims-gold-light);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: 0.19em;
+}
+
+/* Main title */
+
+.branding-main {
+  width: 100%;
+  max-width: 570px;
+  margin-top: clamp(78px, 14vh, 142px);
+  padding-bottom: 20px;
+  animation: rimsBrandIntro 700ms ease both;
+}
+
+.rims-small-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 17px;
+  color: var(--rims-gold-light);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.27em;
+  text-transform: uppercase;
+}
+
+.rims-small-title::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  border-radius: 5px;
+  background: var(--rims-gold);
+  box-shadow: 0 0 12px rgba(232, 185, 85, 0.32);
+}
+
+.branding-main h1 {
+  max-width: 540px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(30px, 3vw, 43px);
+  font-weight: 760;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.24);
+}
+
+.gold-line {
+  width: 56px;
+  height: 4px;
+  margin-top: 23px;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    var(--rims-gold),
+    var(--rims-gold-light)
+  );
+  box-shadow: 0 0 18px rgba(232, 185, 85, 0.16);
+}
+
+.faculty-name {
+  margin: 19px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+  font-weight: 450;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* =========================================================
+   AUTHENTICATION CARD
+   ========================================================= */
+
+.authentication-card {
+  justify-self: end;
+  width: 100%;
+  max-width: 430px;
+  min-width: 0;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.975);
+  box-shadow:
+    0 28px 80px rgba(3, 20, 33, 0.26),
+    0 5px 18px rgba(3, 20, 33, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: #ccd8e2 transparent;
+  animation: rimsCardIntro 650ms ease both;
+}
+
+.authentication-card::-webkit-scrollbar {
+  width: 5px;
+}
+
+.authentication-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.authentication-card::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #ccd8e2;
+}
+
+.authentication-inner {
+  padding: 28px 29px 24px;
+}
+
+/* =========================================================
+   AUTH HEADING
+   ========================================================= */
+
+.auth-heading {
+  margin-bottom: 21px;
+}
+
+.auth-heading > span {
+  display: block;
+  margin-bottom: 11px;
+  color: #a77920;
+  font-size: 10px;
+  font-weight: 850;
+  line-height: 1.5;
+  letter-spacing: 0.21em;
+}
+
+.auth-heading h2 {
+  margin: 0;
+  color: #183953;
+  font-size: 27px;
+  font-weight: 780;
+  line-height: 1.22;
+  letter-spacing: -0.045em;
+}
+
+.auth-heading p {
+  margin: 8px 0 0;
+  color: #7b8fa2;
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   SIGN IN / REQUEST ACCESS TABS
+   ========================================================= */
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+  margin-bottom: 23px;
+  padding: 4px;
+  border: 1px solid #e4ebf1;
+  border-radius: 13px;
+  background: #f3f6f9;
+}
+
+.auth-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 10px 7px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: transparent;
+  color: #637b90;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.auth-tab svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.auth-tab:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--rims-navy);
+}
+
+.auth-tab.active {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: linear-gradient(135deg, #22577d 0%, #103b5c 100%);
+  color: #ffffff;
+  box-shadow:
+    0 4px 11px rgba(18, 54, 84, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+.auth-tab.active svg {
+  color: var(--rims-gold-light);
+}
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.form-group > label,
+.form-label-row > label {
+  color: #2a4358;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.form-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.forgot-password {
+  flex-shrink: 0;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: #1a527b;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.forgot-password:hover {
+  color: #a77920;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 0 12px;
+  border: 1px solid #dce6ee;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #8098ad;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #6592b4;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 92, 132, 0.09);
+}
+
+.input-wrapper > svg {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  color: #7d9bb5;
+  stroke-width: 1.9;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 43px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #263f55;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.input-wrapper input::placeholder {
+  color: #9aafc2;
+  opacity: 1;
+}
+
+.input-wrapper select {
+  cursor: pointer;
+}
+
+.input-wrapper select:invalid {
+  color: #9aafc2;
+}
+
+.input-wrapper input:-webkit-autofill,
+.input-wrapper input:-webkit-autofill:hover,
+.input-wrapper input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #263f55;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.password-toggle {
+  display: inline-flex;
+  flex: 0 0 27px;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #7c96ac;
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.password-toggle svg {
+  width: 17px;
+  height: 17px;
+}
+
+.password-toggle:hover {
+  background: #edf3f7;
+  color: var(--rims-navy);
+}
+
+/* =========================================================
+   CHECKBOXES
+   ========================================================= */
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  width: fit-content;
+  max-width: 100%;
+  color: #758ba0;
+  font-size: 11.5px;
+  line-height: 1.65;
+  cursor: pointer;
+}
+
+.checkbox-row input {
+  flex: 0 0 15px;
+  width: 15px;
+  height: 15px;
+  margin: 2px 0 0;
+  accent-color: #1c5279;
+  cursor: pointer;
+}
+
+.checkbox-row span {
+  min-width: 0;
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.primary-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 1px;
+  padding: 12px 17px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 11px;
+  background: linear-gradient(
+    110deg,
+    #225981 0%,
+    #17496e 48%,
+    #103956 100%
+  );
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 780;
+  cursor: pointer;
+  box-shadow:
+    0 8px 20px rgba(19, 65, 98, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.primary-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 65%;
+  height: 100%;
+  transform: skewX(-22deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.11),
+    transparent
+  );
+  transition: left 500ms ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 11px 25px rgba(19, 65, 98, 0.23),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  filter: saturate(1.08);
+}
+
+.primary-button:hover::before {
+  left: 150%;
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+.primary-button span,
+.primary-button svg {
+  position: relative;
+  z-index: 1;
+}
+
+.primary-button svg {
+  width: 17px;
+  height: 17px;
+  color: var(--rims-gold-light);
+  transition: transform 180ms ease;
+}
+
+.primary-button:hover svg {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   SECURITY NOTE
+   ========================================================= */
+
+.security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 1px;
+  color: #8a9daf;
+  font-size: 10.5px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.security-note svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: #159c75;
+  stroke-width: 2;
+}
+
+/* =========================================================
+   SWITCH BETWEEN SIGN IN AND REGISTER
+   ========================================================= */
+
+.switch-message {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: -1px;
+  color: #8598aa;
+  font-size: 11.5px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.switch-message button {
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: #174d74;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.switch-message button:hover {
+  color: #a77920;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   REGISTRATION FORM
+   ========================================================= */
+
+.registration-form {
+  gap: 13px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  width: 100%;
+  min-width: 0;
+}
+
+.form-row .form-group {
+  min-width: 0;
+}
+
+.registration-form .input-wrapper {
+  min-height: 42px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.registration-form .input-wrapper input,
+.registration-form .input-wrapper select {
+  min-height: 40px;
+  font-size: 11.5px;
+}
+
+.registration-form .form-group > label {
+  font-size: 11.5px;
+}
+
+.optional-label {
+  color: #95a6b5;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   PROFILE PHOTO UPLOAD
+   ========================================================= */
+
+.profile-photo-group {
+  gap: 8px;
+}
+
+.profile-photo-upload {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px dashed #cbd9e4;
+  border-radius: 12px;
+  background: #f8fafc;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.profile-photo-upload:hover {
+  border-color: #8ba9c0;
+  background: #f3f7fa;
+}
+
+.profile-photo-preview {
+  display: flex;
+  flex: 0 0 58px;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  overflow: hidden;
+  border: 1px solid #dce7ef;
+  border-radius: 12px;
+  background: #edf3f7;
+  color: #8199ad;
+}
+
+.profile-photo-preview svg {
+  width: 24px;
+  height: 24px;
+}
+
+.profile-photo-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-photo-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+}
+
+.photo-select-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 7px 10px;
+  border: 1px solid #d5e1eb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #22577d;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.photo-select-button:hover {
+  border-color: #8daec5;
+  background: #f0f6fa;
+}
+
+.profile-photo-details input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.profile-photo-details p {
+  margin: 0;
+  color: #8b9eb0;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.selected-photo-name {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  color: #3e6b8d;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.declaration-row {
+  width: 100%;
+  margin: 1px 0;
+  font-size: 10.5px;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   Subtle blue keyboard focus instead of a yellow outline
+   ========================================================= */
+
+/* Remove colored focus outlines */
+.login-page button:focus-visible,
+.login-page input:focus-visible,
+.login-page select:focus-visible,
+.login-page .photo-select-button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove outline after mouse clicks */
+.login-page button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Avoid focus outlines on buttons clicked with a mouse.
+   Keyboard focus-visible styling remains available. */
+
+.login-page button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Disabled controls */
+
+.login-page button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes rimsBrandIntro {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rimsCardIntro {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   MEDIUM LAPTOPS
+   ========================================================= */
+
+@media (max-width: 1150px) {
+  .login-content {
+    grid-template-columns: minmax(0, 1fr) minmax(350px, 400px);
+    gap: 38px;
+    width: calc(100% - 64px);
+  }
+
+  .authentication-inner {
+    padding: 25px 24px 22px;
+  }
+
+  .branding-main {
+    max-width: 460px;
+    margin-top: clamp(75px, 13vh, 120px);
+  }
+
+  .branding-main h1 {
+    font-size: clamp(29px, 3.1vw, 37px);
+  }
+
+  .university-name {
+    font-size: 12px;
+  }
+
+  .srm-logo-wrapper {
+    flex-basis: 68px;
+    width: 68px;
+    height: 68px;
+    border-radius: 19px;
+  }
+}
+
+/* =========================================================
+   TABLETS
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .login-content {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 28px;
+    width: min(560px, calc(100% - 36px));
+    padding: 28px 0;
+  }
+
+  .rims-branding {
+    align-self: auto;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .university-brand {
+    gap: 13px;
+  }
+
+  .srm-logo-wrapper {
+    flex-basis: 58px;
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+  }
+
+  .university-name {
+    font-size: 11px;
+  }
+
+  .campus-name {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+
+  .branding-main {
+    margin-top: 37px;
+    padding-bottom: 0;
+  }
+
+  .branding-main h1 {
+    max-width: 490px;
+    font-size: clamp(27px, 5vw, 35px);
+  }
+
+  .rims-small-title {
+    margin-bottom: 12px;
+  }
+
+  .gold-line {
+    margin-top: 16px;
+  }
+
+  .faculty-name {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .authentication-card {
+    justify-self: center;
+    width: 100%;
+    max-width: 460px;
+    max-height: none;
+  }
+
+  .authentication-inner {
+    padding: 26px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .login-content {
+    width: calc(100% - 28px);
+    gap: 23px;
+    padding: 20px 0 24px;
+  }
+
+  .campus-background-image {
+    background-position: 58% center;
+    opacity: 0.76;
+  }
+
+  .campus-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 29, 43, 0.76) 0%,
+        rgba(8, 34, 53, 0.65) 43%,
+        rgba(7, 31, 48, 0.78) 100%
+      );
+  }
+
+  .srm-logo-wrapper {
+    flex-basis: 52px;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+
+  .university-brand {
+    gap: 11px;
+  }
+
+  .university-name {
+    max-width: 265px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .campus-name {
+    margin-top: 3px;
+    font-size: 9px;
+    letter-spacing: 0.11em;
+  }
+
+  .branding-main {
+    margin-top: 28px;
+  }
+
+  .rims-small-title {
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+
+  .rims-small-title::before {
+    width: 23px;
+  }
+
+  .branding-main h1 {
+    font-size: clamp(25px, 7vw, 32px);
+    line-height: 1.16;
+  }
+
+  .gold-line {
+    width: 45px;
+    height: 3px;
+    margin-top: 14px;
+  }
+
+  .faculty-name {
+    margin-top: 10px;
+    font-size: 11px;
+  }
+
+  .authentication-card {
+    border-radius: 19px;
+  }
+
+  .authentication-inner {
+    padding: 23px 20px 20px;
+  }
+
+  .auth-heading {
+    margin-bottom: 18px;
+  }
+
+  .auth-heading > span {
+    margin-bottom: 8px;
+    font-size: 9px;
+  }
+
+  .auth-heading h2 {
+    font-size: 24px;
+  }
+
+  .auth-heading p {
+    font-size: 12px;
+  }
+
+  .auth-tabs {
+    margin-bottom: 20px;
+  }
+
+  .auth-tab {
+    min-height: 41px;
+    font-size: 11px;
+  }
+
+  .auth-form {
+    gap: 15px;
+  }
+
+  .form-row {
+    gap: 11px;
+  }
+
+  .registration-form {
+    gap: 12px;
+  }
+
+  .input-wrapper {
+    min-height: 43px;
+    gap: 8px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .input-wrapper input,
+  .input-wrapper select {
+    min-height: 41px;
+    font-size: 12px;
+  }
+
+  .primary-button {
+    min-height: 46px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .login-content {
+    width: calc(100% - 22px);
+    gap: 20px;
+  }
+
+  .university-name {
+    max-width: 220px;
+    font-size: 9px;
+  }
+
+  .campus-name {
+    font-size: 8px;
+  }
+
+  .branding-main h1 {
+    font-size: 25px;
+  }
+
+  .authentication-inner {
+    padding: 21px 16px 18px;
+  }
+
+  .auth-heading h2 {
+    font-size: 22px;
+  }
+
+  .auth-tabs {
+    gap: 3px;
+    padding: 3px;
+  }
+
+  .auth-tab {
+    gap: 6px;
+    padding: 9px 4px;
+    font-size: 10px;
+  }
+
+  .auth-tab svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .form-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .profile-photo-upload {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .profile-photo-preview {
+    flex-basis: 49px;
+    width: 49px;
+    height: 49px;
+  }
+
+  .declaration-row {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   SHORT LAPTOP SCREENS
+   ========================================================= */
+
+@media (min-width: 901px) and (max-height: 760px) {
+  .login-content {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  .authentication-card {
+    max-height: calc(100dvh - 44px);
+  }
+
+  .authentication-inner {
+    padding: 21px 24px 18px;
+  }
+
+  .auth-heading {
+    margin-bottom: 15px;
+  }
+
+  .auth-heading > span {
+    margin-bottom: 7px;
+  }
+
+  .auth-heading h2 {
+    font-size: 24px;
+  }
+
+  .auth-tabs {
+    margin-bottom: 17px;
+  }
+
+  .auth-form {
+    gap: 12px;
+  }
+
+  .branding-main {
+    margin-top: clamp(55px, 10vh, 90px);
+  }
+
+  .branding-main h1 {
+    font-size: clamp(28px, 2.8vw, 38px);
+  }
+
+  .gold-line {
+    margin-top: 17px;
+  }
+
+  .faculty-name {
+    margin-top: 13px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .login-page *,
+  .login-page *::before,
+  .login-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Make registration dropdown text dark and readable */
+.login-page .input-wrapper select {
+  color: #263f55;
+  background-color: #ffffff;
+}
+
+/* Make department and designation dropdown options visible */
+.login-page .input-wrapper select option {
+  color: #213b52;
+  background-color: #ffffff;
+}
+
+/* Keep placeholder text slightly muted */
+.login-page .input-wrapper select:invalid {
+  color: #526b80;
+}

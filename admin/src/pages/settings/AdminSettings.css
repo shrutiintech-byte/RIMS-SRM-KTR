@@ -1,0 +1,1537 @@
+
+/* =====================================================
+   SRM RIMS | ADMIN SETTINGS
+   Clean • Sequential • Responsive
+   Navy + Gold | Light & Dark Mode
+===================================================== */
+
+.admin-settings-page {
+  --as-bg: #f4f6fa;
+  --as-card: #ffffff;
+  --as-surface: #f7f9fc;
+  --as-text: #344256;
+  --as-heading: #18365b;
+  --as-muted: #68788e;
+  --as-border: #e0e6ef;
+  --as-primary: #18365b;
+  --as-primary-hover: #24476f;
+  --as-gold: #c4a052;
+  --as-gold-soft: #faf5e9;
+  --as-success: #287c60;
+  --as-success-bg: #edf7f1;
+  --as-danger: #b83f48;
+  --as-danger-bg: #fff1f1;
+  --as-shadow: 0 3px 12px rgb(26 42 66 / 5%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 26px 30px 32px;
+
+  color: var(--as-text);
+  background: var(--as-bg);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.admin-settings-page *,
+.admin-settings-page *::before,
+.admin-settings-page *::after {
+  box-sizing: border-box;
+}
+
+.admin-settings-page button,
+.admin-settings-page input {
+  font: inherit;
+}
+
+.admin-settings-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.admin-settings-page svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.admin-settings-page h1,
+.admin-settings-page h2,
+.admin-settings-page h3,
+.admin-settings-page p {
+  margin-top: 0;
+}
+
+.admin-settings-page button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   1. DARK MODE
+===================================================== */
+
+html.dark .admin-settings-page,
+html[data-theme="dark"] .admin-settings-page,
+html[data-rims-theme="dark"] .admin-settings-page {
+  --as-bg: #111a29;
+  --as-card: #192538;
+  --as-surface: #202e42;
+  --as-text: #dce5f0;
+  --as-heading: #e5c575;
+  --as-muted: #afbdcf;
+  --as-border: #334258;
+  --as-primary: #d4b363;
+  --as-primary-hover: #e5c982;
+  --as-gold: #d4b363;
+  --as-gold-soft: #302d27;
+  --as-success: #91d5b5;
+  --as-success-bg: #1b382f;
+  --as-danger: #ffaaaa;
+  --as-danger-bg: #3c252c;
+  --as-shadow: 0 4px 14px rgb(0 0 0 / 12%);
+}
+
+/* =====================================================
+   2. PAGE HEADING
+===================================================== */
+
+.admin-settings-page .as-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.admin-settings-page .as-heading-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-settings-page .as-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+
+  color: var(--as-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  line-height: 1.5;
+}
+
+.admin-settings-page .as-heading h1 {
+  margin: 0 0 7px;
+
+  color: var(--as-heading);
+  font-size: 28px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.45px;
+}
+
+.admin-settings-page .as-heading-copy > p {
+  max-width: 680px;
+  margin: 0;
+
+  color: var(--as-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.admin-settings-page .as-heading-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+
+  color: var(--as-gold);
+  background: var(--as-card);
+  border: 1px solid var(--as-border);
+  border-radius: 12px;
+}
+
+/* =====================================================
+   3. WORKSPACE SUMMARY
+===================================================== */
+
+.admin-settings-page .as-summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+  min-width: 0;
+  padding: 17px 20px;
+
+  background: var(--as-card);
+  border: 1px solid var(--as-border);
+  border-radius: 12px;
+  box-shadow: var(--as-shadow);
+}
+
+.admin-settings-page .as-summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+
+  color: var(--as-gold);
+  background: var(--as-gold-soft);
+  border-radius: 10px;
+}
+
+.admin-settings-page .as-summary-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.admin-settings-page .as-summary-copy strong {
+  color: var(--as-heading);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.admin-settings-page .as-summary-copy span {
+  color: var(--as-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.admin-settings-page .as-theme-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  flex-shrink: 0;
+  padding: 8px 12px;
+
+  color: var(--as-heading);
+  background: var(--as-surface);
+  border: 1px solid var(--as-border);
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   4. SUCCESS AND ERROR MESSAGES
+===================================================== */
+
+.admin-settings-page .as-feedback {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  width: 100%;
+  min-width: 0;
+  padding: 13px 16px;
+
+  border: 1px solid var(--as-border);
+  border-radius: 10px;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.admin-settings-page .as-feedback svg {
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+}
+
+.admin-settings-page .as-feedback-error {
+  color: var(--as-danger);
+  background: var(--as-danger-bg);
+  border-color: color-mix(
+    in srgb,
+    var(--as-danger) 25%,
+    var(--as-border)
+  );
+}
+
+.admin-settings-page .as-feedback-success {
+  color: var(--as-success);
+  background: var(--as-success-bg);
+  border-color: color-mix(
+    in srgb,
+    var(--as-success) 25%,
+    var(--as-border)
+  );
+}
+
+.admin-settings-page .as-feedback span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   5. SETTINGS CARDS
+   All sections follow a single vertical sequence.
+===================================================== */
+
+.admin-settings-page .as-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  width: 100%;
+  min-width: 0;
+  align-self: stretch;
+  padding: 23px 25px;
+
+  background: var(--as-card);
+  border: 1px solid var(--as-border);
+  border-radius: 13px;
+  box-shadow: var(--as-shadow);
+
+  transition: border-color 0.2s ease;
+}
+
+.admin-settings-page .as-card:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--as-gold) 35%,
+    var(--as-border)
+  );
+}
+
+.admin-settings-page .as-security-card {
+  width: 100%;
+}
+
+/* =====================================================
+   6. SECTION HEADINGS
+===================================================== */
+
+.admin-settings-page .as-card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 21px;
+}
+
+.admin-settings-page .as-heading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+
+  color: var(--as-heading);
+  background: var(--as-surface);
+  border: 1px solid var(--as-border);
+  border-radius: 10px;
+}
+
+.admin-settings-page .as-card-heading > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-settings-page .as-card-heading h2 {
+  margin: 1px 0 5px;
+
+  color: var(--as-heading);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.admin-settings-page .as-card-heading p {
+  margin: 0;
+
+  color: var(--as-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   7. THEME SELECTION
+===================================================== */
+
+.admin-settings-page .as-theme-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 15px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-settings-page .as-theme-option {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 13px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 92px;
+  padding: 15px;
+
+  color: var(--as-text);
+  text-align: left;
+  background: var(--as-card);
+  border: 1px solid var(--as-border);
+  border-radius: 11px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.admin-settings-page .as-theme-option:hover {
+  background: var(--as-surface);
+  border-color: var(--as-gold);
+}
+
+.admin-settings-page .as-theme-option.selected {
+  background: var(--as-gold-soft);
+  border-color: var(--as-gold);
+  box-shadow: inset 0 0 0 1px var(--as-gold);
+}
+
+.admin-settings-page .as-theme-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  width: 48px;
+  height: 54px;
+  padding: 6px;
+
+  border: 1px solid var(--as-border);
+  border-radius: 8px;
+}
+
+.admin-settings-page .as-preview-light {
+  color: #18365b;
+  background: #ffffff;
+}
+
+.admin-settings-page .as-preview-dark {
+  color: #e5c575;
+  background: #172338;
+  border-color: #35445a;
+}
+
+.admin-settings-page .as-preview-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.admin-settings-page .as-preview-lines i {
+  display: block;
+
+  width: 100%;
+  height: 3px;
+
+  background: #dce3ec;
+  border-radius: 3px;
+}
+
+.admin-settings-page .as-preview-lines i:nth-child(2) {
+  width: 75%;
+}
+
+.admin-settings-page .as-preview-lines i:nth-child(3) {
+  width: 50%;
+}
+
+.admin-settings-page .as-preview-dark .as-preview-lines i {
+  background: #45546a;
+}
+
+.admin-settings-page .as-theme-option-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.admin-settings-page .as-theme-option-copy strong {
+  color: var(--as-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.admin-settings-page .as-theme-option-copy small {
+  color: var(--as-muted);
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.admin-settings-page .as-radio {
+  position: relative;
+
+  width: 18px;
+  height: 18px;
+
+  border: 1.5px solid var(--as-muted);
+  border-radius: 50%;
+}
+
+.admin-settings-page .as-theme-option.selected .as-radio {
+  border-color: var(--as-gold);
+}
+
+.admin-settings-page .as-theme-option.selected .as-radio::after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+
+  width: 10px;
+  height: 10px;
+
+  content: "";
+  background: var(--as-gold);
+  border-radius: 50%;
+}
+
+/* =====================================================
+   8. INFORMATION NOTES
+===================================================== */
+
+.admin-settings-page .as-inline-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  margin: 18px 0 0;
+  padding-top: 14px;
+
+  color: var(--as-muted);
+  border-top: 1px solid var(--as-border);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.admin-settings-page .as-inline-note svg {
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+
+  color: var(--as-gold);
+}
+
+.admin-settings-page .as-inline-note {
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   9. WORKSPACE AND NOTIFICATION ROWS
+===================================================== */
+
+.admin-settings-page .as-setting-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  width: 100%;
+  min-width: 0;
+  padding: 17px 0;
+
+  border-top: 1px solid var(--as-border);
+  cursor: pointer;
+}
+
+.admin-settings-page .as-setting-row:first-of-type {
+  padding-top: 3px;
+  border-top: 0;
+}
+
+.admin-settings-page .as-setting-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+
+  color: var(--as-muted);
+  background: var(--as-surface);
+  border: 1px solid var(--as-border);
+  border-radius: 10px;
+}
+
+.admin-settings-page .as-setting-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 0;
+}
+
+.admin-settings-page .as-setting-copy strong {
+  color: var(--as-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.admin-settings-page .as-setting-copy small {
+  color: var(--as-muted);
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   10. ACCESSIBLE TOGGLE SWITCHES
+===================================================== */
+
+.admin-settings-page .as-setting-row input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  position: relative;
+  display: block;
+
+  width: 42px;
+  height: 24px;
+  flex: 0 0 42px;
+  margin: 0 2px 0 8px;
+
+  background: #d6dce5;
+  border: 1px solid #c7cfdb;
+  border-radius: 24px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.admin-settings-page .as-setting-row input[type="checkbox"]::before {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+
+  width: 16px;
+  height: 16px;
+
+  content: "";
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
+
+  transition: transform 0.18s ease;
+}
+
+.admin-settings-page .as-setting-row input[type="checkbox"]:checked {
+  background: var(--as-primary);
+  border-color: var(--as-primary);
+}
+
+.admin-settings-page .as-setting-row input[type="checkbox"]:checked::before {
+  transform: translateX(18px);
+}
+
+.admin-settings-page .as-setting-row input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--as-gold);
+  outline-offset: 3px;
+}
+
+html.dark .admin-settings-page .as-setting-row input[type="checkbox"]:checked,
+html[data-theme="dark"] .admin-settings-page .as-setting-row input[type="checkbox"]:checked,
+html[data-rims-theme="dark"] .admin-settings-page .as-setting-row input[type="checkbox"]:checked {
+  background: var(--as-gold);
+  border-color: var(--as-gold);
+}
+
+html.dark .admin-settings-page .as-setting-row input[type="checkbox"]:checked::before,
+html[data-theme="dark"] .admin-settings-page .as-setting-row input[type="checkbox"]:checked::before,
+html[data-rims-theme="dark"] .admin-settings-page .as-setting-row input[type="checkbox"]:checked::before {
+  background: #192538;
+}
+
+/* =====================================================
+   11. SECURITY SECTION
+===================================================== */
+
+.admin-settings-page .as-security-note {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 15px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-settings-page .as-security-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  min-width: 0;
+  padding: 17px;
+
+  background: var(--as-surface);
+  border: 1px solid var(--as-border);
+  border-radius: 10px;
+}
+
+.admin-settings-page .as-security-tip > svg {
+  width: 21px;
+  height: 21px;
+  margin-top: 2px;
+
+  color: var(--as-gold);
+}
+
+.admin-settings-page .as-security-tip > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-settings-page .as-security-tip strong {
+  display: block;
+  margin-bottom: 6px;
+
+  color: var(--as-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.admin-settings-page .as-security-tip p {
+  margin: 0;
+
+  color: var(--as-muted);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   PASSWORD CHANGE FORM
+===================================================== */
+
+.admin-settings-page .as-password-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-settings-page .as-password-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.admin-settings-page .as-password-heading-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  color: var(--as-gold);
+  background: var(--as-gold-soft);
+  border: 1px solid var(--as-border);
+  border-radius: 10px;
+}
+
+.admin-settings-page .as-password-heading h3 {
+  margin: 1px 0 5px;
+  color: var(--as-heading);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.admin-settings-page .as-password-heading p {
+  margin: 0;
+  color: var(--as-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.admin-settings-page .as-password-feedback {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  padding: 12px 15px;
+  border: 1px solid var(--as-border);
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.admin-settings-page .as-password-feedback svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.admin-settings-page .as-password-feedback span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.admin-settings-page .as-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-settings-page .as-password-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-settings-page .as-password-field label {
+  color: var(--as-text);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.admin-settings-page .as-password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-settings-page .as-password-input-icon {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--as-muted);
+  pointer-events: none;
+}
+
+.admin-settings-page .as-password-input-wrap input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 0 47px 0 43px;
+  margin: 0;
+  color: var(--as-text);
+  background: var(--as-card);
+  border: 1px solid var(--as-border);
+  border-radius: 9px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: normal;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-settings-page .as-password-input-wrap input::placeholder {
+  color: var(--as-muted);
+  opacity: 0.75;
+}
+
+.admin-settings-page .as-password-input-wrap input:hover:not(:disabled) {
+  border-color: var(--as-gold);
+}
+
+.admin-settings-page .as-password-input-wrap input:focus {
+  border-color: var(--as-gold);
+  box-shadow: 0 0 0 3px var(--as-gold-soft);
+}
+
+.admin-settings-page .as-password-input-wrap input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-settings-page .as-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--as-muted);
+  cursor: pointer;
+}
+
+.admin-settings-page .as-password-toggle:hover {
+  color: var(--as-gold);
+  background: var(--as-gold-soft);
+}
+
+.admin-settings-page .as-password-toggle:focus-visible {
+  outline: 2px solid var(--as-gold);
+  outline-offset: 2px;
+}
+
+.admin-settings-page .as-password-hint {
+  margin: 0;
+  color: var(--as-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.admin-settings-page .as-password-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 3px;
+}
+
+.admin-settings-page .as-password-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 17px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-settings-page .as-password-actions .as-btn-primary {
+  color: #172338;
+  background: var(--as-gold);
+  border-color: var(--as-gold);
+}
+
+.admin-settings-page .as-password-actions .as-btn-primary:hover:not(:disabled) {
+  background: var(--as-primary-hover);
+  border-color: var(--as-primary-hover);
+  color: #ffffff;
+}
+
+html.dark .admin-settings-page .as-password-actions .as-btn-primary:hover:not(:disabled),
+html[data-theme="dark"] .admin-settings-page .as-password-actions .as-btn-primary:hover:not(:disabled),
+html[data-rims-theme="dark"] .admin-settings-page .as-password-actions .as-btn-primary:hover:not(:disabled) {
+  color: #172338;
+  background: #e5c982;
+  border-color: #e5c982;
+}
+
+.admin-settings-page .as-password-actions .as-secondary-btn {
+  color: var(--as-text);
+  background: var(--as-card);
+  border-color: var(--as-border);
+}
+
+.admin-settings-page .as-password-actions .as-secondary-btn:hover:not(:disabled) {
+  border-color: var(--as-gold);
+  color: var(--as-gold);
+}
+
+.admin-settings-page .as-password-secure-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 15px;
+  color: var(--as-muted);
+  background: var(--as-surface);
+  border: 1px solid var(--as-border);
+  border-radius: 9px;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.admin-settings-page .as-password-secure-note svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--as-gold);
+}
+
+.admin-settings-page .as-password-spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: as-password-spin 0.7s linear infinite;
+}
+
+@keyframes as-password-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Password form on mobile */
+
+@media (max-width: 600px) {
+  .admin-settings-page .as-password-heading {
+    gap: 10px;
+  }
+
+  .admin-settings-page .as-password-heading h3 {
+    font-size: 15px;
+  }
+
+  .admin-settings-page .as-password-form {
+    gap: 16px;
+  }
+
+  .admin-settings-page .as-password-input-wrap input {
+    height: 46px;
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-password-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-settings-page .as-password-actions button {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   12. FOOTER ACTIONS
+===================================================== */
+
+.admin-settings-page .as-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  width: 100%;
+  min-width: 0;
+  padding: 19px 0 0;
+
+  border-top: 1px solid var(--as-border);
+}
+
+.admin-settings-page .as-action-status {
+  min-width: 0;
+}
+
+.admin-settings-page .as-saved-message,
+.admin-settings-page .as-unsaved-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.admin-settings-page .as-saved-message {
+  color: var(--as-success);
+  font-weight: 650;
+}
+
+.admin-settings-page .as-unsaved-message {
+  color: var(--as-muted);
+}
+
+.admin-settings-page .as-action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.admin-settings-page .as-reset-confirm {
+  color: var(--as-danger);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-settings-page .as-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 10px 17px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.admin-settings-page .as-btn:active {
+  transform: translateY(1px);
+}
+
+.admin-settings-page .as-btn-primary {
+  color: #ffffff;
+  background: #18365b;
+  border-color: #18365b;
+}
+
+.admin-settings-page .as-btn-primary:hover {
+  background: #24476f;
+  border-color: #24476f;
+}
+
+.admin-settings-page .as-btn-secondary {
+  color: var(--as-text);
+  background: var(--as-card);
+  border-color: var(--as-border);
+}
+
+.admin-settings-page .as-btn-secondary:hover {
+  background: var(--as-surface);
+  border-color: var(--as-gold);
+}
+
+.admin-settings-page .as-btn-danger {
+  color: #ffffff;
+  background: #b43e46;
+  border-color: #b43e46;
+}
+
+.admin-settings-page .as-btn-danger:hover {
+  background: #982f37;
+  border-color: #982f37;
+}
+
+/* Primary button in dark mode */
+
+html.dark .admin-settings-page .as-btn-primary,
+html[data-theme="dark"] .admin-settings-page .as-btn-primary,
+html[data-rims-theme="dark"] .admin-settings-page .as-btn-primary {
+  color: #172338;
+  background: var(--as-gold);
+  border-color: var(--as-gold);
+}
+
+html.dark .admin-settings-page .as-btn-primary:hover,
+html[data-theme="dark"] .admin-settings-page .as-btn-primary:hover,
+html[data-rims-theme="dark"] .admin-settings-page .as-btn-primary:hover {
+  color: #172338;
+  background: #e5c982;
+  border-color: #e5c982;
+}
+
+/* Keyboard accessibility */
+
+.admin-settings-page .as-btn:focus-visible,
+.admin-settings-page .as-theme-option:focus-visible {
+  outline: 2px solid var(--as-gold);
+  outline-offset: 3px;
+}
+
+/* =====================================================
+   13. REDUCED MOTION
+===================================================== */
+
+html[data-rims-reduced-motion="true"] .admin-settings-page *,
+html[data-rims-reduced-motion="true"] .admin-settings-page *::before,
+html[data-rims-reduced-motion="true"] .admin-settings-page *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-settings-page *,
+  .admin-settings-page *::before,
+  .admin-settings-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =====================================================
+   14. MEDIUM SCREENS
+===================================================== */
+
+@media (max-width: 1000px) {
+  .admin-settings-page {
+    gap: 18px;
+    padding: 23px 21px 28px;
+  }
+
+  .admin-settings-page .as-card {
+    padding: 21px;
+  }
+
+  .admin-settings-page .as-theme-options {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 11px;
+  }
+
+  .admin-settings-page .as-security-note {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* =====================================================
+   15. MOBILE
+===================================================== */
+
+@media (max-width: 720px) {
+  .admin-settings-page {
+    gap: 16px;
+    padding: 19px 14px 25px;
+    font-size: 14px;
+  }
+
+  .admin-settings-page .as-heading {
+    gap: 12px;
+  }
+
+  .admin-settings-page .as-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .admin-settings-page .as-heading h1 {
+    font-size: 25px;
+  }
+
+  .admin-settings-page .as-heading-copy > p {
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-heading-mark {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .admin-settings-page .as-summary {
+    gap: 11px;
+    padding: 14px;
+  }
+
+  .admin-settings-page .as-summary-icon {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+  }
+
+  .admin-settings-page .as-summary-copy strong {
+    font-size: 14px;
+  }
+
+  .admin-settings-page .as-summary-copy span {
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-theme-chip {
+    gap: 5px;
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  .admin-settings-page .as-card {
+    padding: 19px 16px;
+    border-radius: 11px;
+  }
+
+  .admin-settings-page .as-card-heading {
+    gap: 11px;
+    margin-bottom: 18px;
+  }
+
+  .admin-settings-page .as-heading-icon {
+    width: 37px;
+    height: 37px;
+    flex-basis: 37px;
+  }
+
+  .admin-settings-page .as-card-heading h2 {
+    font-size: 16px;
+  }
+
+  .admin-settings-page .as-card-heading p {
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-theme-options {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .admin-settings-page .as-theme-option {
+    grid-template-columns: 45px minmax(0, 1fr) 18px;
+    gap: 11px;
+    min-height: 84px;
+    padding: 13px;
+  }
+
+  .admin-settings-page .as-theme-preview {
+    width: 45px;
+    height: 50px;
+  }
+
+  .admin-settings-page .as-theme-option-copy strong {
+    font-size: 14px;
+  }
+
+  .admin-settings-page .as-theme-option-copy small {
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-inline-note {
+    gap: 8px;
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-setting-row {
+    gap: 10px;
+    padding: 16px 0;
+  }
+
+  .admin-settings-page .as-setting-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .admin-settings-page .as-setting-copy strong {
+    font-size: 14px;
+  }
+
+  .admin-settings-page .as-setting-copy small {
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-setting-row input[type="checkbox"] {
+    width: 40px;
+    height: 23px;
+    flex-basis: 40px;
+    margin-left: 2px;
+  }
+
+  .admin-settings-page .as-setting-row input[type="checkbox"]::before {
+    width: 15px;
+    height: 15px;
+  }
+
+  .admin-settings-page .as-setting-row input[type="checkbox"]:checked::before {
+    transform: translateX(17px);
+  }
+
+  .admin-settings-page .as-security-note {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .admin-settings-page .as-security-tip {
+    gap: 11px;
+    padding: 14px;
+  }
+
+  .admin-settings-page .as-security-tip strong {
+    font-size: 14px;
+  }
+
+  .admin-settings-page .as-security-tip p {
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .admin-settings-page .as-action-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 9px;
+  }
+
+  .admin-settings-page .as-btn {
+    min-height: 41px;
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   16. VERY SMALL SCREENS
+===================================================== */
+
+@media (max-width: 380px) {
+  .admin-settings-page {
+    gap: 14px;
+    padding: 15px 10px 21px;
+  }
+
+  .admin-settings-page .as-heading h1 {
+    font-size: 23px;
+  }
+
+  .admin-settings-page .as-heading-mark {
+    width: 37px;
+    height: 37px;
+    flex-basis: 37px;
+  }
+
+  .admin-settings-page .as-summary {
+    align-items: flex-start;
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .admin-settings-page .as-summary-icon {
+    width: 35px;
+    height: 35px;
+    flex-basis: 35px;
+  }
+
+  .admin-settings-page .as-summary-copy strong {
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-summary-copy span {
+    font-size: 12px;
+  }
+
+  .admin-settings-page .as-theme-chip {
+    gap: 4px;
+    padding: 6px 7px;
+    font-size: 11px;
+  }
+
+  .admin-settings-page .as-card {
+    padding: 16px 12px;
+  }
+
+  .admin-settings-page .as-card-heading h2 {
+    font-size: 15px;
+  }
+
+  .admin-settings-page .as-setting-row {
+    gap: 8px;
+  }
+
+  .admin-settings-page .as-setting-icon {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .admin-settings-page .as-setting-copy strong {
+    font-size: 13px;
+  }
+
+  .admin-settings-page .as-setting-copy small {
+    font-size: 12px;
+  }
+
+  .admin-settings-page .as-setting-row input[type="checkbox"] {
+    width: 37px;
+    height: 22px;
+    flex-basis: 37px;
+    margin-left: 0;
+  }
+
+  .admin-settings-page .as-setting-row input[type="checkbox"]::before {
+    width: 14px;
+    height: 14px;
+  }
+
+  .admin-settings-page .as-setting-row input[type="checkbox"]:checked::before {
+    transform: translateX(14px);
+  }
+
+  .admin-settings-page .as-action-buttons {
+    gap: 7px;
+  }
+
+  .admin-settings-page .as-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .admin-settings-page .as-reset-confirm {
+    width: 100%;
+  }
+}

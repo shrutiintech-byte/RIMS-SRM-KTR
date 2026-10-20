@@ -1,0 +1,1060 @@
+
+/* =========================================================
+   RIMS DASHBOARD
+========================================================= */
+
+.dashboard-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 2px 0 3px;
+}
+
+.dashboard-heading {
+  min-width: 0;
+}
+
+/* =========================================================
+   NEW CLAIM BUTTON
+========================================================= */
+
+.dashboard-new-claim {
+  min-height: 40px;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-text-white);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.dashboard-new-claim:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.dashboard-new-claim:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   STATISTICS GRID
+========================================================= */
+
+.dashboard-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.dashboard-stat-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 126px;
+  padding: 16px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  border: 1px solid var(--color-border-light);
+  border-radius: 10px;
+  background: var(--color-surface);
+  color: inherit;
+
+  font-family: inherit;
+  text-align: left;
+  box-sizing: border-box;
+
+  box-shadow: 0 1px 2px rgba(15, 38, 64, 0.025);
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+button.dashboard-stat-card {
+  cursor: pointer;
+}
+
+.dashboard-stat-card-static {
+  cursor: default;
+}
+
+button.dashboard-stat-card:hover {
+  border-color: #c8d7e3;
+  box-shadow: 0 7px 20px rgba(15, 38, 64, 0.075);
+  transform: translateY(-2px);
+}
+
+button.dashboard-stat-card:focus-visible {
+  outline: 2px solid #8daac3;
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   STAT ICONS
+========================================================= */
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+
+  border-radius: 9px;
+  background: #eaf2f8;
+  color: #245b86;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-icon-review {
+  background: #f7f1df;
+  color: #80651c;
+}
+
+.stat-icon-drafts {
+  background: #f0edf8;
+  color: #65558d;
+}
+
+.stat-icon-credited {
+  background: #e8f4ee;
+  color: #24704b;
+}
+
+/* =========================================================
+   STAT CONTENT
+========================================================= */
+
+.stat-content {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.stat-label {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.stat-arrow {
+  flex-shrink: 0;
+  color: #8da0af;
+  opacity: 0;
+  transform: translateX(-3px);
+
+  transition:
+    opacity 140ms ease,
+    transform 140ms ease;
+}
+
+button.dashboard-stat-card:hover .stat-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.stat-value {
+  margin-top: 4px;
+  color: var(--color-primary);
+  font-size: 26px;
+  font-weight: 750;
+  line-height: 29px;
+  letter-spacing: -0.025em;
+}
+
+.stat-meta {
+  margin-top: 2px;
+  color: var(--color-text-muted);
+  font-size: 10px;
+  line-height: 14px;
+}
+
+/* =========================================================
+   SHARED SECTION HEADER
+========================================================= */
+
+.dashboard-section-header {
+  min-height: 62px;
+  padding: 12px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  box-sizing: border-box;
+}
+
+.dashboard-section-heading {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-section-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
+  border-radius: 8px;
+  background: #f0f4f7;
+  color: #557792;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attention-icon {
+  background: #f1f5f7;
+  color: #647b8d;
+}
+
+/* =========================================================
+   SECTION TEXT
+========================================================= */
+
+.dashboard-card-title {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+}
+
+.dashboard-card-subtitle {
+  margin: 2px 0 0;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  line-height: 15px;
+}
+
+/* =========================================================
+   ATTENTION SECTION
+========================================================= */
+
+.dashboard-attention-section {
+  width: 100%;
+}
+
+.dashboard-attention-card {
+  overflow: hidden;
+}
+
+.dashboard-attention-body {
+  min-height: 76px;
+  padding: 13px 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border-top: 1px solid var(--color-border-light);
+  box-sizing: border-box;
+  background: #fbfdfc;
+}
+
+.dashboard-success-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: var(--color-success-light);
+  color: var(--color-success);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-attention-message {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dashboard-attention-message strong {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.dashboard-attention-message span {
+  color: var(--color-text-muted);
+  font-size: 10.5px;
+  line-height: 15px;
+}
+
+.attention-status {
+  min-width: 27px;
+  height: 27px;
+  padding: 0 7px;
+
+  border-radius: 50%;
+  background: var(--color-success-light);
+  color: var(--color-success);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.dashboard-attention-label {
+  margin-left: auto;
+  padding: 5px 9px;
+
+  border: 1px solid #d8e9df;
+  border-radius: 6px;
+  background: #f5faf7;
+  color: #347453;
+
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RECENT CLAIMS CONTAINER
+========================================================= */
+
+.dashboard-recent-card {
+  overflow: hidden;
+}
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+.dashboard-view-all {
+  min-height: 30px;
+  padding: 0 2px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  border: 0;
+  background: transparent;
+  color: var(--color-primary-light);
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: color 140ms ease;
+}
+
+.dashboard-view-all:hover {
+  color: var(--color-primary);
+}
+
+.dashboard-view-all:focus-visible {
+  outline: 2px solid #8daac3;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   RECENT CLAIMS SUMMARY
+========================================================= */
+
+.dashboard-recent-summary {
+  width: 100%;
+  padding: 0;
+  border-top: 1px solid var(--color-border-light);
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.dashboard-recent-summary-row {
+  width: 100%;
+  padding: 20px 22px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+
+  box-sizing: border-box;
+}
+
+/* Individual summary cards */
+
+.dashboard-recent-summary-row > div {
+  position: relative;
+  min-width: 0;
+  min-height: 105px;
+  padding: 17px 18px 17px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  border: 1px solid #e5ebf1;
+  border-radius: 11px;
+  background: #fbfcfe;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+/* Metric accent strips */
+
+.dashboard-recent-summary-row > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 3px;
+  background: #315f87;
+}
+
+.dashboard-recent-summary-row > div:nth-child(2)::before {
+  background: #c3973c;
+}
+
+.dashboard-recent-summary-row > div:nth-child(3)::before {
+  background: #32966a;
+}
+
+.dashboard-recent-summary-row > div:nth-child(4)::before {
+  background: #c66a6a;
+}
+
+/* Summary card hover */
+
+.dashboard-recent-summary-row > div:hover {
+  transform: translateY(-2px);
+  border-color: #d5e0e9;
+  box-shadow: 0 6px 16px rgba(24, 50, 75, 0.065);
+}
+
+/* Summary numbers */
+
+.dashboard-recent-summary-row > div strong {
+  display: block;
+  margin: 0;
+
+  color: #153653;
+  font-size: 29px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: -0.7px;
+}
+
+/* Summary labels */
+
+.dashboard-recent-summary-row > div span {
+  display: block;
+  margin: 0;
+
+  color: #718398;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+/* =========================================================
+   RECENT CLAIMS FOOTER
+========================================================= */
+
+.dashboard-recent-footer {
+  min-height: 54px;
+  padding: 10px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid #edf1f5;
+  background: #fcfdff;
+}
+
+/* Notification text */
+
+.dashboard-recent-footer > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #74879a;
+  font-size: 11px;
+  font-weight: 550;
+  line-height: 1.45;
+}
+
+/* Notification indicator */
+
+.dashboard-recent-footer > span::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+
+  border-radius: 50%;
+  background: #36a273;
+}
+
+/* Footer action */
+
+.dashboard-recent-footer .dashboard-view-all {
+  color: #204f78;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dashboard-recent-footer .dashboard-view-all:hover {
+  color: #102f52;
+}
+
+/* =========================================================
+   RECENT CLAIMS EMPTY STATE
+========================================================= */
+
+.dashboard-recent-empty {
+  min-height: 158px;
+  padding: 22px 20px;
+
+  border-top: 1px solid var(--color-border-light);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.dashboard-recent-empty-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+
+  border-radius: 50%;
+  background: #f0f5f9;
+  color: #66829a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-recent-empty strong {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.dashboard-recent-empty > span {
+  max-width: 400px;
+  margin-top: 3px;
+
+  color: var(--color-text-muted);
+  font-size: 10.5px;
+  line-height: 16px;
+}
+
+/* =========================================================
+   EMPTY STATE ACTION
+========================================================= */
+
+.dashboard-empty-action {
+  min-height: 35px;
+  margin-top: 12px;
+  padding: 0 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  border: 1px solid #cbd8e2;
+  border-radius: 7px;
+  background: var(--color-surface);
+  color: var(--color-primary-light);
+
+  font-family: inherit;
+  font-size: 10.5px;
+  font-weight: 700;
+
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(15, 38, 64, 0.03);
+
+  transition:
+    background 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease,
+    box-shadow 140ms ease,
+    transform 140ms ease;
+}
+
+.dashboard-empty-action:hover {
+  background: #f7fafc;
+  border-color: #b9cad8;
+  color: var(--color-primary);
+
+  box-shadow: 0 3px 8px rgba(15, 38, 64, 0.06);
+  transform: translateY(-1px);
+}
+
+.dashboard-empty-action svg:last-child {
+  color: #8ca0b0;
+  transition: transform 140ms ease;
+}
+
+.dashboard-empty-action:hover svg:last-child {
+  transform: translateX(2px);
+}
+
+.dashboard-empty-action:focus-visible {
+  outline: 2px solid #8daac3;
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .dashboard-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-recent-summary-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+  .dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dashboard-new-claim {
+    width: auto;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .dashboard-page {
+    gap: 15px;
+  }
+
+  .dashboard-stat-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .dashboard-stat-card {
+    min-height: 112px;
+    padding: 15px;
+  }
+
+  .dashboard-new-claim {
+    width: 100%;
+  }
+
+  .dashboard-section-header {
+    min-height: 60px;
+    padding: 12px 13px;
+  }
+
+  .dashboard-section-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dashboard-attention-body {
+    min-height: 72px;
+    padding: 13px;
+  }
+
+  .dashboard-attention-label {
+    display: none;
+  }
+
+  .dashboard-recent-summary-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .dashboard-recent-summary-row > div {
+    min-height: 88px;
+    padding: 14px 14px 14px 17px;
+  }
+
+  .dashboard-recent-summary-row > div strong {
+    font-size: 25px;
+  }
+
+  .dashboard-recent-footer {
+    padding: 10px 14px;
+  }
+
+  .dashboard-recent-empty {
+    min-height: 155px;
+    padding: 21px 16px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .dashboard-stat-card {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .stat-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .stat-value {
+    font-size: 23px;
+  }
+
+  .dashboard-card-title {
+    font-size: 14px;
+  }
+
+  .dashboard-card-subtitle {
+    font-size: 10px;
+  }
+
+  .dashboard-recent-summary-row {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .dashboard-recent-summary-row > div {
+    padding: 12px;
+  }
+
+  .dashboard-recent-summary-row > div strong {
+    font-size: 23px;
+  }
+
+  .dashboard-recent-summary-row > div span {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-stat-card,
+  .dashboard-new-claim,
+  .dashboard-view-all,
+  .dashboard-empty-action,
+  .dashboard-recent-summary-row > div {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   RIMS DASHBOARD — THEME VISIBILITY FIX
+   Preserves the existing navy and gold brand identity.
+   ========================================================= */
+
+/* Shared page heading */
+.dashboard-page .page-eyebrow {
+  color: var(--color-text-secondary);
+}
+
+.dashboard-page .page-title {
+  color: var(--color-text-primary);
+}
+
+.dashboard-page .page-description {
+  color: var(--color-text-secondary);
+}
+
+/* Shared dashboard cards */
+.dashboard-page .rims-card {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Statistics */
+.dashboard-page .dashboard-stat-card {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-light);
+}
+
+.dashboard-page .stat-value {
+  color: var(--color-text-primary);
+}
+
+.dashboard-page .stat-label {
+  color: var(--color-text-secondary);
+}
+
+.dashboard-page .stat-meta {
+  color: var(--color-text-muted);
+}
+
+/* Section headings */
+.dashboard-page .dashboard-card-title {
+  color: var(--color-text-primary);
+}
+
+.dashboard-page .dashboard-card-subtitle {
+  color: var(--color-text-secondary);
+}
+
+/* Recent claims and attention sections */
+.dashboard-page .dashboard-attention-body,
+.dashboard-page .dashboard-recent-summary,
+.dashboard-page .dashboard-recent-summary-row > div,
+.dashboard-page .dashboard-recent-footer,
+.dashboard-page .dashboard-recent-empty {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-light);
+}
+
+/* Recent claim summary numbers and labels */
+.dashboard-page .dashboard-recent-summary-row > div strong {
+  color: var(--color-text-primary);
+}
+
+.dashboard-page .dashboard-recent-summary-row > div span {
+  color: var(--color-text-secondary);
+}
+
+/* Notification footer */
+.dashboard-page .dashboard-recent-footer > span {
+  color: var(--color-text-secondary);
+}
+
+.dashboard-page .dashboard-recent-footer .dashboard-view-all {
+  color: var(--color-text-primary);
+}
+
+.dashboard-page .dashboard-recent-footer .dashboard-view-all:hover {
+  color: var(--color-accent-dark);
+}
+
+/* Empty states and attention messages */
+.dashboard-page .dashboard-attention-message strong,
+.dashboard-page .dashboard-recent-empty strong {
+  color: var(--color-text-primary);
+}
+
+.dashboard-page .dashboard-attention-message span,
+.dashboard-page .dashboard-recent-empty p {
+  color: var(--color-text-secondary);
+}
+
+/* =========================================================
+   DARK THEME — DASHBOARD
+   ========================================================= */
+
+[data-theme="dark"] .dashboard-page .page-eyebrow {
+  color: #c4a45b;
+}
+
+[data-theme="dark"] .dashboard-page .page-title {
+  color: #f4f6fa;
+}
+
+[data-theme="dark"] .dashboard-page .page-description {
+  color: #b8c5d5;
+}
+
+/* All major dashboard panels */
+[data-theme="dark"] .dashboard-page .rims-card,
+[data-theme="dark"] .dashboard-page .dashboard-stat-card,
+[data-theme="dark"] .dashboard-page .dashboard-attention-body,
+[data-theme="dark"] .dashboard-page .dashboard-recent-summary,
+[data-theme="dark"] .dashboard-page .dashboard-recent-summary-row > div,
+[data-theme="dark"] .dashboard-page .dashboard-recent-footer,
+[data-theme="dark"] .dashboard-page .dashboard-recent-empty {
+  background: var(--color-surface);
+  color: #edf2f8;
+  border-color: var(--color-border);
+}
+
+/* High-contrast statistic values */
+[data-theme="dark"] .dashboard-page .stat-value,
+[data-theme="dark"] .dashboard-page .dashboard-recent-summary-row > div strong {
+  color: #f4f6fa;
+}
+
+[data-theme="dark"] .dashboard-page .stat-label,
+[data-theme="dark"] .dashboard-page .dashboard-card-subtitle,
+[data-theme="dark"] .dashboard-page .stat-meta,
+[data-theme="dark"] .dashboard-page .dashboard-recent-summary-row > div span,
+[data-theme="dark"] .dashboard-page .dashboard-recent-footer > span,
+[data-theme="dark"] .dashboard-page .dashboard-attention-message strong,
+[data-theme="dark"] .dashboard-page .dashboard-attention-message span,
+[data-theme="dark"] .dashboard-page .dashboard-recent-empty strong,
+[data-theme="dark"] .dashboard-page .dashboard-recent-empty p {
+  color: #c0ccdb;
+}
+
+/* Gold remains the brand accent in dark mode */
+[data-theme="dark"] .dashboard-page .dashboard-new-claim {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #172235;
+}
+
+[data-theme="dark"] .dashboard-page .dashboard-new-claim:hover {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+}
+
+/* Stat icons retain their distinct meanings */
+[data-theme="dark"] .dashboard-page .stat-icon {
+  background: #20354c;
+  color: #b7d8f3;
+}
+
+[data-theme="dark"] .dashboard-page .stat-icon-review {
+  background: #3a301d;
+  color: #f0ce7b;
+}
+
+[data-theme="dark"] .dashboard-page .stat-icon-drafts {
+  background: #302942;
+  color: #d1c0f6;
+}
+
+[data-theme="dark"] .dashboard-page .stat-icon-credited {
+  background: #19382e;
+  color: #8be0b3;
+}
+
+[data-theme="dark"] .dashboard-page .dashboard-section-icon,
+[data-theme="dark"] .dashboard-page .attention-icon {
+  background: #203044;
+  color: #d0dceb;
+}
+
+/* Attention status and success states */
+[data-theme="dark"] .dashboard-page .dashboard-attention-label {
+  background: #19382e;
+  border-color: #2c6148;
+  color: #a4e7c1;
+}
+
+/* Hover and keyboard focus */
+[data-theme="dark"] .dashboard-page button.dashboard-stat-card:hover {
+  border-color: #b89545;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .dashboard-page .dashboard-new-claim:focus-visible,
+[data-theme="dark"] .dashboard-page .dashboard-view-all:focus-visible,
+[data-theme="dark"] .dashboard-page button.dashboard-stat-card:focus-visible {
+  outline: 2px solid #e7c875;
+  outline-offset: 3px;
+}
+
+[data-theme="dark"] .dashboard-page .dashboard-view-all,
+[data-theme="dark"] .dashboard-page .dashboard-recent-footer .dashboard-view-all {
+  color: #e7c875;
+}
+
+[data-theme="dark"] .dashboard-page .dashboard-view-all:hover,
+[data-theme="dark"] .dashboard-page .dashboard-recent-footer .dashboard-view-all:hover {
+  color: #f5d994;
+}

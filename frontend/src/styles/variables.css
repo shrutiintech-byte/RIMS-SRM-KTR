@@ -1,0 +1,149 @@
+:root {
+  /* ==============================
+     RIMS BRAND COLORS
+     ============================== */
+
+  --color-primary: #0b2345;
+  --color-primary-light: #163b69;
+  --color-primary-dark: #071a34;
+
+  --color-accent: #d9ad4c;
+  --color-accent-light: #e7c875;
+  --color-accent-dark: #b88c2e;
+
+  /* ==============================
+     BACKGROUND COLORS
+     ============================== */
+
+  --color-background: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f8fafc;
+
+  /* ==============================
+     TEXT COLORS
+     ============================== */
+
+  --color-text-primary: #102a43;
+  --color-text-secondary: #60758a;
+  --color-text-muted: #829ab1;
+  --color-text-white: #ffffff;
+
+  /* ==============================
+     BORDER COLORS
+     ============================== */
+
+  --color-border: #d9e1ea;
+  --color-border-light: #e8edf3;
+
+  /* ==============================
+     STATUS COLORS
+     ============================== */
+
+  --color-success: #2e8b57;
+  --color-success-light: #e8f5ee;
+
+  --color-warning: #c88a00;
+  --color-warning-light: #fff5dc;
+
+  --color-danger: #c0392b;
+  --color-danger-light: #fdecea;
+
+  --color-info: #2878b5;
+  --color-info-light: #e8f3fa;
+
+  /* ==============================
+     TYPOGRAPHY
+     ============================== */
+
+  --font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+
+  /* ==============================
+     SPACING
+     ============================== */
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+
+  /* ==============================
+     BORDER RADIUS
+     ============================== */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* ==============================
+     SHADOWS
+     ============================== */
+
+  --shadow-sm: 0 1px 3px rgba(16, 42, 67, 0.08);
+  --shadow-md: 0 4px 12px rgba(16, 42, 67, 0.1);
+  --shadow-lg: 0 10px 30px rgba(16, 42, 67, 0.12);
+
+  /* ==============================
+     LAYOUT
+     ============================== */
+
+  --sidebar-width: 260px;
+  --header-height: 72px;
+
+  /* ==============================
+     TRANSITIONS
+     ============================== */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+[data-theme="dark"] {
+  --color-background: #0f1724;
+  --color-surface: #172235;
+  --color-surface-secondary: #1d2a3d;
+
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #b8c5d3;
+  --color-text-muted: #8fa1b5;
+  --color-text-white: #ffffff;
+
+  --color-border: #2d3b50;
+  --color-border-light: #253348;
+
+  --color-success: #4caf7d;
+  --color-success-light: #193629;
+
+  --color-warning: #e0a52a;
+  --color-warning-light: #3b3019;
+
+  --color-danger: #e05a4f;
+  --color-danger-light: #3b201f;
+
+  --color-info: #4b9bd0;
+  --color-info-light: #1b3347;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.4);
+}

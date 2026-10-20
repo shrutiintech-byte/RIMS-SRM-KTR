@@ -1,0 +1,457 @@
+
+/* ==========================================
+   SRM RIMS — ADMIN REGISTRATION
+   Matches the existing Admin Login design
+========================================== */
+
+.register-page {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 100px);
+}
+
+/* Keep the existing navy branding panel */
+.register-page .auth-brand-panel {
+  min-width: 0;
+}
+
+/* Keep the existing branding typography and colors */
+.register-page .auth-brand-content {
+  max-width: 620px;
+}
+
+.register-page .auth-brand-content h1 {
+  font-size: clamp(30px, 3vw, 48px);
+}
+
+/* Registration form panel */
+.register-page .auth-form-panel {
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(18px, 2vw, 30px);
+}
+
+/* White card — same appearance as login */
+.register-page .register-container {
+  width: 100%;
+  max-width: 570px;
+  min-width: 0;
+  max-height: none;
+  overflow: visible;
+  padding: clamp(28px, 3.2vw, 50px);
+
+  border: 1px solid #e2e8f0;
+  border-radius: 25px;
+  background: #fff;
+
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.09);
+}
+
+/* Registration heading */
+.register-page .auth-heading {
+  margin-bottom: 26px;
+}
+
+.register-page .auth-section-label {
+  margin-bottom: 18px;
+  color: #245cf5;
+}
+
+.register-page .auth-heading h2 {
+  color: #0b142b;
+  font-size: clamp(28px, 2.4vw, 39px);
+}
+
+.register-page .auth-heading p {
+  color: #718096;
+  font-size: 14px;
+}
+
+/* All registration fields remain in ONE column */
+.register-page .auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  width: 100%;
+}
+
+.register-page .form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 19px;
+  width: 100%;
+}
+
+.register-page .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+
+.register-page .form-field > label {
+  color: #23334d;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+/* Match the login inputs */
+.register-page .input-container {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 59px;
+  padding-inline: 18px;
+
+  border: 1px solid #dce5f1;
+  border-radius: 13px;
+
+  background: #fff;
+  color: #64748b;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-page .input-container:hover {
+  border-color: #b8c9e2;
+}
+
+.register-page .input-container:focus-within {
+  border-color: #3974ff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.09);
+}
+
+.register-page .input-container > svg {
+  flex-shrink: 0;
+  width: 21px;
+  height: 21px;
+  color: #647995;
+}
+
+.register-page .input-container:focus-within > svg {
+  color: #245cf5;
+}
+
+.register-page .input-container input,
+.register-page .input-container select {
+  box-sizing: border-box;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 57px;
+  padding: 0;
+
+  border: 0;
+  outline: none;
+  background: transparent;
+
+  color: #14213b;
+  font-family: inherit;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.register-page .input-container input::placeholder {
+  color: #91a0b9;
+  opacity: 1;
+}
+
+.register-page .input-container select {
+  cursor: pointer;
+}
+
+.register-page .input-container input:focus,
+.register-page .input-container select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Password visibility controls */
+.register-page .password-toggle {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+
+  min-width: 38px;
+  min-height: 38px;
+  padding: 5px;
+
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #647995;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.register-page .password-toggle:hover {
+  background: #eff6ff;
+  color: #245cf5;
+}
+
+/* Supporting hints */
+.register-page .field-hint {
+  color: #718096;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Submit button — same blue gradient as login */
+.register-page .primary-auth-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 60px;
+  margin-top: 2px;
+  padding: 14px 18px;
+
+  border: 1px solid #245cf5;
+  border-radius: 13px;
+
+  background: linear-gradient(110deg, #2864f6, #204cdb);
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 650;
+
+  box-shadow: 0 9px 22px rgba(37, 99, 235, 0.19);
+  cursor: pointer;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-page .primary-auth-button:hover:not(:disabled) {
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.26);
+  transform: translateY(-2px);
+}
+
+.register-page .primary-auth-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.register-page .button-spinner {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #fff;
+  border-radius: 50%;
+
+  animation: register-spin 0.7s linear infinite;
+}
+
+@keyframes register-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Validation message */
+.register-page .auth-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-bottom: 20px;
+  padding: 13px 15px;
+
+  border: 1px solid #fecdca;
+  border-radius: 10px;
+  background: #fef3f2;
+  color: #b42318;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.register-page .auth-message svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Sign-in link */
+.register-page .switch-auth {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  margin-top: 24px;
+  text-align: center;
+}
+
+.register-page .switch-auth > span {
+  color: #718096;
+  font-size: 14px;
+}
+
+.register-page .switch-button {
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: #245cf5;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.register-page .switch-button:hover {
+  background: transparent;
+  color: #1749d8;
+  text-decoration: underline;
+}
+
+/* Security footer */
+.register-page .security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  margin-top: 24px;
+  padding-top: 19px;
+
+  border-top: 1px solid #edf1f6;
+  color: #718096;
+
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.register-page .security-note svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: #245cf5;
+}
+
+/* ==========================================
+   TABLET AND MOBILE
+========================================== */
+
+@media (max-width: 1100px) {
+  .register-page {
+    gap: 30px;
+    padding: 22px;
+  }
+
+  .register-page .register-container {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .register-page {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 14px;
+    background-attachment: scroll;
+  }
+
+  .register-page .auth-brand-panel {
+    min-height: auto;
+    padding: 25px 24px;
+  }
+
+  .register-page .auth-brand-content {
+    margin: 30px 0;
+  }
+
+  .register-page .auth-brand-footer {
+    padding-top: 18px;
+  }
+
+  .register-page .auth-form-panel {
+    min-height: auto;
+    padding: 22px 12px;
+  }
+
+  .register-page .register-container {
+    max-width: 560px;
+    max-height: none;
+    padding: clamp(23px, 6vw, 35px);
+    border-radius: 19px;
+  }
+
+  .register-page .auth-heading {
+    margin-bottom: 24px;
+  }
+
+  .register-page .auth-heading h2 {
+    font-size: clamp(27px, 6vw, 33px);
+  }
+
+  .register-page .auth-form,
+  .register-page .form-grid {
+    gap: 17px;
+  }
+
+  .register-page .input-container {
+    min-height: 57px;
+  }
+
+  .register-page .input-container input,
+  .register-page .input-container select {
+    height: 55px;
+  }
+
+  .register-page .primary-auth-button {
+    min-height: 57px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .register-page {
+    padding: 8px;
+  }
+
+  .register-page .auth-brand-panel {
+    padding: 21px 17px;
+  }
+
+  .register-page .auth-form-panel {
+    padding: 14px 5px;
+  }
+
+  .register-page .register-container {
+    padding: 23px 17px;
+    border-radius: 15px;
+  }
+
+  .register-page .input-container {
+    gap: 9px;
+    padding-inline: 11px;
+  }
+
+  .register-page .primary-auth-button {
+    padding-inline: 10px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .register-page *,
+  .register-page *::before,
+  .register-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

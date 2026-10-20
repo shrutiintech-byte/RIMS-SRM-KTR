@@ -1,0 +1,942 @@
+
+/* =========================================================
+   AUDIT HISTORY — PROFESSIONAL ADMIN DASHBOARD
+   File: src/pages/dashboard/AuditHistory.css
+   ========================================================= */
+
+.audit-page {
+  --audit-bg: var(--bg-primary, #f5f7fb);
+  --audit-card: var(--bg-card, #ffffff);
+  --audit-text: var(--text-primary, #172033);
+  --audit-muted: var(--text-secondary, #697586);
+  --audit-border: var(--border-color, #e5e9f0);
+  --audit-accent: #4f46e5;
+  --audit-accent-soft: #eef2ff;
+  --audit-green: #15803d;
+  --audit-green-soft: #ecfdf3;
+  --audit-red: #b91c1c;
+  --audit-red-soft: #fef2f2;
+  --audit-gold: #b45309;
+  --audit-gold-soft: #fffbeb;
+
+  width: 100%;
+  min-width: 0;
+  padding: 26px;
+  color: var(--audit-text);
+  background: var(--audit-bg);
+  box-sizing: border-box;
+}
+
+.audit-page *,
+.audit-page *::before,
+.audit-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   1. PAGE HEADER
+   ========================================================= */
+
+.audit-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  margin: 0 0 25px;
+}
+
+.audit-page-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Verify Audit — DARK BLUE in LIGHT THEME */
+.audit-page .audit-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 8px;
+  color: #1e3a8a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* Verify Audit — GOLDEN in DARK THEME */
+html[data-theme="dark"] .audit-page .audit-eyebrow {
+  color: #f5cc68;
+}
+
+.audit-page-heading h1,
+.audit-page-heading h2 {
+  margin: 0;
+  color: var(--audit-text);
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+}
+
+.audit-page-heading p {
+  max-width: 650px;
+  margin: 9px 0 0;
+  color: var(--audit-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.audit-header-actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Buttons */
+
+.audit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 15px;
+  border: 1px solid var(--audit-border);
+  border-radius: 10px;
+  background: var(--audit-card);
+  color: var(--audit-text);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.audit-button:hover:not(:disabled) {
+  border-color: var(--audit-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgb(15 23 42 / 7%);
+}
+
+.audit-button:focus-visible,
+.audit-page-button:focus-visible,
+.audit-message-dismiss:focus-visible,
+.audit-retry-button:focus-visible {
+  outline: 3px solid rgb(99 102 241 / 30%);
+  outline-offset: 3px;
+}
+
+.audit-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.audit-button-primary {
+  border-color: var(--audit-accent);
+  background: var(--audit-accent);
+  color: #ffffff;
+}
+
+.audit-button-primary:hover:not(:disabled) {
+  border-color: #4338ca;
+  background: #4338ca;
+}
+
+.audit-button-secondary {
+  background: var(--audit-card);
+  color: var(--audit-text);
+}
+
+/* =========================================================
+   2. SUMMARY CARDS
+   ========================================================= */
+
+.audit-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin: 0 0 22px;
+}
+
+.audit-summary-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  min-width: 0;
+  min-height: 132px;
+  padding: 21px;
+  overflow: hidden;
+  border: 1px solid var(--audit-border);
+  border-radius: 15px;
+  background: var(--audit-card);
+  box-shadow: 0 3px 12px rgb(15 23 42 / 3%);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.audit-summary-card:hover {
+  border-color: rgb(99 102 241 / 35%);
+  box-shadow: 0 8px 22px rgb(15 23 42 / 6%);
+  transform: translateY(-2px);
+}
+
+.audit-summary-icon {
+  display: flex;
+  flex: 0 0 46px;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+}
+
+.audit-summary-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.audit-summary-icon-blue {
+  background: var(--audit-accent-soft);
+  color: var(--audit-accent);
+}
+
+.audit-summary-icon-gold {
+  background: var(--audit-gold-soft);
+  color: var(--audit-gold);
+}
+
+.audit-summary-icon-green {
+  background: var(--audit-green-soft);
+  color: var(--audit-green);
+}
+
+.audit-summary-content {
+  flex: 1;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.audit-summary-label {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--audit-muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.audit-summary-value {
+  display: block;
+  margin: 0;
+  color: var(--audit-text);
+  font-size: clamp(23px, 2vw, 29px);
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.audit-summary-caption {
+  display: block;
+  margin-top: 7px;
+  color: var(--audit-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.audit-value-success {
+  color: var(--audit-green);
+}
+
+.audit-value-danger {
+  color: var(--audit-red);
+}
+
+/* =========================================================
+   3. AUDIT CHAIN VERIFICATION PANEL
+   ========================================================= */
+
+.audit-verification {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin: 0 0 24px;
+  padding: 19px 21px;
+  border: 1px solid var(--audit-border);
+  border-radius: 14px;
+  background: var(--audit-card);
+  box-shadow: 0 3px 12px rgb(15 23 42 / 3%);
+}
+
+.audit-verification-success {
+  border-left: 4px solid #16a34a;
+}
+
+.audit-verification-failed {
+  border-left: 4px solid #dc2626;
+}
+
+.audit-verification-icon {
+  display: flex;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--audit-green-soft);
+  color: var(--audit-green);
+}
+
+.audit-verification-failed .audit-verification-icon {
+  background: var(--audit-red-soft);
+  color: var(--audit-red);
+}
+
+.audit-verification-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.audit-verification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.audit-verification-content h3,
+.audit-verification-content h4 {
+  margin: 0;
+  color: var(--audit-text);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.audit-verification-content p {
+  margin: 5px 0 0;
+  color: var(--audit-muted);
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.audit-verification-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  margin-top: 8px;
+  color: var(--audit-muted);
+  font-size: 11px;
+}
+
+.audit-verification-details strong {
+  color: var(--audit-text);
+  font-weight: 700;
+}
+
+/* =========================================================
+   4. ERROR / INFORMATION MESSAGES
+   ========================================================= */
+
+.audit-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  border: 1px solid var(--audit-border);
+  border-radius: 11px;
+  background: var(--audit-card);
+  color: var(--audit-text);
+}
+
+.audit-message-error {
+  border-color: rgb(220 38 38 / 25%);
+  background: var(--audit-red-soft);
+  color: var(--audit-red);
+}
+
+.audit-message-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.audit-message-dismiss {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.audit-message-dismiss:hover {
+  background: rgb(127 127 127 / 10%);
+}
+
+.audit-retry-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 9px;
+  padding: 7px 11px;
+  border: 1px solid currentColor;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================================================
+   5. ACTIVITY LOG TABLE PANEL
+   ========================================================= */
+
+.audit-table-panel {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--audit-border);
+  border-radius: 15px;
+  background: var(--audit-card);
+  box-shadow: 0 3px 14px rgb(15 23 42 / 4%);
+}
+
+.audit-table-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-width: 0;
+  padding: 21px 23px;
+  border-bottom: 1px solid var(--audit-border);
+  background: var(--audit-card);
+}
+
+.audit-table-heading > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.audit-table-heading h2,
+.audit-table-heading h3 {
+  margin: 0;
+  color: var(--audit-text);
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -0.2px;
+  line-height: 1.45;
+}
+
+.audit-table-heading p {
+  margin: 5px 0 0;
+  color: var(--audit-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.audit-record-count {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 6px 11px;
+  border: 1px solid var(--audit-border);
+  border-radius: 8px;
+  background: var(--audit-bg);
+  color: var(--audit-muted);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.audit-table-scroll {
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #aab2c0 transparent;
+}
+
+.audit-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  color: var(--audit-text);
+  font-size: 12px;
+}
+
+.audit-table thead {
+  background: var(--audit-bg);
+}
+
+.audit-table th {
+  padding: 14px 15px;
+  border-bottom: 1px solid var(--audit-border);
+  color: var(--audit-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.65px;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+.audit-table td {
+  padding: 16px 15px;
+  border-bottom: 1px solid var(--audit-border);
+  color: var(--audit-text);
+  line-height: 1.6;
+  text-align: left;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.audit-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.audit-table tbody tr:hover {
+  background: rgb(99 102 241 / 4%);
+}
+
+.audit-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.audit-sequence {
+  color: var(--audit-muted);
+  font-size: 11px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.audit-action {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 5px 8px;
+  border: 1px solid rgb(99 102 241 / 18%);
+  border-radius: 6px;
+  background: var(--audit-accent-soft);
+  color: var(--audit-accent);
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.audit-actor {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.audit-avatar {
+  display: flex;
+  flex: 0 0 33px;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border: 1px solid var(--audit-border);
+  border-radius: 50%;
+  background: var(--audit-bg);
+  color: var(--audit-accent);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.audit-actor-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.audit-actor-details strong {
+  color: var(--audit-text);
+  font-size: 11px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.audit-actor-details span {
+  color: var(--audit-muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.audit-target {
+  color: var(--audit-muted);
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.audit-timestamp {
+  color: var(--audit-muted);
+  font-size: 11px;
+  line-height: 1.65;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.audit-metadata {
+  display: block;
+  max-width: 100%;
+  color: var(--audit-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.audit-table-state {
+  padding: 44px 20px !important;
+  color: var(--audit-muted) !important;
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: center !important;
+}
+
+.audit-table-state svg {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* =========================================================
+   6. PAGINATION
+   ========================================================= */
+
+.audit-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 22px;
+  border-top: 1px solid var(--audit-border);
+  background: var(--audit-card);
+}
+
+.audit-pagination-summary {
+  color: var(--audit-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.audit-pagination-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.audit-page-indicator {
+  padding: 0 7px;
+  color: var(--audit-muted);
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.audit-page-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid var(--audit-border);
+  border-radius: 8px;
+  background: var(--audit-card);
+  color: var(--audit-text);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.audit-page-button:hover:not(:disabled) {
+  border-color: var(--audit-accent);
+  background: var(--audit-accent-soft);
+  color: var(--audit-accent);
+}
+
+.audit-page-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* =========================================================
+   7. LOADING ANIMATION
+   ========================================================= */
+
+.audit-spinning {
+  animation: audit-spin 0.9s linear infinite;
+}
+
+@keyframes audit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   8. DARK MODE
+   ========================================================= */
+
+html[data-theme="dark"] .audit-page {
+  --audit-bg: var(--bg-primary, #0b1120);
+  --audit-card: var(--bg-card, #111827);
+  --audit-text: var(--text-primary, #e5e7eb);
+  --audit-muted: var(--text-secondary, #9ca3af);
+  --audit-border: var(--border-color, #263244);
+  --audit-accent: #a5b4fc;
+  --audit-accent-soft: rgb(99 102 241 / 15%);
+  --audit-green: #4ade80;
+  --audit-green-soft: rgb(34 197 94 / 12%);
+  --audit-red: #fca5a5;
+  --audit-red-soft: rgb(239 68 68 / 12%);
+  --audit-gold: #fbbf24;
+  --audit-gold-soft: rgb(245 158 11 / 12%);
+}
+
+/* Explicit theme overrides */
+html[data-theme="light"] .audit-page .audit-eyebrow {
+  color: #1e3a8a;
+}
+
+html[data-theme="dark"] .audit-page .audit-eyebrow {
+  color: #f5cc68;
+}
+
+html[data-theme="dark"] .audit-summary-card,
+html[data-theme="dark"] .audit-table-panel,
+html[data-theme="dark"] .audit-verification {
+  box-shadow: 0 4px 15px rgb(0 0 0 / 10%);
+}
+
+html[data-theme="dark"] .audit-table thead,
+html[data-theme="dark"] .audit-table-heading,
+html[data-theme="dark"] .audit-pagination {
+  background: var(--audit-card);
+}
+
+html[data-theme="dark"] .audit-table tbody tr:hover {
+  background: rgb(148 163 184 / 5%);
+}
+
+html[data-theme="dark"] .audit-action {
+  border-color: rgb(165 180 252 / 20%);
+}
+
+html[data-theme="dark"] .audit-record-count {
+  background: var(--audit-bg);
+}
+
+/* =========================================================
+   9. RESPONSIVE LAYOUT
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .audit-page {
+    padding: 22px;
+  }
+
+  .audit-summary-grid {
+    gap: 12px;
+  }
+
+  .audit-summary-card {
+    gap: 12px;
+    padding: 17px;
+  }
+
+  .audit-summary-icon {
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .audit-summary-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 820px) {
+  .audit-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .audit-header-actions {
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .audit-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .audit-summary-card {
+    min-height: 120px;
+  }
+
+  .audit-verification {
+    align-items: flex-start;
+  }
+
+  .audit-table-heading {
+    padding: 18px;
+  }
+
+  .audit-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .audit-pagination-controls {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .audit-page {
+    padding: 15px;
+  }
+
+  .audit-page-header {
+    margin-bottom: 19px;
+  }
+
+  .audit-page-heading h1,
+  .audit-page-heading h2 {
+    font-size: 24px;
+  }
+
+  .audit-page-heading p {
+    font-size: 12px;
+  }
+
+  .audit-header-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .audit-button {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 8px;
+    white-space: normal;
+  }
+
+  .audit-summary-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .audit-summary-card {
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .audit-summary-value {
+    font-size: 25px;
+  }
+
+  .audit-verification {
+    gap: 11px;
+    padding: 15px;
+    margin-bottom: 18px;
+  }
+
+  .audit-verification-icon {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .audit-table-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .audit-record-count {
+    align-self: flex-start;
+  }
+
+  .audit-pagination {
+    padding: 15px;
+  }
+
+  .audit-pagination-controls {
+    gap: 5px;
+  }
+
+  .audit-page-button {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 6px 8px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .audit-page *,
+  .audit-page *::before,
+  .audit-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

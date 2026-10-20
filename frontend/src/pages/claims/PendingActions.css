@@ -1,0 +1,1717 @@
+/* =========================================================
+   RIMS — PENDING ACTIONS
+   Navy + Gold Institutional Dashboard
+   Matching All Claims Heading
+   Light Theme | Dark Theme | Responsive
+   ========================================================= */
+
+/* 1. PAGE FOUNDATION */
+
+.pending-actions-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-sizing: border-box;
+  color: var(--color-text-primary, #f1f5f9);
+  font-family: var(--font-family, "Inter"), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pending-actions-page *,
+.pending-actions-page *::before,
+.pending-actions-page *::after {
+  box-sizing: border-box;
+}
+
+.pending-actions-page button,
+.pending-actions-page input,
+.pending-actions-page select {
+  font-family: inherit;
+}
+
+.pending-actions-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pending-actions-page button:focus-visible,
+.pending-actions-page input:focus-visible,
+.pending-actions-page select:focus-visible {
+  outline: 3px solid
+    color-mix(in srgb, var(--color-accent, #e7bd55) 65%, transparent);
+  outline-offset: 3px;
+}
+
+/* 2. PAGE HEADER */
+
+.pending-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0;
+}
+
+.pending-page-heading {
+  min-width: 0;
+}
+
+.pending-page-header .page-eyebrow {
+  display: block;
+  margin: 0 0 12px;
+  color: #a9c0da;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.pending-page-header .page-title {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 0 17px;
+  color: #e7bd55;
+  font-family: var(--font-family, "Inter"), sans-serif;
+  font-size: clamp(30px, 3vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+  text-shadow: 0 2px 18px rgba(231, 189, 85, 0.08);
+}
+
+.pending-page-header .page-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  height: 5px;
+  border-radius: 99px;
+  background: linear-gradient(
+    90deg,
+    #f0cf75 0%,
+    #d9ad4c 55%,
+    rgba(217, 173, 76, 0.12) 100%
+  );
+}
+
+.pending-page-header .page-description {
+  max-width: 680px;
+  margin: 12px 0 0;
+  color: #b8cde5;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* 3. FILTER CARD */
+
+.pending-filter-card {
+  position: relative;
+  margin: 0;
+  padding: 22px;
+  border: 1px solid #293950;
+  border-radius: 15px;
+  background: #172438;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.pending-filter-card:hover {
+  border-color: #34465f;
+}
+
+/* 4. FILTER HEADER */
+
+.pending-filter-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pending-filter-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #66552f;
+  border-radius: 10px;
+  background: #292a26;
+  color: #e7bd55;
+}
+
+.pending-filter-heading h2 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 1.45;
+}
+
+.pending-filter-heading p {
+  margin: 4px 0 0;
+  color: #aebfd3;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* 5. FILTER CONTROLS */
+
+.pending-filter-controls {
+  display: grid;
+  grid-template-columns:
+    minmax(250px, 1.65fr)
+    minmax(180px, 0.8fr)
+    minmax(210px, 0.9fr);
+  align-items: stretch;
+  gap: 13px;
+  width: 100%;
+}
+
+/* 6. SEARCH FIELD */
+
+.pending-search {
+  position: relative;
+  min-width: 0;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.pending-search > svg {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  color: #91a6bf;
+  pointer-events: none;
+  transition: color 160ms ease;
+}
+
+.pending-search input {
+  width: 100%;
+  height: 100%;
+  padding: 0 13px 0 42px;
+  border: 1px solid #34445b;
+  border-radius: 9px;
+  background: #101b2b;
+  color: #f1f5f9;
+  font-size: 13px;
+  font-weight: 400;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.pending-search input::placeholder {
+  color: #91a2b7;
+  opacity: 1;
+}
+
+.pending-search:hover input {
+  border-color: #60738c;
+}
+
+.pending-search:focus-within > svg {
+  color: #e7bd55;
+}
+
+.pending-search input:focus {
+  border-color: #d9ad4c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(217, 173, 76, 0.15);
+}
+
+/* 7. CATEGORY SELECT */
+
+.pending-filter-select {
+  width: 100%;
+  min-width: 0;
+  height: 45px;
+  padding: 0 36px 0 13px;
+  border: 1px solid #34445b;
+  border-radius: 9px;
+  background-color: #101b2b;
+  color: #e5edf7;
+  font-size: 13px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.pending-filter-select:hover {
+  border-color: #60738c;
+}
+
+.pending-filter-select:focus {
+  border-color: #d9ad4c;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(217, 173, 76, 0.15);
+}
+
+.pending-filter-select option {
+  background: #172438;
+  color: #f1f5f9;
+}
+
+/* 8. ACTION TYPE INFORMATION */
+
+.pending-action-type-display {
+  min-width: 0;
+  min-height: 45px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #34445b;
+  border-radius: 9px;
+  background: #101b2b;
+}
+
+.pending-action-type-label {
+  flex-shrink: 0;
+  color: #aebfd3;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.pending-action-type-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 5px 9px;
+  border: 1px solid #66552f;
+  border-radius: 7px;
+  background: #302b20;
+  color: #e7c875;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* 9. RECORDS CARD */
+
+.pending-records-card {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid #293950;
+  border-radius: 15px;
+  background: #172438;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* 10. RECORDS HEADER */
+
+.pending-records-header {
+  min-height: 78px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid #293950;
+  background: #172438;
+}
+
+.pending-records-header h2 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+}
+
+.pending-records-header p {
+  margin: 4px 0 0;
+  color: #aebfd3;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* 11. RECORD COUNT */
+
+.pending-record-count {
+  min-width: 34px;
+  height: 32px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #66552f;
+  border-radius: 9px;
+  background: #292a26;
+  color: #e7bd55;
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 12. CLAIM LIST */
+
+.pending-claim-list {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 13. CLAIM ROW */
+
+.pending-claim-row {
+  width: 100%;
+  min-width: 760px;
+  min-height: 88px;
+  padding: 17px 22px;
+  display: grid;
+  grid-template-columns:
+    minmax(280px, 1fr)
+    minmax(180px, 0.7fr)
+    minmax(140px, 0.45fr)
+    24px;
+  align-items: center;
+  gap: 18px;
+  border: 0;
+  border-bottom: 1px solid #293950;
+  background: #172438;
+  color: #f1f5f9;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.pending-claim-row:last-child {
+  border-bottom: 0;
+}
+
+.pending-claim-row:hover {
+  background: #1c2b40;
+  box-shadow: inset 4px 0 0 #d9ad4c;
+}
+
+.pending-claim-row:focus-visible {
+  outline: 2px solid #e7bd55;
+  outline-offset: -3px;
+  background: #1c2b40;
+}
+
+/* 14. CLAIM DETAILS */
+
+.pending-claim-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pending-claim-id {
+  margin-bottom: 5px;
+  color: #91a6bf;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.pending-claim-main strong {
+  overflow: hidden;
+  color: #f1f5f9;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pending-claim-meta {
+  margin-top: 5px;
+  color: #aebfd3;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* 15. ACTION STAGE */
+
+.pending-claim-stage {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.pending-claim-stage span {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #66552f;
+  border-radius: 7px;
+  background: #302b20;
+  color: #e7c875;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+/* 16. CLAIM AMOUNT */
+
+.pending-claim-amount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #e7bd55;
+  font-size: 14px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* 17. ROW ARROW */
+
+.pending-claim-arrow {
+  flex-shrink: 0;
+  color: #91a6bf;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.pending-claim-row:hover .pending-claim-arrow {
+  color: #e7bd55;
+  transform: translateX(4px);
+}
+
+/* 18. EMPTY STATE */
+
+.pending-empty-state {
+  min-height: 250px;
+  padding: 38px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: #172438;
+}
+
+.pending-empty-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #66552f;
+  border-radius: 12px;
+  background: #292a26;
+  color: #e7bd55;
+}
+
+.pending-empty-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.pending-empty-state h3 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 1.5;
+}
+
+.pending-empty-state p {
+  max-width: 440px;
+  margin: 8px auto 0;
+  color: #aebfd3;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* 19. LOADING STATE */
+
+.pending-loading-state {
+  min-height: 225px;
+  padding: 35px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8cde5;
+  font-size: 13px;
+  font-weight: 500;
+  background: #172438;
+}
+
+/* 20. ERROR STATE */
+
+.pending-error-state {
+  min-height: 225px;
+  padding: 35px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: #172438;
+}
+
+.pending-error-icon {
+  width: 49px;
+  height: 49px;
+  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #603c46;
+  border-radius: 12px;
+  background: #30212a;
+  color: #f0a0a8;
+}
+
+.pending-error-state h3 {
+  margin: 0;
+  color: #f0a0a8;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.pending-error-state p {
+  max-width: 440px;
+  margin: 8px 0 0;
+  color: #d0aeb4;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* 21. LIGHT THEME SUPPORT */
+
+[data-theme="light"] .pending-actions-page {
+  color: #102a43;
+}
+
+[data-theme="light"] .pending-page-header .page-eyebrow {
+  color: #607d9b;
+}
+
+[data-theme="light"] .pending-page-header .page-title {
+  color: #d5a83f;
+  text-shadow: none;
+}
+
+[data-theme="light"] .pending-page-header .page-description {
+  color: #60758a;
+}
+
+[data-theme="light"] .pending-filter-card,
+[data-theme="light"] .pending-records-card {
+  border-color: #d9e1ea;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(15, 42, 67, 0.05);
+}
+
+[data-theme="light"] .pending-filter-card:hover {
+  border-color: #c6d1de;
+}
+
+[data-theme="light"] .pending-filter-icon,
+[data-theme="light"] .pending-empty-icon {
+  border-color: #eadbb5;
+  background: #fbf7eb;
+  color: #0b2345;
+}
+
+[data-theme="light"] .pending-filter-heading h2,
+[data-theme="light"] .pending-records-header h2,
+[data-theme="light"] .pending-claim-main strong,
+[data-theme="light"] .pending-empty-state h3 {
+  color: #102a43;
+}
+
+[data-theme="light"] .pending-filter-heading p,
+[data-theme="light"] .pending-records-header p,
+[data-theme="light"] .pending-claim-meta,
+[data-theme="light"] .pending-empty-state p {
+  color: #60758a;
+}
+
+[data-theme="light"] .pending-search input,
+[data-theme="light"] .pending-filter-select {
+  border-color: #d9e1ea;
+  background: #ffffff;
+  color: #102a43;
+  color-scheme: light;
+}
+
+[data-theme="light"] .pending-search input::placeholder {
+  color: #829ab1;
+}
+
+[data-theme="light"] .pending-search > svg {
+  color: #829ab1;
+}
+
+[data-theme="light"] .pending-search:focus-within > svg {
+  color: #0b2345;
+}
+
+[data-theme="light"] .pending-filter-select option {
+  background: #ffffff;
+  color: #102a43;
+}
+
+[data-theme="light"] .pending-action-type-display {
+  border-color: #d9e1ea;
+  background: #f8fafc;
+}
+
+[data-theme="light"] .pending-action-type-label {
+  color: #60758a;
+}
+
+[data-theme="light"] .pending-action-type-value,
+[data-theme="light"] .pending-claim-stage span {
+  border-color: #eadbb5;
+  background: #fbf4df;
+  color: #795c20;
+}
+
+[data-theme="light"] .pending-records-header {
+  border-bottom-color: #e8edf3;
+  background: #ffffff;
+}
+
+[data-theme="light"] .pending-record-count {
+  border-color: #d9e1ea;
+  background: #f8fafc;
+  color: #102a43;
+}
+
+[data-theme="light"] .pending-claim-row {
+  border-bottom-color: #e8edf3;
+  background: #ffffff;
+  color: #102a43;
+}
+
+[data-theme="light"] .pending-claim-row:hover,
+[data-theme="light"] .pending-claim-row:focus-visible {
+  background: #f8fafc;
+  box-shadow: inset 4px 0 0 #d9ad4c;
+}
+
+[data-theme="light"] .pending-claim-id,
+[data-theme="light"] .pending-claim-arrow {
+  color: #829ab1;
+}
+
+[data-theme="light"] .pending-claim-amount {
+  color: #0b2345;
+}
+
+[data-theme="light"] .pending-claim-row:hover .pending-claim-arrow {
+  color: #0b2345;
+}
+
+[data-theme="light"] .pending-empty-state,
+[data-theme="light"] .pending-loading-state,
+[data-theme="light"] .pending-error-state {
+  background: #ffffff;
+}
+
+[data-theme="light"] .pending-loading-state {
+  color: #60758a;
+}
+
+[data-theme="light"] .pending-error-icon {
+  border-color: #f0dada;
+  background: #fff5f5;
+  color: #b45353;
+}
+
+[data-theme="light"] .pending-error-state h3 {
+  color: #8f3d3d;
+}
+
+[data-theme="light"] .pending-error-state p {
+  color: #987b7b;
+}
+
+/* 22. TABLET — UP TO 1100px */
+
+@media (max-width: 1100px) {
+  .pending-filter-controls {
+    grid-template-columns:
+      minmax(220px, 1.4fr)
+      minmax(170px, 0.9fr);
+    gap: 12px;
+  }
+
+  .pending-search {
+    grid-column: 1 / -1;
+  }
+}
+
+/* 23. SMALL TABLET — UP TO 768px */
+
+@media (max-width: 768px) {
+  .pending-actions-page {
+    gap: 19px;
+  }
+
+  .pending-page-header {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .pending-page-header .page-eyebrow {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .pending-page-header .page-title {
+    font-size: 31px;
+  }
+
+  .pending-page-header .page-description {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .pending-filter-card {
+    padding: 19px;
+  }
+
+  .pending-filter-controls {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .pending-search {
+    grid-column: 1 / -1;
+  }
+
+  .pending-action-type-display {
+    grid-column: 1 / -1;
+  }
+
+  .pending-records-header {
+    min-height: 72px;
+    padding: 16px 18px;
+  }
+
+  .pending-claim-row {
+    min-width: 760px;
+  }
+
+  .pending-empty-state {
+    min-height: 225px;
+  }
+}
+
+/* 24. MOBILE — UP TO 600px */
+
+@media (max-width: 600px) {
+  .pending-actions-page {
+    gap: 17px;
+  }
+
+  .pending-page-header .page-eyebrow {
+    margin-bottom: 9px;
+    font-size: 10px;
+  }
+
+  .pending-page-header .page-title {
+    padding-bottom: 14px;
+    font-size: 28px;
+  }
+
+  .pending-page-header .page-title::after {
+    width: 60px;
+    height: 4px;
+  }
+
+  .pending-page-header .page-description {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .pending-filter-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .pending-filter-heading {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .pending-filter-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .pending-filter-heading h2 {
+    font-size: 14px;
+  }
+
+  .pending-filter-heading p {
+    font-size: 11px;
+  }
+
+  .pending-filter-controls {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 11px;
+  }
+
+  .pending-search,
+  .pending-search input,
+  .pending-filter-select {
+    height: 44px;
+  }
+
+  .pending-search {
+    grid-column: auto;
+  }
+
+  .pending-action-type-display {
+    grid-column: auto;
+    min-height: 44px;
+  }
+
+  .pending-records-card {
+    border-radius: 12px;
+  }
+
+  .pending-records-header {
+    min-height: 66px;
+    padding: 14px 15px;
+  }
+
+  .pending-records-header h2 {
+    font-size: 14px;
+  }
+
+  .pending-records-header p {
+    font-size: 11px;
+  }
+
+  .pending-record-count {
+    min-width: 31px;
+    height: 29px;
+    font-size: 12px;
+  }
+
+  .pending-claim-row {
+    min-width: 760px;
+  }
+
+  .pending-empty-state {
+    min-height: 215px;
+    padding: 28px 16px;
+  }
+
+  .pending-empty-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 13px;
+  }
+
+  .pending-empty-state h3 {
+    font-size: 14px;
+  }
+
+  .pending-empty-state p {
+    font-size: 12px;
+  }
+
+  .pending-loading-state,
+  .pending-error-state {
+    min-height: 200px;
+    padding: 28px 16px;
+  }
+}
+
+/* 25. VERY SMALL MOBILE — UP TO 380px */
+
+@media (max-width: 380px) {
+  .pending-page-header .page-title {
+    font-size: 25px;
+  }
+
+  .pending-page-header .page-description {
+    font-size: 12px;
+  }
+
+  .pending-filter-card {
+    padding: 13px;
+  }
+
+  .pending-filter-heading {
+    align-items: flex-start;
+  }
+
+  .pending-action-type-display {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .pending-action-type-value {
+    align-self: flex-start;
+  }
+
+  .pending-records-header {
+    padding: 12px;
+  }
+
+  .pending-empty-state {
+    padding: 25px 13px;
+  }
+}
+
+/* 26. REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .pending-actions-page *,
+  .pending-actions-page *::before,
+  .pending-actions-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   FINAL DESIGN ALIGNMENT — MATCH ALL CLAIMS CSS
+   ========================================================= */
+
+.pending-actions-page {
+  max-width: 1440px;
+  min-width: 0;
+  gap: 18px;
+  color: var(--color-text-primary, #102a43);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pending-page-header {
+  align-items: center;
+  gap: 28px;
+  padding: 2px 0 3px;
+}
+
+.pending-page-header .page-eyebrow {
+  margin: 0 0 5px;
+  color: var(--color-text-muted, #829ab1);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.pending-page-header .page-title {
+  position: static;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--color-primary, #0b2345);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+  text-shadow: none;
+  transition: color 200ms ease;
+}
+
+.pending-page-header .page-title::after {
+  content: "";
+  position: static;
+  display: block;
+  width: 46px;
+  height: 3px;
+  margin-top: 9px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    #e5c16e 0%,
+    rgba(229, 193, 110, 0.55) 65%,
+    rgba(229, 193, 110, 0.08) 100%
+  );
+}
+
+.pending-page-header .page-description {
+  max-width: 650px;
+  margin: 6px 0 0;
+  color: var(--color-text-secondary, #60758a);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.pending-filter-card,
+.pending-records-card {
+  border: 1px solid var(--color-border-light, #e4eaf0);
+  border-radius: var(--radius-md, 10px);
+  background: var(--color-surface, #ffffff);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(15, 38, 64, 0.04));
+}
+
+.pending-filter-card {
+  padding: 19px;
+}
+
+.pending-filter-card:hover {
+  border-color: var(--color-border, #d9e1ea);
+}
+
+.pending-filter-heading {
+  gap: 11px;
+  margin-bottom: 17px;
+}
+
+.pending-filter-icon {
+  width: 36px;
+  height: 36px;
+  border-color: #e8dfc6;
+  border-radius: 9px;
+  background: #f7f3e8;
+  color: #80651c;
+}
+
+.pending-filter-heading h2 {
+  color: var(--color-primary, #0b2345);
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 20px;
+}
+
+.pending-filter-heading p {
+  margin-top: 3px;
+  color: var(--color-text-muted, #829ab1);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.pending-filter-controls {
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(155px, 0.75fr)
+    minmax(190px, 0.95fr);
+  gap: 12px;
+}
+
+.pending-search {
+  height: 42px;
+}
+
+.pending-search input,
+.pending-filter-select {
+  height: 42px;
+  border-color: var(--color-border, #d9e1ea);
+  border-radius: var(--radius-sm, 7px);
+  background: var(--color-surface, #ffffff);
+  color: var(--color-text-primary, #102a43);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.pending-search input {
+  padding-left: 38px;
+}
+
+.pending-search > svg {
+  left: 13px;
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-muted, #829ab1);
+}
+
+.pending-search input::placeholder {
+  color: var(--color-text-muted, #829ab1);
+}
+
+.pending-search input:hover,
+.pending-filter-select:hover {
+  border-color: #b8c7d5;
+}
+
+.pending-search input:focus,
+.pending-filter-select:focus {
+  border-color: var(--color-primary, #0b2345);
+  box-shadow: 0 0 0 3px rgba(36, 91, 134, 0.10);
+}
+
+.pending-filter-select {
+  padding-right: 35px;
+  padding-left: 12px;
+}
+
+.pending-filter-select option {
+  background: var(--color-surface, #ffffff);
+  color: var(--color-text-primary, #102a43);
+}
+
+.pending-action-type-display {
+  min-height: 42px;
+  padding: 7px 10px;
+  border-color: var(--color-border, #d9e1ea);
+  border-radius: var(--radius-sm, 7px);
+  background: var(--color-surface, #ffffff);
+}
+
+.pending-action-type-label {
+  color: var(--color-text-secondary, #60758a);
+  font-size: 11px;
+}
+
+.pending-action-type-value,
+.pending-claim-stage span {
+  border-color: #e8dfc6;
+  border-radius: 7px;
+  background: #f7f3e8;
+  color: #80651c;
+  font-size: 11px;
+}
+
+.pending-records-card {
+  overflow: hidden;
+}
+
+.pending-records-header {
+  min-height: 66px;
+  padding: 13px 17px;
+  border-bottom-color: var(--color-border-light, #e8edf3);
+  background: var(--color-surface, #ffffff);
+}
+
+.pending-records-header h2 {
+  color: var(--color-primary, #0b2345);
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 21px;
+}
+
+.pending-records-header p {
+  margin-top: 3px;
+  color: var(--color-text-muted, #829ab1);
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.pending-record-count {
+  min-width: 30px;
+  height: 28px;
+  padding: 0 8px;
+  border-color: var(--color-border-light, #e0e7ee);
+  border-radius: 7px;
+  background: var(--color-surface-secondary, #f5f7fa);
+  color: var(--color-primary, #0b2345);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.pending-claim-row {
+  min-height: 78px;
+  padding: 14px 17px;
+  border-bottom-color: var(--color-border-light, #edf0f4);
+  background: var(--color-surface, #ffffff);
+  color: var(--color-text-primary, #243b53);
+  gap: 15px;
+}
+
+.pending-claim-row:hover,
+.pending-claim-row:focus-visible {
+  background: #f8fafc;
+  box-shadow: inset 4px 0 0 var(--color-accent, #d9ad4c);
+}
+
+.pending-claim-id {
+  color: var(--color-text-muted, #829ab1);
+  font-size: 11px;
+}
+
+.pending-claim-main strong {
+  color: var(--color-text-primary, #243b53);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.pending-claim-meta {
+  color: var(--color-text-secondary, #60758a);
+  font-size: 11px;
+}
+
+.pending-claim-amount {
+  color: var(--color-primary, #0b2345);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pending-claim-arrow {
+  color: var(--color-text-muted, #829ab1);
+}
+
+.pending-claim-row:hover .pending-claim-arrow {
+  color: var(--color-primary, #0b2345);
+}
+
+.pending-empty-state,
+.pending-loading-state,
+.pending-error-state {
+  background: var(--color-surface, #ffffff);
+}
+
+.pending-empty-state {
+  min-height: 240px;
+  padding: 32px 22px;
+}
+
+.pending-empty-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 14px;
+  border-color: #e1e8ef;
+  border-radius: 12px;
+  background: #f0f4f7;
+  color: #557792;
+}
+
+.pending-empty-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.pending-empty-state h3 {
+  color: var(--color-primary, #0b2345);
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 22px;
+}
+
+.pending-empty-state p {
+  margin: 7px auto 0;
+  color: var(--color-text-secondary, #60758a);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.pending-loading-state {
+  color: var(--color-text-secondary, #60758a);
+  font-size: 13px;
+}
+
+.pending-error-icon {
+  border-color: #f0dada;
+  background: #fff5f5;
+  color: #b45353;
+}
+
+.pending-error-state h3 {
+  color: #8f3d3d;
+}
+
+.pending-error-state p {
+  color: #987b7b;
+}
+
+/* =========================================================
+   DARK THEME — GOLD HEADING AND NAVY SURFACES
+   ========================================================= */
+
+[data-theme="dark"] .pending-actions-page,
+.dark .pending-actions-page {
+  color: #edf2f8;
+}
+
+[data-theme="dark"] .pending-page-header .page-title,
+.dark .pending-page-header .page-title {
+  color: #e5c16e;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  text-shadow: 0 0 18px rgba(229, 193, 110, 0.12);
+}
+
+[data-theme="dark"] .pending-page-header .page-title::after,
+.dark .pending-page-header .page-title::after {
+  background: linear-gradient(
+    90deg,
+    #e5c16e 0%,
+    rgba(229, 193, 110, 0.55) 65%,
+    rgba(229, 193, 110, 0.08) 100%
+  );
+}
+
+[data-theme="dark"] .pending-page-header .page-eyebrow,
+[data-theme="dark"] .pending-page-header .page-description,
+[data-theme="dark"] .pending-filter-heading p,
+[data-theme="dark"] .pending-records-header p,
+[data-theme="dark"] .pending-claim-meta,
+[data-theme="dark"] .pending-empty-state p,
+.dark .pending-page-header .page-eyebrow,
+.dark .pending-page-header .page-description,
+.dark .pending-filter-heading p,
+.dark .pending-records-header p,
+.dark .pending-claim-meta,
+.dark .pending-empty-state p {
+  color: #b0bfd1;
+}
+
+[data-theme="dark"] .pending-filter-card,
+[data-theme="dark"] .pending-records-card,
+.dark .pending-filter-card,
+.dark .pending-records-card {
+  border-color: #2c3b50;
+  background: #172235;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.14);
+}
+
+[data-theme="dark"] .pending-filter-card:hover,
+.dark .pending-filter-card:hover {
+  border-color: #43516a;
+}
+
+[data-theme="dark"] .pending-filter-icon,
+[data-theme="dark"] .pending-empty-icon,
+.dark .pending-filter-icon,
+.dark .pending-empty-icon {
+  border-color: #5b4c31;
+  background: #302b21;
+  color: #e5c16e;
+}
+
+[data-theme="dark"] .pending-filter-heading h2,
+[data-theme="dark"] .pending-records-header h2,
+[data-theme="dark"] .pending-empty-state h3,
+.dark .pending-filter-heading h2,
+.dark .pending-records-header h2,
+.dark .pending-empty-state h3 {
+  color: #edf2f8;
+}
+
+[data-theme="dark"] .pending-search input,
+[data-theme="dark"] .pending-filter-select,
+.dark .pending-search input,
+.dark .pending-filter-select {
+  border-color: #304056;
+  background: #1d2a3d;
+  color: #edf2f8;
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .pending-search input::placeholder,
+.dark .pending-search input::placeholder {
+  color: #91a2b7;
+}
+
+[data-theme="dark"] .pending-search input:hover,
+[data-theme="dark"] .pending-filter-select:hover,
+.dark .pending-search input:hover,
+.dark .pending-filter-select:hover {
+  border-color: #61758e;
+}
+
+[data-theme="dark"] .pending-search input:focus,
+[data-theme="dark"] .pending-filter-select:focus,
+.dark .pending-search input:focus,
+.dark .pending-filter-select:focus {
+  border-color: #e5c16e;
+  box-shadow: 0 0 0 3px rgba(229, 193, 110, 0.13);
+}
+
+[data-theme="dark"] .pending-search > svg,
+.dark .pending-search > svg {
+  color: #91a2b7;
+}
+
+[data-theme="dark"] .pending-filter-select option,
+.dark .pending-filter-select option {
+  background: #1d2a3d;
+  color: #edf2f8;
+}
+
+[data-theme="dark"] .pending-action-type-display,
+.dark .pending-action-type-display {
+  border-color: #304056;
+  background: #1d2a3d;
+}
+
+[data-theme="dark"] .pending-action-type-label,
+.dark .pending-action-type-label {
+  color: #b0bfd1;
+}
+
+[data-theme="dark"] .pending-action-type-value,
+[data-theme="dark"] .pending-claim-stage span,
+.dark .pending-action-type-value,
+.dark .pending-claim-stage span {
+  border-color: #5b4c31;
+  background: #302b21;
+  color: #e5c16e;
+}
+
+[data-theme="dark"] .pending-records-header,
+.dark .pending-records-header {
+  border-bottom-color: #2c3b50;
+  background: #172235;
+}
+
+[data-theme="dark"] .pending-record-count,
+.dark .pending-record-count {
+  border-color: #5b4c31;
+  background: #302b21;
+  color: #e5c16e;
+}
+
+[data-theme="dark"] .pending-claim-row,
+.dark .pending-claim-row {
+  border-bottom-color: #27364a;
+  background: #172235;
+  color: #dbe5f1;
+}
+
+[data-theme="dark"] .pending-claim-row:hover,
+[data-theme="dark"] .pending-claim-row:focus-visible,
+.dark .pending-claim-row:hover,
+.dark .pending-claim-row:focus-visible {
+  background: #202e43;
+  box-shadow: inset 4px 0 0 #e5c16e;
+}
+
+[data-theme="dark"] .pending-claim-id,
+[data-theme="dark"] .pending-claim-arrow,
+.dark .pending-claim-id,
+.dark .pending-claim-arrow {
+  color: #91a2b7;
+}
+
+[data-theme="dark"] .pending-claim-main strong,
+.dark .pending-claim-main strong {
+  color: #edf2f8;
+}
+
+[data-theme="dark"] .pending-claim-amount,
+.dark .pending-claim-amount {
+  color: #e5c16e;
+}
+
+[data-theme="dark"] .pending-claim-row:hover .pending-claim-arrow,
+.dark .pending-claim-row:hover .pending-claim-arrow {
+  color: #e5c16e;
+}
+
+[data-theme="dark"] .pending-empty-state,
+[data-theme="dark"] .pending-loading-state,
+[data-theme="dark"] .pending-error-state,
+.dark .pending-empty-state,
+.dark .pending-loading-state,
+.dark .pending-error-state {
+  background: #172235;
+}
+
+[data-theme="dark"] .pending-loading-state,
+.dark .pending-loading-state {
+  color: #b0bfd1;
+}
+
+[data-theme="dark"] .pending-error-icon,
+.dark .pending-error-icon {
+  border-color: #603c46;
+  background: #30212a;
+  color: #f0a0a8;
+}
+
+[data-theme="dark"] .pending-error-state h3,
+.dark .pending-error-state h3 {
+  color: #f0a0a8;
+}
+
+[data-theme="dark"] .pending-error-state p,
+.dark .pending-error-state p {
+  color: #d0aeb4;
+}
+
+/* =========================================================
+   LIGHT THEME — BLUE HEADING, NO UNDERLINE
+   ========================================================= */
+
+[data-theme="light"] .pending-page-header .page-title {
+  color: #0b2345;
+  text-shadow: none;
+  padding-bottom: 0;
+}
+
+[data-theme="light"] .pending-page-header .page-title::after {
+  display: none;
+  content: none;
+}
+
+/* =========================================================
+   RESPONSIVE SIZING
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .pending-filter-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pending-search {
+    grid-column: 1 / -1;
+  }
+
+  .pending-claim-row {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pending-actions-page {
+    gap: 15px;
+  }
+
+  .pending-page-header {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .pending-page-header .page-title {
+    font-size: 24px;
+  }
+
+  .pending-page-header .page-description {
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  .pending-filter-card {
+    padding: 16px;
+  }
+
+  .pending-filter-controls {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .pending-search,
+  .pending-action-type-display {
+    grid-column: auto;
+  }
+
+  .pending-records-header {
+    min-height: 64px;
+    padding: 13px 15px;
+  }
+
+  .pending-claim-row {
+    min-width: 760px;
+  }
+
+  .pending-empty-state {
+    min-height: 215px;
+    padding: 28px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pending-page-header .page-title {
+    font-size: 22px;
+  }
+
+  .pending-page-header .page-description {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .pending-filter-card {
+    padding: 13px;
+  }
+
+  .pending-filter-heading {
+    gap: 9px;
+  }
+
+  .pending-filter-icon {
+    width: 33px;
+    height: 33px;
+  }
+
+  .pending-filter-heading h2 {
+    font-size: 13px;
+  }
+
+  .pending-filter-heading p {
+    font-size: 10px;
+  }
+
+  .pending-search,
+  .pending-search input,
+  .pending-filter-select {
+    height: 42px;
+    font-size: 12px;
+  }
+
+  .pending-records-header {
+    padding: 12px;
+  }
+
+  .pending-records-header h2 {
+    font-size: 14px;
+  }
+
+  .pending-record-count {
+    min-width: 27px;
+    height: 26px;
+  }
+
+  .pending-empty-state {
+    min-height: 200px;
+    padding: 24px 14px;
+  }
+
+  .pending-empty-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .pending-empty-state h3 {
+    font-size: 14px;
+  }
+
+  .pending-empty-state p {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,1182 @@
+
+/* =========================================================
+   SRM RIMS ADMIN PROFILE
+   Navy + Gold | Light Mode | Dark Mode | Responsive
+========================================================= */
+
+/* ---------- Theme variables ---------- */
+
+.admin-profile-page {
+  --ap-text: #172641;
+  --ap-secondary: #68778d;
+  --ap-muted: #94a0b1;
+
+  --ap-surface: #ffffff;
+  --ap-surface-soft: #f5f7fb;
+  --ap-border: #e1e7f0;
+
+  --ap-accent: #c59a3a;
+  --ap-accent-light: #f0d994;
+  --ap-navy: #173657;
+  --ap-navy-hover: #244d75;
+
+  --ap-input-bg: #ffffff;
+
+  --ap-success: #16865c;
+  --ap-success-bg: #eaf8f0;
+
+  --ap-error: #c43d48;
+  --ap-error-bg: #fff0f0;
+
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: 28px;
+  color: var(--ap-text);
+  background: transparent;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.admin-profile-page *,
+.admin-profile-page *::before,
+.admin-profile-page *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Dark theme ---------- */
+
+:root[data-theme="dark"] .admin-profile-page,
+.admin-layout[data-theme="dark"] .admin-profile-page,
+[data-theme="dark"] .admin-profile-page {
+  --ap-text: #f1f5fc;
+  --ap-secondary: #b2bfd2;
+  --ap-muted: #8f9fb5;
+
+  --ap-surface: #172439;
+  --ap-surface-soft: #1e2d43;
+  --ap-border: #304158;
+
+  --ap-accent: #e1bb62;
+  --ap-accent-light: #f3d991;
+  --ap-navy: #e1bb62;
+  --ap-navy-hover: #f0ce7d;
+
+  --ap-input-bg: #111c2e;
+
+  --ap-success: #7bdfae;
+  --ap-success-bg: #193b32;
+
+  --ap-error: #ff9b9b;
+  --ap-error-bg: #40252d;
+}
+
+/* ---------- Page heading ---------- */
+
+.admin-profile-page .ap-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 0 0 26px;
+}
+
+.admin-profile-page .ap-page-heading > div {
+  min-width: 0;
+}
+
+.admin-profile-page .ap-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--ap-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  line-height: 1.5;
+}
+
+.admin-profile-page .ap-page-heading h1 {
+  margin: 0;
+  color: var(--ap-text);
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.7px;
+}
+
+.admin-profile-page .ap-page-heading p {
+  margin: 8px 0 0;
+  color: var(--ap-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* ---------- Buttons ---------- */
+
+.admin-profile-page .ap-refresh-button,
+.admin-profile-page .ap-save-button,
+.admin-profile-page .ap-cancel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 42px;
+  padding: 10px 16px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.admin-profile-page .ap-refresh-button {
+  flex-shrink: 0;
+  color: var(--ap-text);
+  background: var(--ap-surface);
+  border-color: var(--ap-border);
+}
+
+.admin-profile-page .ap-refresh-button:hover:not(:disabled) {
+  background: var(--ap-surface-soft);
+  border-color: var(--ap-accent);
+}
+
+.admin-profile-page .ap-save-button {
+  color: #ffffff;
+  background: #173657;
+  border-color: #173657;
+  box-shadow: 0 3px 8px rgba(23, 54, 87, 0.12);
+}
+
+.admin-profile-page .ap-save-button:hover:not(:disabled) {
+  background: #244d75;
+  border-color: #244d75;
+  transform: translateY(-1px);
+}
+
+:root[data-theme="dark"] .admin-profile-page .ap-save-button,
+.admin-layout[data-theme="dark"] .admin-profile-page .ap-save-button,
+[data-theme="dark"] .admin-profile-page .ap-save-button {
+  color: #172439;
+  background: #e1bb62;
+  border-color: #e1bb62;
+}
+
+:root[data-theme="dark"] .admin-profile-page .ap-save-button:hover:not(:disabled),
+.admin-layout[data-theme="dark"] .admin-profile-page .ap-save-button:hover:not(:disabled),
+[data-theme="dark"] .admin-profile-page .ap-save-button:hover:not(:disabled) {
+  color: #172439;
+  background: #f0ce7d;
+  border-color: #f0ce7d;
+}
+
+.admin-profile-page .ap-cancel-button {
+  color: var(--ap-text);
+  background: var(--ap-surface);
+  border-color: var(--ap-border);
+}
+
+.admin-profile-page .ap-cancel-button:hover:not(:disabled) {
+  background: var(--ap-surface-soft);
+  border-color: var(--ap-secondary);
+}
+
+.admin-profile-page .ap-refresh-button:disabled,
+.admin-profile-page .ap-save-button:disabled,
+.admin-profile-page .ap-cancel-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-profile-page button:focus-visible,
+.admin-profile-page input:focus-visible {
+  outline: 3px solid rgba(197, 154, 58, 0.42);
+  outline-offset: 3px;
+}
+
+/* ---------- Notification messages ---------- */
+
+.admin-profile-page .ap-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 14px 16px;
+
+  border: 1px solid var(--ap-border);
+  border-radius: 11px;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  overflow-wrap: anywhere;
+}
+
+.admin-profile-page .ap-notice > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.admin-profile-page .ap-notice-error {
+  color: var(--ap-error);
+  background: var(--ap-error-bg);
+  border-left: 4px solid var(--ap-error);
+}
+
+.admin-profile-page .ap-notice-success {
+  color: var(--ap-success);
+  background: var(--ap-success-bg);
+  border-left: 4px solid var(--ap-success);
+}
+
+/* ---------- Profile card ---------- */
+
+.admin-profile-page .ap-profile-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+
+  background: var(--ap-surface);
+  border: 1px solid var(--ap-border);
+  border-radius: 18px;
+
+  box-shadow: 0 6px 24px rgba(17, 36, 65, 0.055);
+}
+
+/* ---------- Decorative banner ---------- */
+
+.admin-profile-page .ap-banner {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  min-height: 150px;
+  padding: 20px 24px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 20%,
+      rgba(219, 180, 87, 0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      115deg,
+      #102644 0%,
+      #193d63 62%,
+      #244c70 100%
+    );
+}
+
+.admin-profile-page .ap-banner::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #b88b30 0%,
+    #efd48c 50%,
+    #b88b30 100%
+  );
+
+  content: "";
+}
+
+.admin-profile-page .ap-banner-decoration {
+  position: absolute;
+  border: 1px solid rgba(235, 202, 123, 0.22);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.admin-profile-page .ap-decoration-one {
+  top: -100px;
+  right: 8%;
+  width: 290px;
+  height: 290px;
+}
+
+.admin-profile-page .ap-decoration-two {
+  top: -62px;
+  right: 16%;
+  width: 210px;
+  height: 210px;
+}
+
+.admin-profile-page .ap-banner-label {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 9px 12px;
+
+  color: #f3dca5;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(243, 220, 165, 0.25);
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+/* ---------- Profile picture and identity ---------- */
+
+.admin-profile-page .ap-profile-main {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  min-width: 0;
+  padding: 0 30px 25px;
+}
+
+.admin-profile-page .ap-avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+
+  width: 116px;
+  height: 116px;
+  margin-top: -58px;
+}
+
+.admin-profile-page .ap-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 116px;
+  height: 116px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+  background: linear-gradient(145deg, #244c70, #102644);
+  border: 5px solid var(--ap-surface);
+  border-radius: 50%;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+
+  font-size: 35px;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.admin-profile-page .ap-avatar img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+}
+
+/* ---------- Picture upload button ---------- */
+
+.admin-profile-page .ap-camera-button {
+  position: absolute;
+  right: 2px;
+  bottom: 4px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  color: #17314e;
+  background: #e9c66f;
+  border: 3px solid var(--ap-surface);
+  border-radius: 50%;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.admin-profile-page .ap-camera-button:hover {
+  background: #f4d78f;
+  transform: scale(1.06);
+}
+
+.admin-profile-page .ap-camera-button:active {
+  transform: scale(0.96);
+}
+
+.admin-profile-page .ap-file-input {
+  display: none;
+}
+
+/* ---------- Identity text ---------- */
+
+.admin-profile-page .ap-identity {
+  flex: 1;
+  min-width: 0;
+  padding-top: 14px;
+}
+
+.admin-profile-page .ap-identity h2 {
+  margin: 0;
+
+  color: var(--ap-text);
+
+  font-size: 24px;
+  font-weight: 750;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+.admin-profile-page .ap-identity-email {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  min-width: 0;
+  margin: 7px 0 12px;
+
+  color: var(--ap-secondary);
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+}
+
+.admin-profile-page .ap-identity-email svg {
+  flex-shrink: 0;
+}
+
+.admin-profile-page .ap-identity-email span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Role and account badges ---------- */
+
+.admin-profile-page .ap-identity-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.admin-profile-page .ap-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+
+  color: #a77c22;
+  background: rgba(197, 154, 58, 0.13);
+  border: 1px solid rgba(197, 154, 58, 0.25);
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+:root[data-theme="dark"] .admin-profile-page .ap-role,
+.admin-layout[data-theme="dark"] .admin-profile-page .ap-role,
+[data-theme="dark"] .admin-profile-page .ap-role {
+  color: #efd18a;
+  background: rgba(225, 187, 98, 0.12);
+  border-color: rgba(225, 187, 98, 0.3);
+}
+
+.admin-profile-page .ap-account-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--ap-secondary);
+
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.admin-profile-page .ap-status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+
+  background: #22a36a;
+  border-radius: 50%;
+}
+
+/* ---------- Divider ---------- */
+
+.admin-profile-page .ap-divider {
+  height: 1px;
+  margin: 0 30px;
+  background: var(--ap-border);
+}
+
+/* ---------- Section headings ---------- */
+
+.admin-profile-page .ap-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 24px 30px 17px;
+}
+
+.admin-profile-page .ap-section-heading h3 {
+  margin: 0;
+  color: var(--ap-text);
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.admin-profile-page .ap-section-heading p {
+  margin: 5px 0 0;
+  color: var(--ap-secondary);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* ---------- Account details grid ---------- */
+
+.admin-profile-page .ap-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+
+  padding: 0 30px 28px;
+}
+
+.admin-profile-page .ap-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  min-width: 0;
+  padding: 19px 12px 19px 0;
+
+  border-bottom: 1px solid var(--ap-border);
+}
+
+.admin-profile-page .ap-detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  color: var(--ap-accent);
+  background: var(--ap-surface-soft);
+  border: 1px solid var(--ap-border);
+  border-radius: 12px;
+}
+
+.admin-profile-page .ap-detail-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.admin-profile-page .ap-detail-copy > span {
+  color: var(--ap-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.admin-profile-page .ap-detail-copy > strong {
+  color: var(--ap-text);
+
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.6;
+
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.admin-profile-page .ap-detail-item:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.admin-profile-page .ap-account-id {
+  font-size: 12px !important;
+  word-break: break-all;
+}
+
+/* ---------- Edit form ---------- */
+
+.admin-profile-page .ap-edit-form {
+  border-top: 1px solid var(--ap-border);
+}
+
+.admin-profile-page .ap-edit-form .ap-section-heading {
+  padding-bottom: 20px;
+}
+
+.admin-profile-page .ap-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+
+  padding: 0 30px 22px;
+}
+
+.admin-profile-page .ap-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  min-width: 0;
+}
+
+.admin-profile-page .ap-field > span {
+  color: var(--ap-text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ---------- Input fields ---------- */
+
+.admin-profile-page .ap-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+  min-height: 46px;
+  padding: 0 13px;
+
+  color: var(--ap-secondary);
+  background: var(--ap-input-bg);
+  border: 1px solid var(--ap-border);
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-profile-page .ap-input-wrap:focus-within {
+  border-color: var(--ap-accent);
+  box-shadow: 0 0 0 3px rgba(197, 154, 58, 0.1);
+}
+
+.admin-profile-page .ap-input-wrap > svg {
+  flex-shrink: 0;
+}
+
+.admin-profile-page .ap-input-wrap input {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 11px 0;
+
+  color: var(--ap-text);
+  background: transparent;
+  border: 0;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.admin-profile-page .ap-input-wrap input::placeholder {
+  color: var(--ap-muted);
+  opacity: 1;
+}
+
+.admin-profile-page .ap-input-wrap input:focus-visible {
+  outline: none;
+}
+
+/* Prevent browser autofill from making text unreadable. */
+
+.admin-profile-page .ap-input-wrap input:-webkit-autofill,
+.admin-profile-page .ap-input-wrap input:-webkit-autofill:hover,
+.admin-profile-page .ap-input-wrap input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--ap-text);
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ---------- Image upload helper ---------- */
+
+.admin-profile-page .ap-upload-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  margin: 0 30px 24px;
+  padding: 12px 14px;
+
+  color: var(--ap-secondary);
+  background: var(--ap-surface-soft);
+  border: 1px dashed var(--ap-border);
+  border-radius: 10px;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.admin-profile-page .ap-upload-hint > svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--ap-accent);
+}
+
+/* ---------- Form action buttons ---------- */
+
+.admin-profile-page .ap-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  padding: 20px 30px;
+
+  background: var(--ap-surface-soft);
+  border-top: 1px solid var(--ap-border);
+}
+
+/* ---------- Security information ---------- */
+
+.admin-profile-page .ap-security-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  margin-top: 22px;
+  padding: 20px 22px;
+
+  background: var(--ap-surface);
+  border: 1px solid var(--ap-border);
+  border-radius: 15px;
+
+  box-shadow: 0 4px 15px rgba(17, 36, 65, 0.025);
+}
+
+.admin-profile-page .ap-security-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+
+  color: var(--ap-accent);
+  background: rgba(197, 154, 58, 0.12);
+  border: 1px solid rgba(197, 154, 58, 0.15);
+  border-radius: 12px;
+}
+
+.admin-profile-page .ap-security-card h3 {
+  margin: 1px 0 6px;
+  color: var(--ap-text);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.admin-profile-page .ap-security-card p {
+  margin: 0;
+  color: var(--ap-secondary);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ---------- Loading state ---------- */
+
+.admin-profile-page .ap-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 280px;
+  padding: 30px;
+
+  color: var(--ap-secondary);
+  text-align: center;
+}
+
+.admin-profile-page .ap-state > svg {
+  color: var(--ap-accent);
+}
+
+.admin-profile-page .ap-state h2 {
+  margin: 4px 0 0;
+  color: var(--ap-text);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.admin-profile-page .ap-state p {
+  margin: 0;
+  color: var(--ap-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ---------- Loading animation ---------- */
+
+.admin-profile-page .ap-spin {
+  animation: ap-spin 1s linear infinite;
+}
+
+@keyframes ap-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 850px) {
+  .admin-profile-page {
+    padding: 22px;
+  }
+
+  .admin-profile-page .ap-profile-main {
+    padding-right: 22px;
+    padding-left: 22px;
+    gap: 17px;
+  }
+
+  .admin-profile-page .ap-avatar-wrapper,
+  .admin-profile-page .ap-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .admin-profile-page .ap-avatar-wrapper {
+    margin-top: -50px;
+  }
+
+  .admin-profile-page .ap-avatar {
+    font-size: 30px;
+  }
+
+  .admin-profile-page .ap-details {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .admin-profile-page .ap-section-heading {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .admin-profile-page .ap-form-grid {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .admin-profile-page .ap-upload-hint {
+    margin-right: 22px;
+    margin-left: 22px;
+  }
+
+  .admin-profile-page .ap-form-actions {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .admin-profile-page .ap-divider {
+    margin-right: 22px;
+    margin-left: 22px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  .admin-profile-page {
+    padding: 16px 12px 24px;
+  }
+
+  .admin-profile-page .ap-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .admin-profile-page .ap-page-heading h1 {
+    font-size: 25px;
+    letter-spacing: -0.4px;
+  }
+
+  .admin-profile-page .ap-page-heading p {
+    font-size: 13px;
+  }
+
+  .admin-profile-page .ap-page-heading .ap-refresh-button {
+    width: 100%;
+  }
+
+  .admin-profile-page .ap-profile-card {
+    border-radius: 15px;
+  }
+
+  .admin-profile-page .ap-banner {
+    min-height: 115px;
+    padding: 14px;
+  }
+
+  .admin-profile-page .ap-banner-label {
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .admin-profile-page .ap-profile-main {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 0 18px 22px;
+  }
+
+  .admin-profile-page .ap-avatar-wrapper,
+  .admin-profile-page .ap-avatar {
+    width: 92px;
+    height: 92px;
+  }
+
+  .admin-profile-page .ap-avatar-wrapper {
+    margin-top: -46px;
+  }
+
+  .admin-profile-page .ap-avatar {
+    font-size: 28px;
+  }
+
+  .admin-profile-page .ap-camera-button {
+    right: 0;
+    bottom: 2px;
+    width: 33px;
+    height: 33px;
+  }
+
+  .admin-profile-page .ap-identity {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .admin-profile-page .ap-identity h2 {
+    font-size: 21px;
+  }
+
+  .admin-profile-page .ap-identity-email {
+    align-items: flex-start;
+    margin-top: 7px;
+    font-size: 12px;
+  }
+
+  .admin-profile-page .ap-identity-badges {
+    gap: 8px;
+  }
+
+  .admin-profile-page .ap-role {
+    font-size: 10px;
+  }
+
+  .admin-profile-page .ap-account-status {
+    font-size: 10px;
+  }
+
+  .admin-profile-page .ap-divider {
+    margin-right: 18px;
+    margin-left: 18px;
+  }
+
+  .admin-profile-page .ap-section-heading {
+    padding: 20px 18px 12px;
+  }
+
+  .admin-profile-page .ap-section-heading h3 {
+    font-size: 15px;
+  }
+
+  .admin-profile-page .ap-details {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 18px 18px;
+  }
+
+  .admin-profile-page .ap-detail-item {
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--ap-border);
+  }
+
+  .admin-profile-page .ap-detail-item:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--ap-border);
+  }
+
+  .admin-profile-page .ap-detail-item:last-child {
+    border-bottom: 0;
+  }
+
+  .admin-profile-page .ap-detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+  }
+
+  .admin-profile-page .ap-detail-copy > strong {
+    font-size: 13px;
+  }
+
+  .admin-profile-page .ap-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+    padding: 0 18px 20px;
+  }
+
+  .admin-profile-page .ap-field > span {
+    font-size: 12px;
+  }
+
+  .admin-profile-page .ap-input-wrap {
+    min-height: 45px;
+  }
+
+  .admin-profile-page .ap-input-wrap input {
+    min-height: 43px;
+    font-size: 13px;
+  }
+
+  .admin-profile-page .ap-upload-hint {
+    margin: 0 18px 20px;
+    padding: 11px 12px;
+    font-size: 11px;
+  }
+
+  .admin-profile-page .ap-form-actions {
+    padding: 16px 18px;
+  }
+
+  .admin-profile-page .ap-security-card {
+    gap: 12px;
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 13px;
+  }
+
+  .admin-profile-page .ap-security-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .admin-profile-page .ap-security-card h3 {
+    font-size: 13px;
+  }
+
+  .admin-profile-page .ap-security-card p {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .admin-profile-page .ap-notice {
+    padding: 12px;
+    font-size: 12px;
+  }
+}
+
+/* ---------- Very small screens ---------- */
+
+@media (max-width: 360px) {
+  .admin-profile-page {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+
+  .admin-profile-page .ap-form-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .admin-profile-page .ap-form-actions button {
+    width: 100%;
+  }
+
+  .admin-profile-page .ap-banner-decoration.ap-decoration-one {
+    right: -35%;
+  }
+
+  .admin-profile-page .ap-banner-decoration.ap-decoration-two {
+    right: -15%;
+  }
+
+  .admin-profile-page .ap-identity h2 {
+    font-size: 19px;
+  }
+}
+
+/* ---------- Reduced motion accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-profile-page *,
+  .admin-profile-page *::before,
+  .admin-profile-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

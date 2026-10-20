@@ -1,0 +1,32 @@
+﻿# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+admin/dist/
+frontend/dist/
+**/dist/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Runtime files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Uploaded files and personal data
+uploads/
+
+# Backup archives
+backend.zip
+frontend.zip

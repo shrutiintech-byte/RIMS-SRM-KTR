@@ -1,0 +1,1394 @@
+
+/* =========================================================
+   POSTGRADUATE RESEARCH — RIMS DASHBOARD THEME
+   Theme: Navy Blue / Gold / White
+   Responsive + Dark Mode
+   ========================================================= */
+
+/* ===================== THEME VARIABLES ===================== */
+
+.postgraduate-research-page {
+  --pgr-primary: #172b4d;
+  --pgr-primary-hover: #223b63;
+  --pgr-primary-light: #edf2f8;
+
+  --pgr-gold: #c59a42;
+  --pgr-gold-hover: #b18731;
+  --pgr-gold-light: #fbf5e7;
+
+  --pgr-page-bg: #f5f7fb;
+  --pgr-card-bg: #ffffff;
+  --pgr-input-bg: #ffffff;
+
+  --pgr-text: #263449;
+  --pgr-heading: #172b4d;
+  --pgr-muted: #738096;
+
+  --pgr-border: #e1e6ee;
+  --pgr-input-border: #d6dde7;
+
+  --pgr-success: #18794e;
+  --pgr-success-bg: #eaf7ef;
+
+  --pgr-danger: #c43d4b;
+  --pgr-danger-bg: #fff0f1;
+
+  --pgr-shadow: 0 3px 14px rgba(23, 43, 77, 0.045);
+
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 28px 32px 36px;
+
+  color: var(--pgr-text);
+  background: transparent;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+
+  box-sizing: border-box;
+}
+
+.postgraduate-research-page *,
+.postgraduate-research-page *::before,
+.postgraduate-research-page *::after {
+  box-sizing: border-box;
+}
+
+/* ===================== PAGE HEADER ===================== */
+
+.postgraduate-research-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+
+  width: 100%;
+  margin-bottom: 26px;
+}
+
+.postgraduate-research-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 36px;
+  padding: 7px 0;
+
+  color: var(--pgr-muted);
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  outline-offset: 4px;
+
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.postgraduate-research-back:hover {
+  color: var(--pgr-primary);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.postgraduate-research-back:focus-visible {
+  outline: 2px solid var(--pgr-gold);
+}
+
+.postgraduate-research-back svg {
+  flex-shrink: 0;
+}
+
+.postgraduate-research-heading {
+  width: 100%;
+}
+
+.postgraduate-research-eyebrow {
+  margin-bottom: 11px;
+
+  color: var(--pgr-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.postgraduate-research-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.postgraduate-research-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+
+  color: var(--pgr-gold);
+  background: var(--pgr-primary-light);
+  border: 1px solid rgba(197, 154, 66, 0.3);
+  border-radius: 12px;
+}
+
+.postgraduate-research-page-title {
+  margin: 0;
+
+  color: var(--pgr-heading);
+  font-size: clamp(22px, 2.1vw, 29px);
+  font-weight: 750;
+  letter-spacing: -0.7px;
+  line-height: 1.3;
+}
+
+.postgraduate-research-page-description {
+  max-width: 760px;
+  margin: 8px 0 0;
+
+  color: var(--pgr-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ===================== FEEDBACK MESSAGES ===================== */
+
+.postgraduate-research-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 13px 16px;
+
+  color: var(--pgr-primary);
+  background: var(--pgr-primary-light);
+  border: 1px solid var(--pgr-border);
+  border-left: 3px solid var(--pgr-gold);
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.postgraduate-research-message svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--pgr-success);
+}
+
+.postgraduate-research-message:has(svg) {
+  color: var(--pgr-success);
+  background: var(--pgr-success-bg);
+  border-color: #cce8d7;
+  border-left-color: var(--pgr-success);
+}
+
+/* ===================== MAIN FORM ===================== */
+
+.postgraduate-research-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* ===================== SECTION CARDS ===================== */
+
+.postgraduate-research-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+
+  background: var(--pgr-card-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 12px;
+  box-shadow: var(--pgr-shadow);
+}
+
+/* ===================== SECTION HEADERS ===================== */
+
+.postgraduate-research-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  padding: 21px 24px;
+  background: var(--pgr-card-bg);
+  border-bottom: 1px solid var(--pgr-border);
+}
+
+.postgraduate-research-section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  color: var(--pgr-gold);
+  background: var(--pgr-primary-light);
+  border: 1px solid rgba(197, 154, 66, 0.23);
+  border-radius: 9px;
+}
+
+.postgraduate-research-section-header > div:last-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.postgraduate-research-section-header h2 {
+  margin: 1px 0 4px;
+
+  color: var(--pgr-heading);
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: -0.15px;
+  line-height: 1.45;
+}
+
+.postgraduate-research-section-header p {
+  margin: 0;
+
+  color: var(--pgr-muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* ===================== FORM BODY ===================== */
+
+.postgraduate-research-form-body {
+  padding: 24px;
+}
+
+.postgraduate-research-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 24px;
+
+  width: 100%;
+}
+
+.postgraduate-research-field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 7px;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.postgraduate-research-field-full {
+  grid-column: 1 / -1;
+}
+
+/* ===================== LABELS ===================== */
+
+.postgraduate-research-field > label,
+.postgraduate-research-scholar-fields .postgraduate-research-field > label {
+  display: block;
+  margin: 0;
+
+  color: var(--pgr-text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.postgraduate-research-field > label span,
+.postgraduate-research-scholar-fields .postgraduate-research-field > label span {
+  margin-left: 3px;
+  color: var(--pgr-danger);
+}
+
+/* ===================== INPUTS / SELECTS / TEXTAREAS ===================== */
+
+.postgraduate-research-page input:not([type="checkbox"]):not([type="file"]),
+.postgraduate-research-page select,
+.postgraduate-research-page textarea {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 43px;
+  margin: 0;
+  padding: 10px 12px;
+
+  color: var(--pgr-text);
+  background: var(--pgr-input-bg);
+  border: 1px solid var(--pgr-input-border);
+  border-radius: 7px;
+  outline: none;
+  box-shadow: none;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.postgraduate-research-page input::placeholder,
+.postgraduate-research-page textarea::placeholder {
+  color: #9aa5b5;
+  opacity: 1;
+}
+
+.postgraduate-research-page select {
+  padding-right: 34px;
+  cursor: pointer;
+}
+
+.postgraduate-research-page textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.postgraduate-research-page input:hover,
+.postgraduate-research-page select:hover,
+.postgraduate-research-page textarea:hover {
+  border-color: #b9c4d3;
+}
+
+.postgraduate-research-page input:focus,
+.postgraduate-research-page select:focus,
+.postgraduate-research-page textarea:focus {
+  border-color: var(--pgr-gold);
+  box-shadow: 0 0 0 3px rgba(197, 154, 66, 0.14);
+}
+
+.postgraduate-research-page input:disabled,
+.postgraduate-research-page select:disabled,
+.postgraduate-research-page textarea:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.postgraduate-research-page input[type="date"] {
+  min-height: 43px;
+}
+
+.postgraduate-research-page input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.postgraduate-research-page input[type="number"]::-webkit-inner-spin-button,
+.postgraduate-research-page input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+/* ===================== VALIDATION ===================== */
+
+.postgraduate-research-error,
+.postgraduate-research-document-error {
+  margin: 1px 0 0;
+
+  color: var(--pgr-danger);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.postgraduate-research-page input[aria-invalid="true"],
+.postgraduate-research-page select[aria-invalid="true"],
+.postgraduate-research-page textarea[aria-invalid="true"] {
+  border-color: var(--pgr-danger);
+}
+
+/* ===================== SCHOLAR SUBSECTION ===================== */
+
+.postgraduate-research-subsection {
+  width: 100%;
+  min-width: 0;
+}
+
+.postgraduate-research-subsection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 17px;
+}
+
+.postgraduate-research-subsection-header > div {
+  min-width: 0;
+}
+
+.postgraduate-research-subsection-header strong {
+  display: block;
+
+  color: var(--pgr-heading);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.postgraduate-research-subsection-header p {
+  margin: 5px 0 0;
+
+  color: var(--pgr-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ===================== SECONDARY BUTTON ===================== */
+
+.postgraduate-research-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 36px;
+  padding: 8px 13px;
+  flex-shrink: 0;
+
+  color: var(--pgr-primary);
+  background: var(--pgr-card-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.postgraduate-research-secondary-button:hover {
+  color: var(--pgr-primary);
+  background: var(--pgr-primary-light);
+  border-color: var(--pgr-gold);
+}
+
+.postgraduate-research-secondary-button svg {
+  color: var(--pgr-gold);
+}
+
+/* ===================== EMPTY SCHOLAR STATE ===================== */
+
+.postgraduate-research-empty-inline {
+  display: flex;
+  align-items: center;
+
+  min-height: 64px;
+  padding: 17px;
+
+  color: var(--pgr-muted);
+  background: var(--pgr-page-bg);
+  border: 1px dashed var(--pgr-border);
+  border-radius: 8px;
+
+  font-size: 12px;
+}
+
+/* ===================== SCHOLAR ROWS ===================== */
+
+.postgraduate-research-scholar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.postgraduate-research-scholar-row {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 36px;
+  align-items: start;
+  gap: 13px;
+
+  padding: 17px;
+
+  background: var(--pgr-page-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 9px;
+}
+
+.postgraduate-research-scholar-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 29px;
+  height: 29px;
+  margin-top: 1px;
+
+  color: var(--pgr-primary);
+  background: var(--pgr-gold-light);
+  border: 1px solid rgba(197, 154, 66, 0.35);
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.postgraduate-research-scholar-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  min-width: 0;
+}
+
+.postgraduate-research-scholar-fields .postgraduate-research-field {
+  min-width: 0;
+}
+
+.postgraduate-research-delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+  padding: 0;
+
+  color: var(--pgr-danger);
+  background: var(--pgr-card-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 7px;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.postgraduate-research-delete-button:hover {
+  background: var(--pgr-danger-bg);
+  border-color: #e8aeb4;
+}
+
+/* ===================== INCENTIVE AMOUNT ===================== */
+
+.postgraduate-research-currency-input {
+  display: flex;
+  align-items: stretch;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.postgraduate-research-currency-input > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  min-width: 43px;
+
+  color: var(--pgr-gold);
+  background: var(--pgr-primary-light);
+  border: 1px solid var(--pgr-input-border);
+  border-right: none;
+  border-radius: 7px 0 0 7px;
+}
+
+.postgraduate-research-currency-input input {
+  flex: 1;
+  min-width: 0;
+  border-radius: 0 7px 7px 0 !important;
+}
+
+/* ===================== DOCUMENT LIST ===================== */
+
+.postgraduate-research-document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  width: 100%;
+}
+
+.postgraduate-research-document {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+
+  width: 100%;
+  min-width: 0;
+  padding: 17px;
+
+  background: var(--pgr-card-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 9px;
+
+  transition: border-color 0.2s ease;
+}
+
+.postgraduate-research-document:hover {
+  border-color: #c4ccd9;
+}
+
+.postgraduate-research-document-information {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.postgraduate-research-document-information > div:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.postgraduate-research-document-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
+
+  color: var(--pgr-gold);
+  background: var(--pgr-primary-light);
+  border: 1px solid rgba(197, 154, 66, 0.23);
+  border-radius: 8px;
+}
+
+.postgraduate-research-document-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.postgraduate-research-document-title strong {
+  color: var(--pgr-heading);
+  font-size: 12px;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.postgraduate-research-required {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 3px 7px;
+
+  color: #956b1e;
+  background: var(--pgr-gold-light);
+  border: 1px solid rgba(197, 154, 66, 0.27);
+  border-radius: 4px;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.postgraduate-research-document-information p {
+  margin: 5px 0 0;
+
+  color: var(--pgr-muted);
+  font-size: 11px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+/* ===================== FILE UPLOAD CONTROL ===================== */
+
+.postgraduate-research-upload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 37px;
+  padding: 8px 12px;
+  flex-shrink: 0;
+
+  color: var(--pgr-primary);
+  background: var(--pgr-card-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.postgraduate-research-upload:hover {
+  background: var(--pgr-primary-light);
+  border-color: var(--pgr-gold);
+}
+
+.postgraduate-research-upload svg {
+  color: var(--pgr-gold);
+  flex-shrink: 0;
+}
+
+.postgraduate-research-upload input[type="file"] {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.postgraduate-research-upload:focus-within {
+  outline: 2px solid var(--pgr-gold);
+  outline-offset: 3px;
+}
+
+/* ===================== SELECTED / EXISTING FILES ===================== */
+
+.postgraduate-research-selected-file {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  min-width: 0;
+  margin-top: 9px;
+
+  color: var(--pgr-muted);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.postgraduate-research-selected-file > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.postgraduate-research-document-information .postgraduate-research-selected-file {
+  padding: 8px 10px;
+
+  background: var(--pgr-page-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 6px;
+}
+
+.postgraduate-research-document-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 27px;
+  padding: 4px 8px;
+
+  color: var(--pgr-primary);
+  background: var(--pgr-card-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 5px;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.postgraduate-research-document-action:hover {
+  background: var(--pgr-primary-light);
+  border-color: var(--pgr-gold);
+}
+
+.postgraduate-research-document-action:last-child {
+  color: var(--pgr-danger);
+}
+
+.postgraduate-research-document-action:last-child:hover {
+  background: var(--pgr-danger-bg);
+  border-color: #e8aeb4;
+}
+
+/* ===================== DOCUMENT NOTES ===================== */
+
+.postgraduate-research-document-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin: 0 0 15px;
+  padding: 12px 14px;
+
+  color: var(--pgr-muted);
+  background: var(--pgr-page-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 7px;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.postgraduate-research-document-note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--pgr-gold);
+}
+
+.postgraduate-research-document-note p {
+  margin: 0;
+}
+
+/* ===================== DECLARATION ===================== */
+
+.postgraduate-research-declaration-card {
+  border-color: var(--pgr-border);
+}
+
+.postgraduate-research-declaration {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  width: 100%;
+  padding: 16px;
+
+  color: var(--pgr-text);
+  background: var(--pgr-page-bg);
+  border: 1px solid var(--pgr-border);
+  border-radius: 8px;
+
+  font-size: 12px;
+  line-height: 1.8;
+
+  cursor: pointer;
+}
+
+.postgraduate-research-declaration input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  margin: 3px 0 0;
+  padding: 0;
+
+  background: var(--pgr-input-bg);
+  border: 1px solid var(--pgr-input-border);
+  border-radius: 4px;
+
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.postgraduate-research-declaration input[type="checkbox"]:checked {
+  background: var(--pgr-primary);
+  border-color: var(--pgr-primary);
+}
+
+.postgraduate-research-declaration input[type="checkbox"]:checked::after {
+  content: "";
+
+  width: 5px;
+  height: 9px;
+  margin-top: -2px;
+
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.postgraduate-research-declaration input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--pgr-gold);
+  outline-offset: 3px;
+}
+
+.postgraduate-research-declaration:hover {
+  border-color: #c5cedb;
+}
+
+/* ===================== SUBMISSION CARD ===================== */
+
+.postgraduate-research-submission-card {
+  width: 100%;
+  padding: 22px 24px;
+
+  background: var(--pgr-card-bg);
+  border: 1px solid var(--pgr-border);
+  border-top: 3px solid var(--pgr-gold);
+  border-radius: 10px;
+  box-shadow: var(--pgr-shadow);
+}
+
+.postgraduate-research-submission-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.postgraduate-research-submission-content > div:first-child {
+  min-width: 0;
+  flex: 1;
+}
+
+.postgraduate-research-submission-content strong {
+  display: block;
+
+  color: var(--pgr-heading);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.postgraduate-research-submission-content p {
+  max-width: 620px;
+  margin: 6px 0 0;
+
+  color: var(--pgr-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* ===================== SUBMISSION ACTIONS ===================== */
+
+.postgraduate-research-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+.postgraduate-research-draft-button,
+.postgraduate-research-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 41px;
+  padding: 10px 17px;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.postgraduate-research-draft-button {
+  color: var(--pgr-primary);
+  background: var(--pgr-card-bg);
+  border-color: var(--pgr-border);
+}
+
+.postgraduate-research-draft-button:hover:not(:disabled) {
+  background: var(--pgr-primary-light);
+  border-color: var(--pgr-primary);
+}
+
+.postgraduate-research-submit-button {
+  color: #ffffff;
+  background: var(--pgr-primary);
+  border-color: var(--pgr-primary);
+}
+
+.postgraduate-research-submit-button:hover:not(:disabled) {
+  background: var(--pgr-primary-hover);
+  border-color: var(--pgr-primary-hover);
+}
+
+.postgraduate-research-submit-button:focus-visible,
+.postgraduate-research-draft-button:focus-visible,
+.postgraduate-research-secondary-button:focus-visible,
+.postgraduate-research-delete-button:focus-visible,
+.postgraduate-research-document-action:focus-visible {
+  outline: 2px solid var(--pgr-gold);
+  outline-offset: 3px;
+}
+
+.postgraduate-research-draft-button:disabled,
+.postgraduate-research-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===================== DARK MODE ===================== */
+
+/* Support common dashboard theme attributes and classes. */
+
+[data-theme="dark"] .postgraduate-research-page,
+.dark .postgraduate-research-page,
+.dark-mode .postgraduate-research-page {
+  --pgr-primary: #d6b56e;
+  --pgr-primary-hover: #e5c985;
+  --pgr-primary-light: #263348;
+
+  --pgr-gold: #d6b56e;
+  --pgr-gold-hover: #e5c985;
+  --pgr-gold-light: #393326;
+
+  --pgr-page-bg: #171f2d;
+  --pgr-card-bg: #202b3b;
+  --pgr-input-bg: #192333;
+
+  --pgr-text: #dbe3ef;
+  --pgr-heading: #f1f4f9;
+  --pgr-muted: #a4b0c1;
+
+  --pgr-border: #354154;
+  --pgr-input-border: #465268;
+
+  --pgr-success: #69d6a0;
+  --pgr-success-bg: #1d3b32;
+
+  --pgr-danger: #ff8c97;
+  --pgr-danger-bg: #402a34;
+
+  --pgr-shadow: 0 3px 14px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .postgraduate-research-page .postgraduate-research-message:has(svg),
+.dark .postgraduate-research-page .postgraduate-research-message:has(svg),
+.dark-mode .postgraduate-research-page .postgraduate-research-message:has(svg) {
+  border-color: #315344;
+  border-left-color: var(--pgr-success);
+}
+
+[data-theme="dark"] .postgraduate-research-page .postgraduate-research-required,
+.dark .postgraduate-research-page .postgraduate-research-required,
+.dark-mode .postgraduate-research-page .postgraduate-research-required {
+  color: #ead39c;
+  border-color: #655637;
+}
+
+[data-theme="dark"] .postgraduate-research-page .postgraduate-research-submit-button,
+.dark .postgraduate-research-page .postgraduate-research-submit-button,
+.dark-mode .postgraduate-research-page .postgraduate-research-submit-button {
+  color: #192333;
+  background: #d6b56e;
+  border-color: #d6b56e;
+}
+
+[data-theme="dark"] .postgraduate-research-page .postgraduate-research-submit-button:hover:not(:disabled),
+.dark .postgraduate-research-page .postgraduate-research-submit-button:hover:not(:disabled),
+.dark-mode .postgraduate-research-page .postgraduate-research-submit-button:hover:not(:disabled) {
+  color: #192333;
+  background: #e5c985;
+  border-color: #e5c985;
+}
+
+[data-theme="dark"] .postgraduate-research-page .postgraduate-research-back:hover,
+.dark .postgraduate-research-page .postgraduate-research-back:hover,
+.dark-mode .postgraduate-research-page .postgraduate-research-back:hover {
+  color: #f1f4f9;
+}
+
+/* ===================== TABLET ===================== */
+
+@media (max-width: 1100px) {
+  .postgraduate-research-page {
+    padding: 24px;
+  }
+
+  .postgraduate-research-form-body {
+    padding: 21px;
+  }
+
+  .postgraduate-research-section-header {
+    padding: 19px 21px;
+  }
+
+  .postgraduate-research-submission-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .postgraduate-research-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* ===================== SMALL TABLET ===================== */
+
+@media (max-width: 760px) {
+  .postgraduate-research-page {
+    padding: 20px 16px 28px;
+  }
+
+  .postgraduate-research-header {
+    gap: 16px;
+    margin-bottom: 21px;
+  }
+
+  .postgraduate-research-title-icon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+  }
+
+  .postgraduate-research-page-title {
+    font-size: 23px;
+  }
+
+  .postgraduate-research-form {
+    gap: 16px;
+  }
+
+  .postgraduate-research-form-grid {
+    gap: 18px;
+  }
+
+  .postgraduate-research-scholar-row {
+    grid-template-columns: 29px minmax(0, 1fr) 34px;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .postgraduate-research-scholar-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .postgraduate-research-document {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .postgraduate-research-upload {
+    justify-self: start;
+  }
+
+  .postgraduate-research-submission-card {
+    padding: 19px;
+  }
+}
+
+/* ===================== MOBILE ===================== */
+
+@media (max-width: 520px) {
+  .postgraduate-research-page {
+    padding: 16px 12px 24px;
+  }
+
+  .postgraduate-research-header {
+    margin-bottom: 18px;
+  }
+
+  .postgraduate-research-title-row {
+    gap: 11px;
+  }
+
+  .postgraduate-research-title-icon {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+    border-radius: 9px;
+  }
+
+  .postgraduate-research-title-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .postgraduate-research-page-title {
+    font-size: 20px;
+    letter-spacing: -0.4px;
+  }
+
+  .postgraduate-research-page-description {
+    font-size: 12px;
+  }
+
+  .postgraduate-research-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .postgraduate-research-form {
+    gap: 14px;
+  }
+
+  .postgraduate-research-section-header {
+    gap: 11px;
+    padding: 16px;
+  }
+
+  .postgraduate-research-section-icon {
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+    border-radius: 7px;
+  }
+
+  .postgraduate-research-section-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .postgraduate-research-section-header h2 {
+    font-size: 14px;
+  }
+
+  .postgraduate-research-section-header p {
+    font-size: 11px;
+  }
+
+  .postgraduate-research-form-body {
+    padding: 17px 15px;
+  }
+
+  .postgraduate-research-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .postgraduate-research-field-full {
+    grid-column: auto;
+  }
+
+  .postgraduate-research-page input:not([type="checkbox"]):not([type="file"]),
+  .postgraduate-research-page select,
+  .postgraduate-research-page textarea {
+    font-size: 13px;
+  }
+
+  .postgraduate-research-subsection-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .postgraduate-research-secondary-button {
+    width: 100%;
+  }
+
+  .postgraduate-research-scholar-row {
+    grid-template-columns: 27px minmax(0, 1fr) 31px;
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .postgraduate-research-scholar-number {
+    width: 26px;
+    height: 26px;
+  }
+
+  .postgraduate-research-scholar-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .postgraduate-research-delete-button {
+    width: 31px;
+    height: 31px;
+  }
+
+  .postgraduate-research-document {
+    padding: 13px;
+  }
+
+  .postgraduate-research-document-information {
+    gap: 10px;
+  }
+
+  .postgraduate-research-document-icon {
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+  }
+
+  .postgraduate-research-document-title strong {
+    font-size: 11px;
+  }
+
+  .postgraduate-research-declaration {
+    gap: 10px;
+    padding: 13px;
+    font-size: 11px;
+  }
+
+  .postgraduate-research-submission-card {
+    padding: 17px 15px;
+  }
+
+  .postgraduate-research-submission-content {
+    gap: 17px;
+  }
+
+  .postgraduate-research-submission-content strong {
+    font-size: 13px;
+  }
+
+  .postgraduate-research-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .postgraduate-research-draft-button,
+  .postgraduate-research-submit-button {
+    width: 100%;
+    min-height: 43px;
+  }
+}
+
+/* ===================== REDUCED MOTION ===================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .postgraduate-research-page *,
+  .postgraduate-research-page *::before,
+  .postgraduate-research-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,1715 @@
+/* =========================================================
+   RIMS - Settings
+
+   Institutional / Professional Styling
+   ========================================================= */
+
+.settings-page {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4px 0 30px;
+  color: #243b53;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  box-sizing: border-box;
+}
+
+.settings-page *,
+.settings-page *::before,
+.settings-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.settings-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.page-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: #6b7f93;
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.page-title {
+  margin: 0;
+  color: #243b53;
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.35px;
+}
+
+.page-description {
+  margin: 5px 0 0;
+  color: #6b7f93;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.settings-save-button {
+  min-height: 38px;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #18558b;
+  border-radius: 7px;
+  background: #18558b;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.settings-save-button:hover {
+  background: #12466f;
+  border-color: #12466f;
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 10px rgba(24, 85, 139, 0.15);
+}
+
+.settings-save-button:active {
+  transform: translateY(0);
+}
+
+.settings-save-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   COMMON CARD
+   ========================================================= */
+
+.settings-card {
+  margin-bottom: 16px;
+  border: 1px solid #d8e1e9;
+  border-radius: 9px;
+  background: #ffffff;
+  box-shadow:
+    0 1px 2px rgba(36, 59, 83, 0.04),
+    0 4px 12px rgba(36, 59, 83, 0.04);
+  overflow: hidden;
+}
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.settings-card-header {
+  min-height: 57px;
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border-bottom: 1px solid #e2e8ee;
+}
+
+.settings-card-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d5e2eb;
+  border-radius: 7px;
+  background: #f1f6fa;
+  color: #18558b;
+}
+
+.settings-card-header h2 {
+  margin: 0;
+  color: #243b53;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.settings-card-header p {
+  margin: 3px 0 0;
+  color: #7b8c9d;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   NOTIFICATION OPTIONS
+   ========================================================= */
+
+.settings-options {
+  padding: 0 16px;
+}
+
+.settings-option {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 2px;
+  border-bottom: 1px solid #edf1f4;
+}
+
+.settings-option:last-child {
+  border-bottom: none;
+}
+
+.settings-option-content {
+  min-width: 0;
+}
+
+.settings-option-title {
+  margin-bottom: 3px;
+  color: #304b63;
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+.settings-option-description {
+  max-width: 700px;
+  color: #7b8c9d;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   TOGGLE
+   ========================================================= */
+
+.settings-toggle {
+  position: relative;
+  width: 42px;
+  height: 23px;
+  flex: 0 0 42px;
+  padding: 0;
+  border: 1px solid #c7d3dd;
+  border-radius: 999px;
+  background: #dfe6ec;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.settings-toggle span {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow:
+    0 1px 3px rgba(36, 59, 83, 0.2);
+  transition:
+    transform 0.2s ease;
+}
+
+.settings-toggle.active {
+  border-color: #18558b;
+  background: #18558b;
+}
+
+.settings-toggle.active span {
+  transform: translateX(19px);
+}
+
+/* =========================================================
+   APPEARANCE
+   ========================================================= */
+
+.settings-theme-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 16px;
+}
+
+.settings-theme-option {
+  position: relative;
+  min-height: 78px;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid #d6e0e8;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #243b53;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.settings-theme-option:hover {
+  border-color: #b7c9d7;
+  background: #fafcfd;
+}
+
+.settings-theme-option.selected {
+  border-color: #6c9abb;
+  background: #f4f8fb;
+  box-shadow:
+    0 0 0 2px rgba(24, 85, 139, 0.06);
+}
+
+.settings-theme-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d5e2eb;
+  border-radius: 8px;
+  background: #f1f6fa;
+  color: #18558b;
+}
+
+.settings-theme-option strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #304b63;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 650;
+}
+
+.settings-theme-option span {
+  display: block;
+  color: #7b8c9d;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.settings-theme-check {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  color: #18558b;
+}
+
+/* =========================================================
+   APPEARANCE INFORMATION
+   ========================================================= */
+
+.settings-info-message {
+  margin: 0 16px 16px;
+  padding: 10px 12px;
+  border: 1px solid #dce6ed;
+  border-radius: 6px;
+  background: #f7fafc;
+  color: #718397;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ACCOUNT SECURITY INFORMATION
+   ========================================================= */
+
+.settings-security-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #edf1f4;
+}
+
+.settings-security-info-row {
+  min-width: 0;
+  min-height: 62px;
+  padding: 11px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e0e7ed;
+  border-radius: 7px;
+  background: #fafcfd;
+}
+
+.settings-security-info-icon {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d5e2eb;
+  border-radius: 6px;
+  background: #f1f6fa;
+  color: #18558b;
+}
+
+.settings-security-info-row > div:last-child {
+  min-width: 0;
+}
+
+.settings-security-info-row span {
+  display: block;
+  margin-bottom: 3px;
+  color: #7b8c9d;
+  font-size: 9px;
+  line-height: 1.3;
+}
+
+.settings-security-info-row strong {
+  display: block;
+  overflow: hidden;
+  color: #304b63;
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   SECURITY CONTENT
+   ========================================================= */
+
+.settings-security-row {
+  min-height: 82px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.settings-security-content {
+  min-width: 0;
+}
+
+.settings-security-content strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #304b63;
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+.settings-security-content span {
+  display: block;
+  color: #7b8c9d;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CHANGE PASSWORD ACTION
+   ========================================================= */
+
+.settings-password-action {
+  min-height: 82px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.settings-password-button {
+  min-height: 34px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #b9cad8;
+  border-radius: 6px;
+  background: #f7fafc;
+  color: #18558b;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.settings-password-button:hover {
+  background: #eef5f9;
+  border-color: #94b1c7;
+  color: #12466f;
+  transform: translateY(-1px);
+}
+
+.settings-password-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.settings-logout-button {
+  min-height: 34px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #d8bcbc;
+  border-radius: 6px;
+  background: #fffafa;
+  color: #9b4e4e;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.settings-logout-button:hover {
+  background: #fdf0f0;
+  border-color: #cfa5a5;
+  color: #843e3e;
+  transform: translateY(-1px);
+}
+
+.settings-logout-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   BOTTOM SAVE ACTIONS
+   ========================================================= */
+
+.settings-bottom-actions {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  padding: 8px 0 0;
+}
+
+.settings-saved-message {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #4f7965;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.settings-saved-message svg {
+  flex: 0 0 auto;
+}
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.settings-loading {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7b8c9d;
+  font-size: 11px;
+}
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.settings-error-message {
+  margin-bottom: 16px;
+  padding: 10px 13px;
+  border: 1px solid #e3c5c5;
+  border-radius: 7px;
+  background: #fff8f8;
+  color: #9b4e4e;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PASSWORD MODAL OVERLAY
+   ========================================================= */
+
+.settings-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(22, 39, 55, 0.48);
+  backdrop-filter: blur(2px);
+}
+
+/* =========================================================
+   PASSWORD MODAL
+   ========================================================= */
+
+.settings-password-modal {
+  width: 100%;
+  max-width: 470px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  border: 1px solid #d8e1e9;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow:
+    0 16px 40px rgba(36, 59, 83, 0.18),
+    0 4px 12px rgba(36, 59, 83, 0.08);
+}
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.settings-modal-header {
+  padding: 18px 18px 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid #e2e8ee;
+}
+
+.settings-modal-header > div:first-child {
+  min-width: 0;
+}
+
+.settings-modal-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d5e2eb;
+  border-radius: 7px;
+  background: #f1f6fa;
+  color: #18558b;
+}
+
+.settings-modal-header h2 {
+  margin: 0;
+  color: #243b53;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.settings-modal-header p {
+  margin: 4px 0 0;
+  color: #7b8c9d;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.settings-modal-close {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #d8e1e9;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #718397;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.settings-modal-close:hover {
+  background: #f5f8fa;
+  border-color: #c4d1dc;
+  color: #304b63;
+}
+
+.settings-modal-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   PASSWORD FORM
+   ========================================================= */
+
+.settings-password-form {
+  padding: 18px;
+}
+
+.settings-password-field {
+  margin-bottom: 15px;
+}
+
+.settings-password-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: #304b63;
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+.settings-password-input-wrapper {
+  position: relative;
+}
+
+.settings-password-input-wrapper input {
+  width: 100%;
+  min-height: 38px;
+  padding: 0 40px 0 11px;
+  border: 1px solid #cfd9e1;
+  border-radius: 6px;
+  outline: none;
+  background: #ffffff;
+  color: #243b53;
+  font-family: inherit;
+  font-size: 11px;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.settings-password-input-wrapper input::placeholder {
+  color: #a1afbc;
+}
+
+.settings-password-input-wrapper input:focus {
+  border-color: #6c9abb;
+  box-shadow:
+    0 0 0 3px rgba(24, 85, 139, 0.07);
+}
+
+.settings-password-input-wrapper input:disabled {
+  background: #f6f8fa;
+  cursor: not-allowed;
+}
+
+.settings-password-eye {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #718397;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.settings-password-eye:hover {
+  color: #18558b;
+}
+
+.settings-password-eye:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.settings-password-field small {
+  display: block;
+  margin-top: 5px;
+  color: #8a99a7;
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PASSWORD STRENGTH
+   ========================================================= */
+
+.settings-password-strength {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 7px;
+}
+
+.settings-password-strength-bar {
+  width: 90px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2e8ee;
+}
+
+.settings-password-strength-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #6c9abb;
+  transition: width 0.2s ease;
+}
+
+.settings-password-strength > span {
+  color: #718397;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   PASSWORD ERROR / SUCCESS
+   ========================================================= */
+
+.settings-password-error {
+  margin: 14px 18px 0;
+  padding: 9px 11px;
+  border: 1px solid #e3c5c5;
+  border-radius: 6px;
+  background: #fff8f8;
+  color: #9b4e4e;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.settings-password-success {
+  margin: 14px 18px 0;
+  padding: 9px 11px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #c9ddd1;
+  border-radius: 6px;
+  background: #f6fbf8;
+  color: #4f7965;
+  font-size: 9px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.settings-password-success svg {
+  flex: 0 0 auto;
+}
+
+/* =========================================================
+   MODAL ACTIONS
+   ========================================================= */
+
+.settings-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #edf1f4;
+}
+
+.settings-modal-cancel,
+.settings-modal-submit {
+  min-height: 35px;
+  padding: 0 13px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.settings-modal-cancel {
+  border: 1px solid #d1dce4;
+  background: #ffffff;
+  color: #607487;
+}
+
+.settings-modal-cancel:hover {
+  background: #f7fafc;
+  border-color: #bdccd8;
+}
+
+.settings-modal-submit {
+  border: 1px solid #18558b;
+  background: #18558b;
+  color: #ffffff;
+}
+
+.settings-modal-submit:hover {
+  border-color: #12466f;
+  background: #12466f;
+}
+
+.settings-modal-cancel:disabled,
+.settings-modal-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   FOCUS STATES
+   ========================================================= */
+
+.settings-save-button:focus-visible,
+.settings-toggle:focus-visible,
+.settings-theme-option:focus-visible,
+.settings-logout-button:focus-visible,
+.settings-password-button:focus-visible,
+.settings-modal-close:focus-visible,
+.settings-password-eye:focus-visible,
+.settings-modal-cancel:focus-visible,
+.settings-modal-submit:focus-visible {
+  outline: 2px solid #7da9c9;
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .settings-page {
+    padding: 4px 16px 28px;
+  }
+
+  .settings-theme-options {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .settings-security-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .settings-page {
+    padding: 2px 12px 24px;
+  }
+
+  .settings-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .settings-page-header > div {
+    width: 100%;
+  }
+
+  .page-eyebrow {
+    font-size: 9px;
+  }
+
+  .page-title {
+    font-size: 21px;
+  }
+
+  .page-description {
+    font-size: 10px;
+  }
+
+  .settings-page-header .settings-save-button {
+    width: 100%;
+  }
+
+  .settings-card-header {
+    min-height: 54px;
+    padding: 10px 13px;
+  }
+
+  .settings-card-header h2 {
+    font-size: 13px;
+  }
+
+  .settings-card-header p {
+    font-size: 9px;
+  }
+
+  .settings-options {
+    padding: 0 13px;
+  }
+
+  .settings-option {
+    min-height: 72px;
+    gap: 15px;
+    padding: 13px 0;
+  }
+
+  .settings-option-title {
+    font-size: 10px;
+  }
+
+  .settings-option-description {
+    font-size: 9px;
+  }
+
+  .settings-theme-options {
+    grid-template-columns: 1fr;
+    padding: 13px;
+  }
+
+  .settings-theme-option {
+    min-height: 70px;
+  }
+
+  .settings-info-message {
+    margin: 0 13px 13px;
+  }
+
+  .settings-security-info {
+    grid-template-columns: 1fr;
+    padding: 13px;
+  }
+
+  .settings-security-info-row {
+    min-height: 58px;
+  }
+
+  .settings-security-row,
+  .settings-password-action {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 14px 13px;
+  }
+
+  .settings-logout-button,
+  .settings-password-button {
+    width: 100%;
+  }
+
+  .settings-bottom-actions {
+    align-items: stretch;
+    flex-direction: column;
+    padding-top: 5px;
+  }
+
+  .settings-bottom-actions .settings-save-button {
+    width: 100%;
+  }
+
+  .settings-saved-message {
+    justify-content: center;
+  }
+
+  .settings-modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .settings-password-modal {
+    max-width: none;
+    max-height: 92vh;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .settings-modal-header {
+    padding: 16px 15px 13px;
+  }
+
+  .settings-password-form {
+    padding: 15px;
+  }
+
+  .settings-password-error,
+  .settings-password-success {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .page-title {
+    font-size: 20px;
+  }
+
+  .settings-card-header {
+    gap: 9px;
+  }
+
+  .settings-card-icon {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+
+  .settings-option-description {
+    line-height: 1.45;
+  }
+
+  .settings-toggle {
+    width: 40px;
+    flex-basis: 40px;
+  }
+
+  .settings-toggle.active span {
+    transform: translateX(17px);
+  }
+
+  .settings-theme-option {
+    padding: 11px;
+  }
+
+  .settings-theme-icon {
+    width: 33px;
+    height: 33px;
+    flex-basis: 33px;
+  }
+
+  .settings-theme-option strong {
+    font-size: 10px;
+  }
+
+  .settings-theme-option span {
+    font-size: 8px;
+  }
+
+  .settings-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .settings-modal-cancel,
+  .settings-modal-submit {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   RIMS SETTINGS — DESIGN SYSTEM ALIGNMENT
+   Append this block to the bottom of Settings.css
+   ========================================================= */
+
+/* Shared typography and theme-aware surfaces */
+.settings-page {
+  color: var(--color-text-primary);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.settings-page .page-eyebrow {
+  color: var(--color-text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+}
+
+.settings-page .page-title {
+  color: var(--color-text-primary);
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.45px;
+}
+
+.settings-page .page-description {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.settings-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.settings-card-header {
+  border-bottom-color: var(--color-border-light);
+}
+
+.settings-card-header h2 {
+  color: var(--color-text-primary);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.settings-card-header p,
+.settings-option-description,
+.settings-security-content span,
+.settings-security-info-row span {
+  color: var(--color-text-secondary);
+}
+
+.settings-option {
+  border-bottom-color: var(--color-border-light);
+}
+
+.settings-option-title,
+.settings-security-content strong,
+.settings-security-info-row strong,
+.settings-theme-option strong {
+  color: var(--color-text-primary);
+  font-size: 12px;
+}
+
+.settings-option-description,
+.settings-security-content span {
+  font-size: 11px;
+}
+
+/* Navy-and-gold primary actions */
+.settings-page .settings-save-button,
+.settings-page .settings-modal-submit {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #ffffff;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.settings-page .settings-save-button:hover,
+.settings-page .settings-modal-submit:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #071a34;
+  box-shadow: var(--shadow-sm);
+}
+
+.settings-page .settings-password-button {
+  border-color: var(--color-border);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+  font-size: 11px;
+}
+
+.settings-page .settings-password-button:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.settings-page .settings-toggle {
+  border-color: var(--color-border);
+  background: var(--color-border);
+}
+
+.settings-page .settings-toggle.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+.settings-page .settings-toggle span {
+  background: #ffffff;
+}
+
+/* Appearance selection */
+.settings-theme-option {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.settings-theme-option:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface-secondary);
+}
+
+.settings-theme-option.selected {
+  border-color: var(--color-accent);
+  background: var(--color-surface-secondary);
+  box-shadow: 0 0 0 2px rgba(217, 173, 76, 0.15);
+}
+
+.settings-theme-icon,
+.settings-card-icon,
+.settings-security-info-icon,
+.settings-modal-icon {
+  border-color: var(--color-border);
+  background: var(--color-surface-secondary);
+  color: var(--color-accent);
+}
+
+.settings-theme-check {
+  color: var(--color-accent);
+}
+
+.settings-theme-option span,
+.settings-info-message {
+  color: var(--color-text-secondary);
+}
+
+.settings-info-message {
+  border-color: var(--color-border);
+  border-radius: 7px;
+  background: var(--color-surface-secondary);
+  font-size: 10px;
+}
+
+/* Security information */
+.settings-security-info {
+  border-bottom-color: var(--color-border-light);
+}
+
+.settings-security-info-row {
+  border-color: var(--color-border);
+  background: var(--color-surface-secondary);
+  border-radius: 8px;
+}
+
+.settings-security-info-row strong {
+  font-size: 11px;
+}
+
+/* Logout action — preserve clear danger styling */
+.settings-logout-button {
+  border-color: #e3c5c5;
+  background: #fff8f8;
+  color: #9b3f46;
+  border-radius: 7px;
+  font-size: 11px;
+}
+
+.settings-logout-button:hover {
+  border-color: #d7a4a8;
+  background: #fceeee;
+  color: #842e36;
+}
+
+/* Saved and error messages */
+.settings-saved-message {
+  color: var(--color-success);
+  font-size: 11px;
+}
+
+.settings-page .settings-error-message {
+  border-color: #e3c5c5;
+  background: #fff8f8;
+  color: #9b3f46;
+  border-radius: 7px;
+  font-size: 11px;
+}
+
+.settings-loading {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+/* Password modal */
+.settings-modal-overlay {
+  background: rgba(5, 15, 30, 0.62);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.settings-password-modal {
+  border-color: var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.settings-modal-header,
+.settings-modal-actions {
+  border-color: var(--color-border-light);
+}
+
+.settings-modal-header h2 {
+  color: var(--color-text-primary);
+  font-size: 17px;
+}
+
+.settings-modal-header p {
+  color: var(--color-text-secondary);
+  font-size: 11px;
+}
+
+.settings-modal-close,
+.settings-modal-cancel {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  border-radius: 7px;
+}
+
+.settings-modal-close:hover,
+.settings-modal-cancel:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+}
+
+.settings-password-field label {
+  color: var(--color-text-primary);
+  font-size: 11px;
+}
+
+.settings-password-input-wrapper input {
+  border-color: var(--color-border);
+  border-radius: 7px;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.settings-password-input-wrapper input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(217, 173, 76, 0.17);
+}
+
+.settings-password-input-wrapper input:disabled {
+  background: var(--color-surface-secondary);
+}
+
+.settings-password-field small {
+  color: var(--color-text-muted);
+  font-size: 10px;
+}
+
+.settings-password-strength-bar {
+  background: var(--color-border);
+}
+
+.settings-password-strength-bar span {
+  background: var(--color-accent);
+}
+
+.settings-password-strength > span {
+  color: var(--color-text-secondary);
+  font-size: 10px;
+}
+
+/* Keep validation feedback legible */
+.settings-password-error {
+  border-color: #e3c5c5;
+  background: #fff8f8;
+  color: #9b3f46;
+  font-size: 10px;
+}
+
+.settings-password-success {
+  border-color: #c9ddd1;
+  background: #f3faf5;
+  color: #356b4d;
+  font-size: 10px;
+}
+
+/* Accessible keyboard focus */
+.settings-page button:focus-visible,
+.settings-modal-overlay button:focus-visible,
+.settings-password-input-wrapper input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   DARK THEME
+   Works when data-theme="dark" is on html or an ancestor.
+   ========================================================= */
+
+[data-theme="dark"] .settings-page {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .settings-page .page-eyebrow,
+[data-theme="dark"] .settings-page .page-description,
+[data-theme="dark"] .settings-card-header p,
+[data-theme="dark"] .settings-option-description,
+[data-theme="dark"] .settings-security-content span,
+[data-theme="dark"] .settings-security-info-row span,
+[data-theme="dark"] .settings-theme-option span,
+[data-theme="dark"] .settings-info-message,
+[data-theme="dark"] .settings-loading,
+[data-theme="dark"] .settings-password-field small,
+[data-theme="dark"] .settings-password-strength > span,
+[data-theme="dark"] .settings-modal-header p {
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .settings-page .page-title,
+[data-theme="dark"] .settings-card-header h2,
+[data-theme="dark"] .settings-option-title,
+[data-theme="dark"] .settings-security-content strong,
+[data-theme="dark"] .settings-security-info-row strong,
+[data-theme="dark"] .settings-theme-option strong,
+[data-theme="dark"] .settings-modal-header h2,
+[data-theme="dark"] .settings-password-field label {
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .settings-card,
+[data-theme="dark"] .settings-password-modal {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .settings-card-header,
+[data-theme="dark"] .settings-option,
+[data-theme="dark"] .settings-security-info,
+[data-theme="dark"] .settings-modal-header,
+[data-theme="dark"] .settings-modal-actions {
+  border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .settings-card-icon,
+[data-theme="dark"] .settings-theme-icon,
+[data-theme="dark"] .settings-security-info-icon,
+[data-theme="dark"] .settings-modal-icon {
+  border-color: var(--color-border);
+  background: var(--color-surface-secondary);
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .settings-theme-option {
+  border-color: var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .settings-theme-option:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface-secondary);
+}
+
+[data-theme="dark"] .settings-theme-option.selected {
+  border-color: var(--color-accent);
+  background: #202c3d;
+  box-shadow: 0 0 0 2px rgba(217, 173, 76, 0.12);
+}
+
+[data-theme="dark"] .settings-theme-check {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .settings-info-message,
+[data-theme="dark"] .settings-security-info-row {
+  border-color: var(--color-border);
+  background: var(--color-surface-secondary);
+}
+
+[data-theme="dark"] .settings-toggle {
+  border-color: #46556a;
+  background: #35445a;
+}
+
+[data-theme="dark"] .settings-toggle.active {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+[data-theme="dark"] .settings-toggle.active span {
+  background: #071a34;
+}
+
+[data-theme="dark"] .settings-page .settings-save-button,
+[data-theme="dark"] .settings-page .settings-modal-submit {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #071a34;
+}
+
+[data-theme="dark"] .settings-page .settings-save-button:hover,
+[data-theme="dark"] .settings-page .settings-modal-submit:hover {
+  border-color: #e7c875;
+  background: #e7c875;
+  color: #071a34;
+}
+
+[data-theme="dark"] .settings-page .settings-password-button {
+  border-color: var(--color-border);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .settings-page .settings-password-button:hover {
+  border-color: var(--color-accent);
+  background: #26354a;
+}
+
+[data-theme="dark"] .settings-page .settings-logout-button {
+  border-color: #69404a;
+  background: #35232d;
+  color: #ffb4bd;
+}
+
+[data-theme="dark"] .settings-page .settings-logout-button:hover {
+  border-color: #92515c;
+  background: #432832;
+  color: #ffd0d5;
+}
+
+[data-theme="dark"] .settings-saved-message {
+  color: #9ae6b4;
+}
+
+[data-theme="dark"] .settings-page .settings-error-message,
+[data-theme="dark"] .settings-password-error {
+  border-color: #69404a;
+  background: #35232d;
+  color: #ffb4bd;
+}
+
+[data-theme="dark"] .settings-password-success {
+  border-color: #285b44;
+  background: #193528;
+  color: #9ae6b4;
+}
+
+[data-theme="dark"] .settings-modal-close,
+[data-theme="dark"] .settings-modal-cancel {
+  border-color: var(--color-border);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .settings-modal-close:hover,
+[data-theme="dark"] .settings-modal-cancel:hover {
+  border-color: var(--color-accent);
+  background: #26354a;
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .settings-password-input-wrapper input {
+  border-color: var(--color-border);
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .settings-password-input-wrapper input::placeholder {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .settings-password-input-wrapper input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(217, 173, 76, 0.16);
+}
+
+[data-theme="dark"] .settings-password-input-wrapper input:disabled {
+  background: #131e2e;
+}
+
+[data-theme="dark"] .settings-password-eye {
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .settings-password-eye:hover {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] .settings-password-strength-bar {
+  background: var(--color-border);
+}
+
+[data-theme="dark"] .settings-password-strength-bar span {
+  background: var(--color-accent);
+}
+
+[data-theme="dark"] .settings-modal-overlay {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+/* Responsive typography — align with other RIMS pages */
+@media (max-width: 640px) {
+  .settings-page .page-title {
+    font-size: 22px;
+  }
+
+  .settings-page .page-description {
+    font-size: 11px;
+  }
+
+  .settings-card-header h2 {
+    font-size: 13px;
+  }
+
+  .settings-option-title,
+  .settings-security-content strong,
+  .settings-theme-option strong {
+    font-size: 11px;
+  }
+
+  .settings-option-description,
+  .settings-security-content span {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .settings-page .page-title {
+    font-size: 20px;
+  }
+
+  .settings-card {
+    border-radius: 8px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .settings-page *,
+  .settings-page *::before,
+  .settings-page *::after,
+  .settings-modal-overlay * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

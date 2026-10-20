@@ -1,0 +1,963 @@
+
+/* =========================================================
+   RIMS PROFILE — REFINED DESIGN SYSTEM
+   Light mode + Dark mode
+   Works with the existing Profile.jsx
+========================================================= */
+
+/* =========================================================
+   1. LIGHT THEME TOKENS
+========================================================= */
+
+.profile-page {
+  --p-bg: #f5f7fb;
+  --p-card: #ffffff;
+  --p-card-alt: #f7f9fc;
+  --p-card-hover: #f0f5fb;
+
+  --p-text: #172b4d;
+  --p-heading: #0b2345;
+  --p-muted: #64748b;
+
+  --p-border: #e1e8f0;
+  --p-border-hover: #c5d4e5;
+
+  --p-blue: #18558b;
+  --p-blue-bright: #246da8;
+  --p-blue-soft: #edf5ff;
+  --p-blue-border: #d7e8fa;
+
+  --p-gold: #d9ad4c;
+
+  --p-green: #167548;
+  --p-green-bg: #eaf8ef;
+  --p-green-border: #c5e9d1;
+
+  --p-yellow: #946200;
+  --p-yellow-bg: #fff7df;
+  --p-yellow-border: #f1dfaa;
+
+  --p-red: #b42318;
+  --p-red-bg: #fff0ee;
+  --p-red-border: #f3ccc7;
+
+  --p-shadow: 0 2px 8px rgba(15, 35, 65, 0.035);
+  --p-shadow-hover: 0 8px 22px rgba(15, 35, 65, 0.075);
+
+  width: 100%;
+  max-width: 1180px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 6px 0 32px;
+
+  color: var(--p-text);
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color-scheme: light;
+}
+
+.profile-page,
+.profile-page *,
+.profile-page *::before,
+.profile-page *::after {
+  box-sizing: border-box;
+}
+
+.profile-page svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.profile-page h1,
+.profile-page h2,
+.profile-page h3,
+.profile-page p {
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   2. DARK THEME TOKENS
+========================================================= */
+
+[data-theme="dark"] .profile-page,
+.profile-page[data-theme="dark"] {
+  --p-bg: #0e1726;
+  --p-card: #172438;
+  --p-card-alt: #1c2b40;
+  --p-card-hover: #22364f;
+
+  --p-text: #f1f5fb;
+  --p-heading: #f8fafc;
+  --p-muted: #bdcbe0;
+
+  --p-border: #2b3b52;
+  --p-border-hover: #455d7a;
+
+  --p-blue: #8dc3ff;
+  --p-blue-bright: #b3d8ff;
+  --p-blue-soft: #20344d;
+  --p-blue-border: #304965;
+
+  --p-gold: #e5bd63;
+
+  --p-green: #86efac;
+  --p-green-bg: rgba(22, 163, 74, 0.13);
+  --p-green-border: rgba(74, 222, 128, 0.27);
+
+  --p-yellow: #fcd675;
+  --p-yellow-bg: rgba(217, 157, 30, 0.13);
+  --p-yellow-border: rgba(252, 211, 77, 0.27);
+
+  --p-red: #fca5a5;
+  --p-red-bg: rgba(220, 38, 38, 0.13);
+  --p-red-border: rgba(248, 113, 113, 0.27);
+
+  --p-shadow: 0 4px 16px rgba(0, 0, 0, 0.09);
+  --p-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.17);
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   3. PAGE HEADER
+========================================================= */
+
+.profile-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.profile-page .page-eyebrow {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: var(--p-blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.profile-page .page-title {
+  margin: 0;
+  color: var(--p-heading);
+  font-size: 28px;
+  font-weight: 780;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+}
+
+.profile-page .page-description {
+  margin: 8px 0 0;
+  max-width: 650px;
+  color: var(--p-muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   4. SHARED CARDS
+========================================================= */
+
+.profile-page .rims-card {
+  position: relative;
+  min-width: 0;
+  margin: 0 0 20px;
+  overflow: hidden;
+
+  background: var(--p-card);
+  border: 1px solid var(--p-border);
+  border-radius: 13px;
+  box-shadow: var(--p-shadow);
+
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.profile-page .rims-card:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   5. PROFILE BANNER
+========================================================= */
+
+.profile-identity-card {
+  isolation: isolate;
+}
+
+/* IMPORTANT:
+   overflow must be visible here so the avatar is not clipped.
+   The outer identity card still clips its rounded corners.
+*/
+
+.profile-cover-area {
+  position: relative;
+  height: 145px;
+  overflow: visible;
+
+  background:
+    radial-gradient(
+      ellipse at 83% 16%,
+      rgba(217, 173, 76, 0.24),
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #0b2345 0%,
+      #123d65 48%,
+      #24658a 100%
+    );
+}
+
+.profile-cover-area::before {
+  position: absolute;
+  top: -120px;
+  right: 11%;
+  width: 270px;
+  height: 270px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.profile-cover-area::after {
+  position: absolute;
+  right: -45px;
+  bottom: -125px;
+  width: 260px;
+  height: 210px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+/* =========================================================
+   6. PROFILE PHOTO — FIXED OVERLAP
+========================================================= */
+
+.profile-photo-container {
+  position: absolute;
+  z-index: 3;
+  left: 30px;
+  bottom: -43px;
+
+  width: 104px;
+  height: 104px;
+}
+
+.profile-photo,
+.profile-photo-placeholder {
+  display: flex;
+  width: 104px;
+  height: 104px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  background: var(--p-card);
+  border: 4px solid var(--p-card);
+  border-radius: 50%;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.17);
+}
+
+.profile-photo {
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-photo-placeholder {
+  color: var(--p-blue);
+  background: var(--p-blue-soft);
+}
+
+.profile-photo-placeholder svg {
+  width: 40px;
+  height: 40px;
+  color: var(--p-blue);
+}
+
+.profile-photo-badge {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 3px;
+
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: #123e70;
+  border: 2px solid var(--p-card);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-photo-badge svg {
+  width: 14px;
+  height: 14px;
+  color: #ffffff;
+}
+
+/* =========================================================
+   7. IDENTITY DETAILS
+========================================================= */
+
+.profile-identity-content {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  min-height: 116px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 20px 26px 20px 155px;
+  background: var(--p-card);
+}
+
+.profile-identity-main {
+  min-width: 0;
+}
+
+.profile-identity-main h2 {
+  margin: 0;
+  color: var(--p-heading);
+  font-size: 22px;
+  font-weight: 780;
+  letter-spacing: -0.45px;
+  line-height: 1.4;
+}
+
+.profile-identity-main p {
+  margin: 5px 0 0;
+  color: var(--p-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   8. ACTIVE STATUS
+========================================================= */
+
+.profile-account-status {
+  display: inline-flex;
+  min-height: 34px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 7px 12px;
+  color: var(--p-green);
+  background: var(--p-green-bg);
+  border: 1px solid var(--p-green-border);
+  border-radius: 24px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.profile-account-status svg {
+  width: 16px;
+  height: 16px;
+  color: var(--p-green);
+}
+
+/* =========================================================
+   9. SECTION HEADERS
+========================================================= */
+
+.profile-card-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 20px 23px;
+
+  border-bottom: 1px solid var(--p-border);
+}
+
+.profile-card-header-icon {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--p-blue);
+  background: var(--p-blue-soft);
+  border: 1px solid var(--p-blue-border);
+  border-radius: 11px;
+}
+
+.profile-card-header-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--p-blue);
+}
+
+.profile-card-header > div:last-child {
+  min-width: 0;
+}
+
+.profile-card-header h2 {
+  margin: 0;
+  color: var(--p-heading);
+  font-size: 15px;
+  font-weight: 760;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+}
+
+.profile-card-header p {
+  margin: 3px 0 0;
+  color: var(--p-muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   10. PERSONAL INFORMATION
+========================================================= */
+
+.profile-information-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 30px;
+  padding: 5px 23px;
+}
+
+.profile-information-item {
+  min-width: 0;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--p-border);
+}
+
+.profile-information-item:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.profile-information-label {
+  display: block;
+  margin-bottom: 8px;
+
+  color: var(--p-muted);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.15px;
+  line-height: 1.5;
+}
+
+.profile-information-value {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 11px;
+
+  color: var(--p-text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.profile-information-value svg {
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+
+  /* Brighter icon color in both themes */
+  color: var(--p-blue);
+  opacity: 1;
+}
+
+.profile-information-value span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   11. ACCOUNT INFORMATION
+========================================================= */
+
+.profile-account-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 14px;
+  padding: 22px;
+}
+
+.profile-account-item {
+  display: flex;
+  min-width: 0;
+  min-height: 94px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 17px;
+
+  background: var(--p-card-alt);
+  border: 1px solid var(--p-border);
+  border-radius: 11px;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.profile-account-item > span {
+  color: var(--p-muted);
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.profile-account-item strong {
+  max-width: 100%;
+  color: var(--p-text);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   12. STATUS BADGES
+========================================================= */
+
+.profile-status {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 29px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 10px;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.profile-status.active,
+.profile-status.approved {
+  color: var(--p-green);
+  background: var(--p-green-bg);
+  border-color: var(--p-green-border);
+}
+
+.profile-status.pending {
+  color: var(--p-yellow);
+  background: var(--p-yellow-bg);
+  border-color: var(--p-yellow-border);
+}
+
+.profile-status.suspended,
+.profile-status.rejected,
+.profile-status.inactive,
+.profile-status.disabled {
+  color: var(--p-red);
+  background: var(--p-red-bg);
+  border-color: var(--p-red-border);
+}
+
+/* =========================================================
+   13. LOADING, ERROR AND EMPTY STATES
+========================================================= */
+
+.profile-state-card {
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 36px 24px;
+
+  background: var(--p-card);
+  border: 1px solid var(--p-border);
+  border-radius: 13px;
+  box-shadow: var(--p-shadow);
+
+  text-align: center;
+}
+
+.profile-state-card h2 {
+  margin: 17px 0 7px;
+  color: var(--p-heading);
+  font-size: 18px;
+  font-weight: 760;
+  line-height: 1.45;
+}
+
+.profile-state-card p {
+  max-width: 440px;
+  margin: 0;
+  color: var(--p-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.profile-state-icon {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--p-blue);
+  background: var(--p-blue-soft);
+  border: 1px solid var(--p-blue-border);
+  border-radius: 16px;
+}
+
+.profile-state-icon svg {
+  width: 25px;
+  height: 25px;
+  color: var(--p-blue);
+}
+
+.profile-error-card .profile-state-icon {
+  color: var(--p-red);
+  background: var(--p-red-bg);
+  border-color: var(--p-red-border);
+}
+
+.profile-error-card .profile-state-icon svg {
+  color: var(--p-red);
+}
+
+/* Loading spinner */
+
+.profile-spinner {
+  width: 39px;
+  height: 39px;
+
+  border: 3px solid var(--p-border);
+  border-top-color: var(--p-blue);
+  border-radius: 50%;
+
+  animation: profile-spin 0.8s linear infinite;
+}
+
+@keyframes profile-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   14. RETRY BUTTON
+========================================================= */
+
+.profile-retry-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 23px;
+  padding: 10px 19px;
+
+  color: #ffffff;
+  background: #18558b;
+  border: 1px solid #18558b;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.5;
+
+  cursor: pointer;
+
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.profile-retry-button:hover {
+  background: #123f6b;
+  box-shadow: 0 4px 12px rgba(24, 85, 139, 0.2);
+  transform: translateY(-1px);
+}
+
+.profile-retry-button:active {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .profile-retry-button,
+.profile-page[data-theme="dark"] .profile-retry-button {
+  color: #ffffff;
+  background: #18558b;
+  border-color: #397db7;
+}
+
+[data-theme="dark"] .profile-retry-button:hover,
+.profile-page[data-theme="dark"] .profile-retry-button:hover {
+  background: #246ba4;
+}
+
+/* =========================================================
+   15. ACCESSIBILITY
+========================================================= */
+
+.profile-page button:focus-visible {
+  outline: 3px solid var(--p-gold);
+  outline-offset: 3px;
+}
+
+.profile-page button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   16. TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .profile-page {
+    padding-right: 2px;
+    padding-left: 2px;
+  }
+
+  .profile-page-header {
+    margin-bottom: 19px;
+  }
+
+  .profile-information-grid {
+    column-gap: 22px;
+  }
+
+  .profile-account-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-account-item:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   17. MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .profile-page {
+    padding: 0 0 22px;
+  }
+
+  .profile-page-header {
+    margin-bottom: 16px;
+  }
+
+  .profile-page .page-title {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .profile-page .page-description {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  .profile-page .rims-card {
+    margin-bottom: 15px;
+    border-radius: 11px;
+  }
+
+  .profile-cover-area {
+    height: 112px;
+  }
+
+  /* Keep the avatar completely visible */
+  .profile-photo-container {
+    left: 18px;
+    bottom: -35px;
+    width: 86px;
+    height: 86px;
+  }
+
+  .profile-photo,
+  .profile-photo-placeholder {
+    width: 86px;
+    height: 86px;
+  }
+
+  .profile-photo-placeholder svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .profile-photo-badge {
+    width: 26px;
+    height: 26px;
+  }
+
+  .profile-identity-content {
+    min-height: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 47px 18px 18px;
+  }
+
+  .profile-identity-main h2 {
+    font-size: 20px;
+  }
+
+  .profile-identity-main p {
+    font-size: 12px;
+  }
+
+  .profile-account-status {
+    min-height: 31px;
+    padding: 6px 10px;
+  }
+
+  .profile-card-header {
+    gap: 11px;
+    padding: 16px;
+  }
+
+  .profile-card-header-icon {
+    width: 37px;
+    height: 37px;
+    border-radius: 9px;
+  }
+
+  .profile-card-header h2 {
+    font-size: 14px;
+  }
+
+  .profile-card-header p {
+    font-size: 11px;
+  }
+
+  .profile-information-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 4px 17px;
+  }
+
+  .profile-information-item {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--p-border) !important;
+  }
+
+  .profile-information-item:last-child {
+    border-bottom: none !important;
+  }
+
+  .profile-information-value {
+    font-size: 12px;
+  }
+
+  .profile-account-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .profile-account-item,
+  .profile-account-item:last-child {
+    min-height: 76px;
+    grid-column: auto;
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .profile-state-card {
+    min-height: 260px;
+    padding: 28px 18px;
+  }
+}
+
+/* =========================================================
+   18. EXTRA SMALL SCREENS
+========================================================= */
+
+@media (max-width: 360px) {
+  .profile-page .page-title {
+    font-size: 22px;
+  }
+
+  .profile-cover-area {
+    height: 100px;
+  }
+
+  .profile-photo-container {
+    left: 14px;
+    bottom: -32px;
+    width: 78px;
+    height: 78px;
+  }
+
+  .profile-photo,
+  .profile-photo-placeholder {
+    width: 78px;
+    height: 78px;
+  }
+
+  .profile-identity-content {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .profile-card-header {
+    padding: 13px;
+  }
+
+  .profile-information-grid {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .profile-account-grid {
+    padding: 12px;
+  }
+}
+
+/* =========================================================
+   19. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-page *,
+  .profile-page *::before,
+  .profile-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

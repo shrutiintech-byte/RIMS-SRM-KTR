@@ -1,0 +1,1359 @@
+
+/* =========================================================
+   RIMS — PhD Supervision Claim
+   Theme: Navy Blue | Gold | White
+   Responsive + Dark Mode
+   ========================================================= */
+
+/* -------------------------
+   Theme Variables
+------------------------- */
+
+.phd-page {
+  --phd-navy: #142d50;
+  --phd-navy-dark: #0d203b;
+  --phd-navy-light: #203f68;
+  --phd-gold: #d4a64a;
+  --phd-gold-light: #f5e8c8;
+
+  --phd-bg: #f5f7fb;
+  --phd-card: #ffffff;
+  --phd-input-bg: #ffffff;
+  --phd-text: #243247;
+  --phd-heading: #142d50;
+  --phd-muted: #718096;
+  --phd-border: #e0e6ef;
+  --phd-soft-bg: #f7f9fc;
+
+  --phd-success: #24764a;
+  --phd-success-bg: #eaf7ef;
+  --phd-danger: #c0392b;
+  --phd-danger-bg: #fff0ee;
+
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px 36px 48px;
+  box-sizing: border-box;
+
+  background: transparent;
+  color: var(--phd-text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Prevent padding from increasing element dimensions */
+
+.phd-page *,
+.phd-page *::before,
+.phd-page *::after {
+  box-sizing: border-box;
+}
+
+.phd-page button,
+.phd-page input,
+.phd-page select,
+.phd-page textarea {
+  font: inherit;
+}
+
+.phd-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.phd-page button:focus-visible,
+.phd-page input:focus-visible,
+.phd-page select:focus-visible,
+.phd-page textarea:focus-visible {
+  outline: 3px solid rgba(212, 166, 74, 0.3);
+  outline-offset: 2px;
+}
+
+/* -------------------------
+   Page Header
+------------------------- */
+
+.phd-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+
+  margin: 0 auto 28px;
+  max-width: 1180px;
+  width: 100%;
+}
+
+/* Plain back button — no grid, background or decoration */
+
+.phd-page .phd-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+
+  padding: 7px 0;
+  margin: 0;
+
+  color: var(--phd-navy);
+  background: transparent !important;
+
+  border: none !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  background-image: none !important;
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.phd-page .phd-back::before,
+.phd-page .phd-back::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.phd-page .phd-back:hover {
+  color: var(--phd-gold);
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none;
+}
+
+.phd-page .phd-back:active {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.phd-page .phd-back svg {
+  flex-shrink: 0;
+}
+
+.phd-heading {
+  width: 100%;
+}
+
+.phd-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+
+  color: #a77b28;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.phd-heading h1 {
+  margin: 0;
+
+  color: var(--phd-heading);
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+}
+
+.phd-heading p {
+  margin: 9px 0 0;
+
+  color: var(--phd-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* -------------------------
+   Form Container
+------------------------- */
+
+.phd-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* -------------------------
+   Cards
+------------------------- */
+
+.phd-card {
+  width: 100%;
+  min-width: 0;
+  padding: 27px 29px;
+
+  background: var(--phd-card);
+  border: 1px solid var(--phd-border);
+  border-radius: 12px;
+
+  box-shadow: 0 3px 12px rgba(20, 45, 80, 0.035);
+}
+
+/* -------------------------
+   Section Headers
+------------------------- */
+
+.phd-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding-bottom: 22px;
+  margin-bottom: 25px;
+
+  border-bottom: 1px solid var(--phd-border);
+}
+
+.phd-section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 43px;
+  height: 43px;
+
+  color: var(--phd-navy);
+  background: var(--phd-gold-light);
+  border: 1px solid rgba(212, 166, 74, 0.3);
+  border-radius: 10px;
+}
+
+.phd-section-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.phd-section-header > div:last-child {
+  min-width: 0;
+}
+
+.phd-section-header h2 {
+  margin: 0;
+
+  color: var(--phd-heading);
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.phd-section-header p {
+  margin: 5px 0 0;
+
+  color: var(--phd-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* -------------------------
+   Form Grid
+------------------------- */
+
+.phd-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 23px 25px;
+  align-items: start;
+}
+
+.phd-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 8px;
+}
+
+.phd-field-full {
+  grid-column: 1 / -1;
+}
+
+/* -------------------------
+   Labels
+------------------------- */
+
+.phd-field label {
+  display: block;
+  margin: 0;
+
+  color: var(--phd-text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.phd-field label span {
+  color: var(--phd-danger);
+  font-weight: 800;
+}
+
+/* -------------------------
+   Inputs, Selects and Textareas
+------------------------- */
+
+.phd-page .phd-field input,
+.phd-page .phd-field select,
+.phd-page .phd-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+
+  padding: 11px 13px;
+  margin: 0;
+
+  color: var(--phd-text);
+  background: var(--phd-input-bg);
+
+  border: 1px solid var(--phd-border);
+  border-radius: 7px;
+  outline: none;
+
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  box-shadow: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.phd-page .phd-field input::placeholder,
+.phd-page .phd-field textarea::placeholder {
+  color: #9aa5b5;
+  opacity: 1;
+}
+
+.phd-page .phd-field input:hover,
+.phd-page .phd-field select:hover,
+.phd-page .phd-field textarea:hover {
+  border-color: #b8c4d5;
+}
+
+.phd-page .phd-field input:focus,
+.phd-page .phd-field select:focus,
+.phd-page .phd-field textarea:focus {
+  border-color: var(--phd-gold);
+  box-shadow: 0 0 0 3px rgba(212, 166, 74, 0.13);
+}
+
+.phd-page .phd-field select {
+  cursor: pointer;
+}
+
+.phd-page .phd-field textarea {
+  min-height: 115px;
+  resize: vertical;
+}
+
+.phd-page .phd-field input[type="date"] {
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.phd-page .phd-field input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.phd-page .phd-field input[type="number"]::-webkit-inner-spin-button,
+.phd-page .phd-field input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+/* -------------------------
+   Currency Input
+------------------------- */
+
+.phd-currency-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+
+  color: var(--phd-navy);
+  background: var(--phd-input-bg);
+
+  border: 1px solid var(--phd-border);
+  border-radius: 7px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.phd-currency-input:focus-within {
+  border-color: var(--phd-gold);
+  box-shadow: 0 0 0 3px rgba(212, 166, 74, 0.13);
+}
+
+.phd-currency-input > svg {
+  flex-shrink: 0;
+  color: var(--phd-navy);
+}
+
+.phd-page .phd-currency-input input {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+
+  padding: 9px 0;
+
+  color: var(--phd-text);
+  background: transparent;
+
+  border: none;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.phd-page .phd-currency-input input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.phd-helper-text {
+  display: block;
+  margin-top: 1px;
+
+  color: var(--phd-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* -------------------------
+   Validation Errors
+------------------------- */
+
+.phd-error {
+  margin: 0;
+  color: var(--phd-danger);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.phd-page .phd-field input:invalid {
+  box-shadow: none;
+}
+
+/* -------------------------
+   Co-Supervisor Subsection
+------------------------- */
+
+.phd-subsection {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--phd-border);
+}
+
+.phd-subsection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+.phd-subsection-header > div:first-child {
+  min-width: 0;
+}
+
+.phd-subsection-header h3 {
+  margin: 0;
+
+  color: var(--phd-heading);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.phd-subsection-header p {
+  margin: 5px 0 0;
+
+  color: var(--phd-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* -------------------------
+   Buttons
+------------------------- */
+
+.phd-page .phd-secondary-button,
+.phd-page .phd-draft-button,
+.phd-page .phd-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 42px;
+  padding: 10px 17px;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.phd-page .phd-secondary-button {
+  flex-shrink: 0;
+
+  color: var(--phd-navy);
+  background: var(--phd-card);
+  border-color: var(--phd-border);
+}
+
+.phd-page .phd-secondary-button:hover:not(:disabled) {
+  background: var(--phd-gold-light);
+  border-color: var(--phd-gold);
+}
+
+.phd-page .phd-draft-button {
+  color: var(--phd-navy);
+  background: var(--phd-card);
+  border-color: #cbd5e1;
+}
+
+.phd-page .phd-draft-button:hover:not(:disabled) {
+  background: var(--phd-soft-bg);
+  border-color: var(--phd-navy);
+}
+
+.phd-page .phd-submit-button {
+  color: #ffffff;
+  background: var(--phd-navy);
+  border-color: var(--phd-navy);
+}
+
+.phd-page .phd-submit-button:hover:not(:disabled) {
+  background: var(--phd-navy-light);
+  border-color: var(--phd-navy-light);
+  box-shadow: 0 4px 10px rgba(20, 45, 80, 0.16);
+  transform: translateY(-1px);
+}
+
+.phd-page .phd-secondary-button:disabled,
+.phd-page .phd-draft-button:disabled,
+.phd-page .phd-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* -------------------------
+   Empty Supervisor State
+------------------------- */
+
+.phd-empty-supervisors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 130px;
+  padding: 25px;
+
+  color: var(--phd-muted);
+  background: var(--phd-soft-bg);
+
+  border: 1px dashed var(--phd-border);
+  border-radius: 9px;
+
+  text-align: center;
+}
+
+.phd-empty-supervisors svg {
+  color: #9ba8b9;
+}
+
+.phd-empty-supervisors p {
+  margin: 0;
+  font-size: 12px;
+}
+
+/* -------------------------
+   Supervisor List
+------------------------- */
+
+.phd-supervisor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.phd-supervisor-row {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 38px;
+  align-items: start;
+  gap: 15px;
+
+  padding: 19px;
+
+  background: var(--phd-soft-bg);
+  border: 1px solid var(--phd-border);
+  border-radius: 9px;
+}
+
+.phd-supervisor-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  margin-top: 26px;
+
+  color: var(--phd-navy);
+  background: var(--phd-gold-light);
+  border-radius: 50%;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.phd-supervisor-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+
+  min-width: 0;
+}
+
+.phd-supervisor-fields .phd-error {
+  grid-column: 1 / -1;
+}
+
+.phd-page .phd-delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  margin-top: 22px;
+
+  color: var(--phd-danger);
+  background: var(--phd-card);
+
+  border: 1px solid var(--phd-border);
+  border-radius: 7px;
+
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.phd-page .phd-delete-button:hover:not(:disabled) {
+  color: #ffffff;
+  background: var(--phd-danger);
+  border-color: var(--phd-danger);
+}
+
+.phd-page .phd-delete-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* -------------------------
+   Document Uploads
+------------------------- */
+
+.phd-document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.phd-document {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+
+  padding: 19px 0;
+
+  border-bottom: 1px solid var(--phd-border);
+}
+
+.phd-document:first-child {
+  padding-top: 0;
+}
+
+.phd-document:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.phd-document-information {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  min-width: 0;
+}
+
+.phd-document-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 39px;
+  height: 39px;
+
+  color: var(--phd-navy);
+  background: var(--phd-gold-light);
+  border-radius: 8px;
+}
+
+.phd-document-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.phd-document-title strong {
+  color: var(--phd-heading);
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.6;
+}
+
+.phd-document-required {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 3px 7px;
+
+  color: #9b3c30;
+  background: #fff0ee;
+  border-radius: 4px;
+
+  font-size: 9px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.phd-document-information p {
+  margin: 5px 0 0;
+
+  color: var(--phd-muted);
+  font-size: 11px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.phd-page .phd-upload {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 38px;
+  max-width: 100%;
+  padding: 9px 13px;
+
+  color: var(--phd-navy);
+  background: var(--phd-card);
+
+  border: 1px solid var(--phd-border);
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+
+  text-align: center;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.phd-page label.phd-upload:hover {
+  color: var(--phd-navy);
+  background: var(--phd-gold-light);
+  border-color: var(--phd-gold);
+}
+
+.phd-page button.phd-upload:hover:not(:disabled) {
+  background: var(--phd-gold-light);
+  border-color: var(--phd-gold);
+}
+
+.phd-page .phd-upload input[type="file"] {
+  display: none;
+}
+
+.phd-page .phd-upload:has(input[type="file"]:disabled) {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.phd-selected-file {
+  grid-column: 1 / -1;
+  min-width: 0;
+
+  padding: 9px 11px;
+
+  color: var(--phd-success);
+  background: var(--phd-success-bg);
+
+  border: 1px solid rgba(36, 118, 74, 0.15);
+  border-radius: 6px;
+
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.phd-selected-file small {
+  color: var(--phd-muted);
+  font-size: 10px;
+}
+
+.phd-document > .phd-error {
+  grid-column: 1 / -1;
+}
+
+/* -------------------------
+   Document Note
+------------------------- */
+
+.phd-document-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin-top: 22px;
+  padding: 13px 15px;
+
+  color: var(--phd-navy);
+  background: var(--phd-soft-bg);
+
+  border: 1px solid var(--phd-border);
+  border-left: 3px solid var(--phd-gold);
+  border-radius: 6px;
+}
+
+.phd-document-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #a77b28;
+}
+
+.phd-document-note p {
+  margin: 0;
+
+  color: var(--phd-muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* -------------------------
+   Declaration
+------------------------- */
+
+.phd-declaration-card {
+  border-top: 3px solid var(--phd-gold);
+}
+
+.phd-checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 16px;
+
+  color: var(--phd-text);
+  background: var(--phd-soft-bg);
+
+  border: 1px solid var(--phd-border);
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.phd-checkbox-wrapper input[type="checkbox"] {
+  flex-shrink: 0;
+
+  width: 17px;
+  height: 17px;
+  margin: 3px 0 0;
+
+  accent-color: var(--phd-navy);
+  cursor: pointer;
+}
+
+.phd-checkbox-wrapper span {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.phd-checkbox-wrapper + .phd-error {
+  margin-top: 10px;
+}
+
+/* -------------------------
+   Success / Status Message
+------------------------- */
+
+.phd-success-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto 22px;
+  padding: 14px 17px;
+
+  color: var(--phd-success);
+  background: var(--phd-success-bg);
+
+  border: 1px solid rgba(36, 118, 74, 0.2);
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.7;
+
+  overflow-wrap: anywhere;
+}
+
+.phd-success-message svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* -------------------------
+   Bottom Actions
+------------------------- */
+
+.phd-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 13px;
+
+  width: 100%;
+  padding: 5px 0 0;
+}
+
+.phd-actions button {
+  min-width: 145px;
+}
+
+/* -------------------------
+   Dark Mode
+   Supports common app theme selectors
+------------------------- */
+
+[data-theme="dark"] .phd-page,
+.dark .phd-page,
+.dark-mode .phd-page,
+body.dark .phd-page {
+  --phd-navy: #d7e4f5;
+  --phd-navy-dark: #0b1729;
+  --phd-navy-light: #29496f;
+  --phd-gold: #e0b65d;
+  --phd-gold-light: #3a3325;
+
+  --phd-bg: #111827;
+  --phd-card: #1b2535;
+  --phd-input-bg: #141e2d;
+  --phd-text: #e1e8f2;
+  --phd-heading: #f0f4fb;
+  --phd-muted: #a5b1c2;
+  --phd-border: #344155;
+  --phd-soft-bg: #202c3e;
+
+  --phd-success: #8cdbab;
+  --phd-success-bg: #193729;
+  --phd-danger: #ffaaa2;
+  --phd-danger-bg: #402725;
+}
+
+[data-theme="dark"] .phd-page .phd-back,
+.dark .phd-page .phd-back,
+.dark-mode .phd-page .phd-back,
+body.dark .phd-page .phd-back {
+  color: var(--phd-text);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .phd-page .phd-back:hover,
+.dark .phd-page .phd-back:hover,
+.dark-mode .phd-page .phd-back:hover,
+body.dark .phd-page .phd-back:hover {
+  color: var(--phd-gold);
+  background: transparent !important;
+}
+
+[data-theme="dark"] .phd-eyebrow,
+.dark .phd-eyebrow,
+.dark-mode .phd-eyebrow,
+body.dark .phd-eyebrow {
+  color: var(--phd-gold);
+}
+
+[data-theme="dark"] .phd-page .phd-secondary-button:hover:not(:disabled),
+.dark .phd-page .phd-secondary-button:hover:not(:disabled),
+.dark-mode .phd-page .phd-secondary-button:hover:not(:disabled),
+body.dark .phd-page .phd-secondary-button:hover:not(:disabled) {
+  color: #ffffff;
+  background: #3a3325;
+  border-color: var(--phd-gold);
+}
+
+[data-theme="dark"] .phd-page .phd-submit-button,
+.dark .phd-page .phd-submit-button,
+.dark-mode .phd-page .phd-submit-button,
+body.dark .phd-page .phd-submit-button {
+  color: #ffffff;
+  background: #29496f;
+  border-color: #29496f;
+}
+
+[data-theme="dark"] .phd-page .phd-submit-button:hover:not(:disabled),
+.dark .phd-page .phd-submit-button:hover:not(:disabled),
+.dark-mode .phd-page .phd-submit-button:hover:not(:disabled),
+body.dark .phd-page .phd-submit-button:hover:not(:disabled) {
+  background: #355b88;
+  border-color: #355b88;
+}
+
+[data-theme="dark"] .phd-document-required,
+.dark .phd-document-required,
+.dark-mode .phd-document-required,
+body.dark .phd-document-required {
+  color: #ffb7ae;
+  background: #402725;
+}
+
+[data-theme="dark"] .phd-page .phd-field input::placeholder,
+[data-theme="dark"] .phd-page .phd-field textarea::placeholder,
+.dark .phd-page .phd-field input::placeholder,
+.dark .phd-page .phd-field textarea::placeholder,
+.dark-mode .phd-page .phd-field input::placeholder,
+.dark-mode .phd-page .phd-field textarea::placeholder,
+body.dark .phd-page .phd-field input::placeholder,
+body.dark .phd-page .phd-field textarea::placeholder {
+  color: #8392a8;
+}
+
+[data-theme="dark"] .phd-page .phd-back:focus-visible,
+.dark .phd-page .phd-back:focus-visible,
+.dark-mode .phd-page .phd-back:focus-visible,
+body.dark .phd-page .phd-back:focus-visible {
+  outline-color: var(--phd-gold);
+}
+
+/* -------------------------
+   Responsive: Tablets
+------------------------- */
+
+@media (max-width: 900px) {
+  .phd-page {
+    padding: 27px 24px 40px;
+  }
+
+  .phd-header,
+  .phd-form,
+  .phd-success-message {
+    max-width: 100%;
+  }
+
+  .phd-card {
+    padding: 24px;
+  }
+
+  .phd-form-grid {
+    gap: 21px 18px;
+  }
+
+  .phd-supervisor-row {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .phd-supervisor-fields {
+    gap: 16px;
+  }
+}
+
+/* -------------------------
+   Responsive: Mobile
+------------------------- */
+
+@media (max-width: 600px) {
+  .phd-page {
+    padding: 20px 14px 30px;
+    font-size: 13px;
+  }
+
+  .phd-header {
+    gap: 15px;
+    margin-bottom: 22px;
+  }
+
+  .phd-page .phd-back {
+    padding: 5px 0;
+    font-size: 12px;
+  }
+
+  .phd-heading h1 {
+    font-size: 26px;
+    letter-spacing: -0.5px;
+  }
+
+  .phd-heading p {
+    font-size: 12px;
+  }
+
+  .phd-eyebrow {
+    font-size: 10px;
+  }
+
+  .phd-form {
+    gap: 16px;
+  }
+
+  .phd-card {
+    padding: 19px 16px;
+    border-radius: 10px;
+  }
+
+  .phd-section-header {
+    gap: 11px;
+    padding-bottom: 17px;
+    margin-bottom: 20px;
+  }
+
+  .phd-section-icon {
+    width: 37px;
+    height: 37px;
+    border-radius: 8px;
+  }
+
+  .phd-section-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .phd-section-header h2 {
+    font-size: 15px;
+  }
+
+  .phd-section-header p {
+    font-size: 11px;
+  }
+
+  .phd-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 19px;
+  }
+
+  .phd-field-full {
+    grid-column: auto;
+  }
+
+  .phd-page .phd-field input,
+  .phd-page .phd-field select,
+  .phd-page .phd-field textarea {
+    font-size: 13px;
+  }
+
+  .phd-subsection {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .phd-subsection-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .phd-page .phd-secondary-button {
+    width: 100%;
+  }
+
+  .phd-supervisor-row {
+    grid-template-columns: 28px minmax(0, 1fr) 32px;
+    gap: 8px;
+    padding: 12px 9px;
+  }
+
+  .phd-supervisor-number {
+    width: 26px;
+    height: 26px;
+    margin-top: 26px;
+    font-size: 11px;
+  }
+
+  .phd-supervisor-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .phd-page .phd-delete-button {
+    width: 31px;
+    height: 33px;
+    margin-top: 22px;
+  }
+
+  .phd-page .phd-delete-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .phd-document {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+    padding: 17px 0;
+  }
+
+  .phd-document-information {
+    gap: 10px;
+  }
+
+  .phd-document-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .phd-page .phd-upload {
+    width: 100%;
+    min-height: 40px;
+  }
+
+  .phd-document-note {
+    padding: 11px;
+  }
+
+  .phd-checkbox-wrapper {
+    gap: 10px;
+    padding: 13px;
+  }
+
+  .phd-checkbox-wrapper span {
+    font-size: 11px;
+  }
+
+  .phd-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .phd-actions button {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+  }
+
+  .phd-success-message {
+    gap: 9px;
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+}
+
+/* -------------------------
+   Small Mobile Devices
+------------------------- */
+
+@media (max-width: 360px) {
+  .phd-page {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .phd-card {
+    padding: 16px 12px;
+  }
+
+  .phd-section-header {
+    gap: 9px;
+  }
+
+  .phd-section-header h2 {
+    font-size: 14px;
+  }
+
+  .phd-supervisor-row {
+    grid-template-columns: 24px minmax(0, 1fr) 29px;
+    gap: 6px;
+    padding: 10px 7px;
+  }
+
+  .phd-supervisor-number {
+    width: 23px;
+    height: 23px;
+  }
+
+  .phd-page .phd-delete-button {
+    width: 28px;
+    height: 30px;
+  }
+}
+
+/* -------------------------
+   Reduced Motion
+------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .phd-page *,
+  .phd-page *::before,
+  .phd-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

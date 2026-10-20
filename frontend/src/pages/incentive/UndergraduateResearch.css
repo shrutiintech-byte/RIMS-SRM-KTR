@@ -1,0 +1,1542 @@
+
+/* =========================================================
+   UNDERGRADUATE RESEARCH
+   RIMS Faculty Portal — Navy & Gold Design System
+   Responsive Layout | Light & Dark Theme
+   ========================================================= */
+
+.undergraduate-research-page {
+  --ur-primary: #0b2345;
+  --ur-primary-hover: #163b69;
+  --ur-gold: #d9ad4c;
+  --ur-gold-dark: #b88c2e;
+  --ur-gold-soft: #fbf6e9;
+
+  --ur-surface: #ffffff;
+  --ur-surface-alt: #f8fafc;
+  --ur-input-bg: #ffffff;
+
+  --ur-text: #102a43;
+  --ur-text-secondary: #60758a;
+  --ur-text-muted: #829ab1;
+
+  --ur-border: #d9e1ea;
+  --ur-border-light: #e8edf3;
+
+  --ur-success: #16845b;
+  --ur-success-bg: #eaf7f0;
+  --ur-success-border: #b9e5cc;
+
+  --ur-danger: #c43d4b;
+  --ur-danger-bg: #fff0f1;
+  --ur-danger-border: #f3c4c9;
+
+  --ur-focus: rgba(217, 173, 76, 0.22);
+
+  --ur-radius-sm: 6px;
+  --ur-radius-md: 9px;
+  --ur-radius-lg: 12px;
+
+  --ur-shadow:
+    0 2px 8px rgba(11, 35, 69, 0.025),
+    0 6px 20px rgba(11, 35, 69, 0.025);
+
+  width: 100%;
+  max-width: 1320px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px 30px 40px;
+  box-sizing: border-box;
+  color: var(--ur-text);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.undergraduate-research-page *,
+.undergraduate-research-page *::before,
+.undergraduate-research-page *::after {
+  box-sizing: border-box;
+}
+
+.undergraduate-research-page button,
+.undergraduate-research-page input,
+.undergraduate-research-page select,
+.undergraduate-research-page textarea {
+  font: inherit;
+}
+
+.undergraduate-research-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.undergraduate-research-page button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.undergraduate-research-page svg {
+  flex-shrink: 0;
+}
+
+.undergraduate-research-page button:focus-visible,
+.undergraduate-research-page input:focus-visible,
+.undergraduate-research-page select:focus-visible,
+.undergraduate-research-page textarea:focus-visible {
+  outline: 3px solid var(--ur-focus);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.undergraduate-research-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 100%;
+  margin: 0 auto 26px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid var(--ur-border-light);
+}
+
+.undergraduate-research-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 35px;
+  margin: 0 0 22px;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: var(--ur-radius-sm);
+  background: transparent;
+  color: var(--ur-primary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.undergraduate-research-back:hover {
+  border-color: var(--ur-border);
+  background: var(--ur-surface);
+  color: var(--ur-primary-hover);
+}
+
+.undergraduate-research-heading {
+  width: 100%;
+  min-width: 0;
+}
+
+.undergraduate-research-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 8px;
+  color: var(--ur-gold-dark);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.undergraduate-research-eyebrow::before {
+  width: 22px;
+  height: 2px;
+  flex: 0 0 22px;
+  border-radius: 2px;
+  background: var(--ur-gold);
+  content: "";
+}
+
+.undergraduate-research-page-title {
+  margin: 0;
+  color: var(--ur-primary);
+  font-size: clamp(25px, 2.5vw, 30px);
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.7px;
+  overflow-wrap: anywhere;
+}
+
+.undergraduate-research-page-description {
+  max-width: 680px;
+  margin: 9px 0 0;
+  color: var(--ur-text-secondary);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   VALIDATION AND STATUS MESSAGES
+   ========================================================= */
+
+.undergraduate-research-message,
+.undergraduate-research-error[role="alert"] {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  max-width: 100%;
+  margin: 0 auto 20px;
+  padding: 14px 16px;
+  border: 1px solid;
+  border-radius: var(--ur-radius-md);
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.undergraduate-research-message {
+  align-items: center;
+  border-color: var(--ur-success-border);
+  background: var(--ur-success-bg);
+  color: var(--ur-success);
+  font-weight: 600;
+}
+
+.undergraduate-research-message svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.undergraduate-research-error[role="alert"] {
+  border-color: var(--ur-danger-border);
+  background: var(--ur-danger-bg);
+  color: var(--ur-danger);
+}
+
+.undergraduate-research-error {
+  margin: 1px 0 0;
+  color: var(--ur-danger);
+  font-size: 11px;
+  font-weight: 550;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   FORM LAYOUT AND CARDS
+   ========================================================= */
+
+.undergraduate-research-form {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+}
+
+.undergraduate-research-card,
+.undergraduate-research-submission-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--ur-border-light);
+  border-radius: var(--ur-radius-lg);
+  background: var(--ur-surface);
+  box-shadow: var(--ur-shadow);
+}
+
+.undergraduate-research-card {
+  transition: border-color 0.2s ease;
+}
+
+.undergraduate-research-card:hover {
+  border-color: var(--ur-border);
+}
+
+.undergraduate-research-form-body {
+  min-width: 0;
+  padding: 25px 24px;
+}
+
+/* =========================================================
+   SECTION HEADERS
+   ========================================================= */
+
+.undergraduate-research-section-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 76px;
+  padding: 16px 23px;
+  border-bottom: 1px solid var(--ur-border-light);
+  background: var(--ur-surface-alt);
+}
+
+.undergraduate-research-section-icon {
+  display: flex;
+  flex: 0 0 39px;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  border: 1px solid var(--ur-border-light);
+  border-radius: 9px;
+  background: var(--ur-surface);
+  color: var(--ur-primary);
+}
+
+.undergraduate-research-section-header > div:last-child {
+  min-width: 0;
+}
+
+.undergraduate-research-section-header h2 {
+  margin: 0;
+  color: var(--ur-primary);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.45;
+  letter-spacing: -0.15px;
+}
+
+.undergraduate-research-section-header p {
+  margin: 4px 0 0;
+  color: var(--ur-text-secondary);
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FORM GRID AND FIELDS
+   ========================================================= */
+
+.undergraduate-research-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 22px 25px;
+  min-width: 0;
+}
+
+.undergraduate-research-field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 7px;
+  min-width: 0;
+}
+
+.undergraduate-research-field-full {
+  grid-column: 1 / -1;
+}
+
+.undergraduate-research-field > label {
+  display: block;
+  margin: 0;
+  color: var(--ur-text);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.undergraduate-research-field > label span {
+  color: var(--ur-danger);
+  font-weight: 700;
+}
+
+/* =========================================================
+   INPUTS, SELECTS AND TEXTAREAS
+   ========================================================= */
+
+.undergraduate-research-page .undergraduate-research-field input:not([type="checkbox"]),
+.undergraduate-research-page .undergraduate-research-field select,
+.undergraduate-research-page .undergraduate-research-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0;
+  border: 1px solid var(--ur-border);
+  border-radius: 7px;
+  background: var(--ur-input-bg);
+  color: var(--ur-text);
+  font-size: 12.5px;
+  font-weight: 450;
+  line-height: 1.5;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.undergraduate-research-page .undergraduate-research-field input:not([type="checkbox"]),
+.undergraduate-research-page .undergraduate-research-field select {
+  height: 44px;
+  padding: 0 12px;
+}
+
+.undergraduate-research-page .undergraduate-research-field select {
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+.undergraduate-research-page .undergraduate-research-field textarea {
+  min-height: 105px;
+  padding: 11px 12px;
+  resize: vertical;
+}
+
+.undergraduate-research-page .undergraduate-research-field input::placeholder,
+.undergraduate-research-page .undergraduate-research-field textarea::placeholder {
+  color: var(--ur-text-muted);
+  opacity: 1;
+}
+
+.undergraduate-research-page .undergraduate-research-field input:hover:not(:focus):not(:disabled),
+.undergraduate-research-page .undergraduate-research-field select:hover:not(:focus):not(:disabled),
+.undergraduate-research-page .undergraduate-research-field textarea:hover:not(:focus):not(:disabled) {
+  border-color: #b8c6d6;
+}
+
+.undergraduate-research-page .undergraduate-research-field input:focus,
+.undergraduate-research-page .undergraduate-research-field select:focus,
+.undergraduate-research-page .undergraduate-research-field textarea:focus {
+  outline: none;
+  border-color: var(--ur-gold-dark);
+  box-shadow: 0 0 0 3px var(--ur-focus);
+}
+
+.undergraduate-research-page .undergraduate-research-field input:disabled,
+.undergraduate-research-page .undergraduate-research-field select:disabled,
+.undergraduate-research-page .undergraduate-research-field textarea:disabled {
+  border-color: var(--ur-border-light);
+  background: var(--ur-surface-alt);
+  color: var(--ur-text-muted);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.undergraduate-research-page input[type="date"] {
+  color-scheme: light;
+}
+
+.undergraduate-research-page input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.undergraduate-research-page input[type="number"]::-webkit-inner-spin-button,
+.undergraduate-research-page input[type="number"]::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.undergraduate-research-page .field-error {
+  border-color: var(--ur-danger) !important;
+}
+
+.undergraduate-research-page .field-error:focus {
+  box-shadow: 0 0 0 3px rgba(196, 61, 75, 0.12);
+}
+
+.undergraduate-research-field small {
+  display: block;
+  margin-top: 1px;
+  color: var(--ur-text-secondary);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CURRENCY INPUT
+   ========================================================= */
+
+.undergraduate-research-input-prefix {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--ur-border);
+  border-radius: 7px;
+  background: var(--ur-input-bg);
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.undergraduate-research-input-prefix > span {
+  display: flex;
+  flex: 0 0 43px;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--ur-border);
+  background: var(--ur-surface-alt);
+  color: var(--ur-primary);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.undergraduate-research-page .undergraduate-research-input-prefix input {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: var(--ur-text);
+  font-size: 12.5px;
+  box-shadow: none;
+}
+
+.undergraduate-research-page .undergraduate-research-input-prefix input:focus {
+  outline: none;
+  border: 0;
+  box-shadow: none;
+}
+
+.undergraduate-research-input-prefix:focus-within {
+  border-color: var(--ur-gold-dark);
+  box-shadow: 0 0 0 3px var(--ur-focus);
+}
+
+.undergraduate-research-input-prefix.field-error {
+  border-color: var(--ur-danger) !important;
+}
+
+/* =========================================================
+   ADDITIONAL STUDENTS
+   ========================================================= */
+
+.undergraduate-research-subsection {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--ur-border-light);
+}
+
+.undergraduate-research-subsection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.undergraduate-research-subsection-header > div {
+  min-width: 0;
+}
+
+.undergraduate-research-subsection-header h3 {
+  margin: 0;
+  color: var(--ur-primary);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.undergraduate-research-subsection-header p {
+  margin: 4px 0 0;
+  color: var(--ur-text-secondary);
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+.undergraduate-research-add-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 37px;
+  padding: 8px 12px;
+  border: 1px solid var(--ur-border);
+  border-radius: 7px;
+  background: var(--ur-surface);
+  color: var(--ur-primary);
+  font-size: 11.5px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.undergraduate-research-add-button:hover {
+  border-color: var(--ur-primary);
+  background: var(--ur-primary);
+  color: #ffffff;
+}
+
+.undergraduate-research-empty-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 65px;
+  padding: 16px;
+  border: 1px dashed var(--ur-border);
+  border-radius: 8px;
+  background: var(--ur-surface-alt);
+  color: var(--ur-text-secondary);
+  font-size: 12px;
+  text-align: center;
+}
+
+.undergraduate-research-student-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.undergraduate-research-student-row {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 36px;
+  align-items: start;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--ur-border-light);
+  border-radius: 9px;
+  background: var(--ur-surface-alt);
+}
+
+.undergraduate-research-student-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--ur-border-light);
+  border-radius: 7px;
+  background: var(--ur-surface);
+  color: var(--ur-primary);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.undergraduate-research-student-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 15px;
+  min-width: 0;
+}
+
+.undergraduate-research-student-fields .undergraduate-research-field > label {
+  font-size: 12px;
+}
+
+.undergraduate-research-remove-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--ur-danger-border);
+  border-radius: 7px;
+  background: var(--ur-surface);
+  color: var(--ur-danger);
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.undergraduate-research-remove-button:hover:not(:disabled) {
+  border-color: var(--ur-danger);
+  background: var(--ur-danger);
+  color: #ffffff;
+}
+
+.undergraduate-research-student-error {
+  grid-column: 2 / -1;
+}
+
+/* =========================================================
+   SUPPORTING DOCUMENTS
+   ========================================================= */
+
+.undergraduate-research-document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.undergraduate-research-document-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px 18px;
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid var(--ur-border-light);
+  border-radius: 9px;
+  background: var(--ur-surface);
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.undergraduate-research-document-item:hover {
+  border-color: var(--ur-border);
+  background: var(--ur-surface-alt);
+}
+
+.undergraduate-research-document-information {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.undergraduate-research-document-information > div:last-child {
+  min-width: 0;
+}
+
+.undergraduate-research-document-icon {
+  display: flex;
+  flex: 0 0 38px;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--ur-border-light);
+  border-radius: 8px;
+  background: var(--ur-surface-alt);
+  color: var(--ur-primary);
+}
+
+.undergraduate-research-document-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+}
+
+.undergraduate-research-document-title strong {
+  color: var(--ur-text);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.undergraduate-research-document-required {
+  display: inline-flex;
+  align-items: center;
+  min-height: 19px;
+  padding: 1px 6px;
+  border: 1px solid var(--ur-danger-border);
+  border-radius: 4px;
+  background: var(--ur-danger-bg);
+  color: var(--ur-danger);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.undergraduate-research-document-information p {
+  max-width: 650px;
+  margin: 5px 0 0;
+  color: var(--ur-text-secondary);
+  font-size: 11px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.undergraduate-research-upload-button {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 116px;
+  min-height: 38px;
+  padding: 8px 12px;
+  overflow: hidden;
+  border: 1px solid var(--ur-border);
+  border-radius: 7px;
+  background: var(--ur-surface);
+  color: var(--ur-primary);
+  font-size: 11.5px;
+  font-weight: 650;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.undergraduate-research-upload-button:hover {
+  border-color: var(--ur-primary);
+  background: var(--ur-primary);
+  color: #ffffff;
+}
+
+.undergraduate-research-upload-button input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.undergraduate-research-upload-button:focus-within {
+  outline: 3px solid var(--ur-focus);
+  outline-offset: 2px;
+}
+
+.undergraduate-research-selected-file {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+  margin-top: 0;
+  padding: 9px 11px;
+  border: 1px solid var(--ur-success-border);
+  border-radius: 6px;
+  background: var(--ur-success-bg);
+  color: var(--ur-success);
+  font-size: 11px;
+  font-weight: 550;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.undergraduate-research-selected-file svg {
+  margin-top: 2px;
+}
+
+.undergraduate-research-selected-file span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.undergraduate-research-document-item > .undergraduate-research-error {
+  grid-column: 1 / -1;
+}
+
+.undergraduate-research-document-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 15px;
+  padding: 11px 13px;
+  border: 1px solid var(--ur-border-light);
+  border-radius: 7px;
+  background: var(--ur-surface-alt);
+  color: var(--ur-text-secondary);
+}
+
+.undergraduate-research-document-note > svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--ur-primary);
+}
+
+.undergraduate-research-document-note p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.undergraduate-research-document-note-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  color: var(--ur-text-secondary);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   DECLARATION
+   ========================================================= */
+
+.undergraduate-research-declaration-card {
+  padding: 0;
+}
+
+.undergraduate-research-checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 19px 21px;
+}
+
+.undergraduate-research-checkbox-wrapper input[type="checkbox"] {
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  margin: 4px 0 0;
+  accent-color: var(--ur-primary);
+  cursor: pointer;
+}
+
+.undergraduate-research-checkbox-wrapper input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--ur-focus);
+  outline-offset: 3px;
+}
+
+.undergraduate-research-checkbox-wrapper label {
+  min-width: 0;
+  color: var(--ur-text);
+  font-size: 12px;
+  line-height: 1.8;
+  cursor: pointer;
+}
+
+.undergraduate-research-declaration-card > .undergraduate-research-error {
+  margin: 0 21px 16px 50px;
+}
+
+/* =========================================================
+   SUBMISSION CARD AND ACTIONS
+   ========================================================= */
+
+.undergraduate-research-submission-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 23px 24px;
+}
+
+.undergraduate-research-submission-content > div:first-child {
+  min-width: 0;
+}
+
+.undergraduate-research-submission-content h2 {
+  margin: 0;
+  color: var(--ur-primary);
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.45;
+  letter-spacing: -0.2px;
+}
+
+.undergraduate-research-submission-content p {
+  max-width: 610px;
+  margin: 7px 0 0;
+  color: var(--ur-text-secondary);
+  font-size: 11.5px;
+  line-height: 1.75;
+}
+
+.undergraduate-research-submission-meta {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  padding: 10px 13px;
+  border: 1px solid var(--ur-border-light);
+  border-radius: 7px;
+  background: var(--ur-surface-alt);
+}
+
+.undergraduate-research-submission-meta span {
+  color: var(--ur-text-secondary);
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.undergraduate-research-submission-meta strong {
+  color: var(--ur-primary);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.undergraduate-research-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 23px;
+  border-top: 1px solid var(--ur-border-light);
+  background: var(--ur-surface-alt);
+}
+
+.undergraduate-research-secondary-button,
+.undergraduate-research-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.undergraduate-research-secondary-button {
+  border-color: var(--ur-border);
+  background: var(--ur-surface);
+  color: var(--ur-primary);
+}
+
+.undergraduate-research-secondary-button:hover:not(:disabled) {
+  border-color: var(--ur-primary);
+  background: var(--ur-surface-alt);
+}
+
+.undergraduate-research-primary-button {
+  border-color: var(--ur-primary);
+  background: var(--ur-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(11, 35, 69, 0.1);
+}
+
+.undergraduate-research-primary-button:hover:not(:disabled) {
+  border-color: var(--ur-primary-hover);
+  background: var(--ur-primary-hover);
+  box-shadow: 0 4px 10px rgba(11, 35, 69, 0.13);
+}
+
+.undergraduate-research-primary-button:focus-visible,
+.undergraduate-research-secondary-button:focus-visible,
+.undergraduate-research-add-button:focus-visible,
+.undergraduate-research-remove-button:focus-visible {
+  outline: 3px solid var(--ur-focus);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .undergraduate-research-page {
+    padding: 24px 22px 32px;
+  }
+
+  .undergraduate-research-form-body {
+    padding: 22px;
+  }
+
+  .undergraduate-research-section-header {
+    padding: 15px 20px;
+  }
+
+  .undergraduate-research-form-grid {
+    gap: 21px 20px;
+  }
+
+  .undergraduate-research-submission-content {
+    padding: 21px;
+    gap: 18px;
+  }
+
+  .undergraduate-research-actions {
+    gap: 8px;
+  }
+
+  .undergraduate-research-primary-button,
+  .undergraduate-research-secondary-button {
+    padding: 10px 12px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .undergraduate-research-page {
+    padding: 20px 15px 28px;
+    font-size: 12.5px;
+  }
+
+  .undergraduate-research-header {
+    margin-bottom: 21px;
+    padding-bottom: 20px;
+  }
+
+  .undergraduate-research-back {
+    margin-bottom: 18px;
+  }
+
+  .undergraduate-research-page-title {
+    font-size: 24px;
+    letter-spacing: -0.45px;
+  }
+
+  .undergraduate-research-page-description {
+    font-size: 12px;
+  }
+
+  .undergraduate-research-form {
+    gap: 17px;
+  }
+
+  .undergraduate-research-section-header {
+    min-height: 69px;
+    gap: 11px;
+    padding: 14px 16px;
+  }
+
+  .undergraduate-research-section-icon {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .undergraduate-research-section-header h2 {
+    font-size: 13.5px;
+  }
+
+  .undergraduate-research-section-header p {
+    font-size: 11px;
+  }
+
+  .undergraduate-research-form-body {
+    padding: 20px 17px;
+  }
+
+  .undergraduate-research-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .undergraduate-research-field-full {
+    grid-column: auto;
+  }
+
+  .undergraduate-research-subsection {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .undergraduate-research-student-row {
+    grid-template-columns: 28px minmax(0, 1fr) 36px;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .undergraduate-research-student-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .undergraduate-research-document-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .undergraduate-research-upload-button {
+    justify-self: start;
+    min-width: 116px;
+  }
+
+  .undergraduate-research-selected-file {
+    grid-column: auto;
+  }
+
+  .undergraduate-research-submission-content {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px 17px;
+  }
+
+  .undergraduate-research-submission-meta {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .undergraduate-research-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 9px;
+    padding: 14px 17px;
+  }
+
+  .undergraduate-research-primary-button,
+  .undergraduate-research-secondary-button {
+    width: 100%;
+    min-height: 43px;
+    flex: auto;
+  }
+
+  .undergraduate-research-checkbox-wrapper {
+    padding: 17px;
+  }
+
+  .undergraduate-research-declaration-card > .undergraduate-research-error {
+    margin: 0 17px 15px 46px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .undergraduate-research-page {
+    padding: 16px 11px 23px;
+  }
+
+  .undergraduate-research-page-title {
+    font-size: 22px;
+  }
+
+  .undergraduate-research-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+  }
+
+  .undergraduate-research-section-header {
+    align-items: flex-start;
+    padding: 14px;
+  }
+
+  .undergraduate-research-section-icon {
+    flex-basis: 33px;
+    width: 33px;
+    height: 33px;
+    border-radius: 8px;
+  }
+
+  .undergraduate-research-form-body {
+    padding: 17px 14px;
+  }
+
+  .undergraduate-research-subsection-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .undergraduate-research-add-button {
+    width: 100%;
+  }
+
+  .undergraduate-research-student-row {
+    grid-template-columns: 25px minmax(0, 1fr) 32px;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .undergraduate-research-student-number {
+    width: 25px;
+    height: 25px;
+  }
+
+  .undergraduate-research-student-error {
+    grid-column: 1 / -1;
+  }
+
+  .undergraduate-research-document-information {
+    gap: 10px;
+  }
+
+  .undergraduate-research-document-icon {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .undergraduate-research-upload-button {
+    width: 100%;
+    min-height: 40px;
+  }
+
+  .undergraduate-research-submission-content {
+    padding: 18px 14px;
+  }
+
+  .undergraduate-research-actions {
+    padding: 13px 14px;
+  }
+
+  .undergraduate-research-checkbox-wrapper {
+    padding: 14px;
+  }
+
+  .undergraduate-research-checkbox-wrapper label {
+    font-size: 11.5px;
+  }
+
+  .undergraduate-research-declaration-card > .undergraduate-research-error {
+    margin: 0 14px 14px;
+  }
+
+  .undergraduate-research-message,
+  .undergraduate-research-error[role="alert"] {
+    padding: 12px;
+  }
+}
+
+/* =========================================================
+   DARK THEME
+   Activated when data-theme="dark" is on this page
+   or one of its ancestors.
+   ========================================================= */
+
+[data-theme="dark"] .undergraduate-research-page {
+  --ur-primary: #e3c16e;
+  --ur-primary-hover: #f0d58d;
+  --ur-gold: #d9ad4c;
+  --ur-gold-dark: #e3c16e;
+  --ur-gold-soft: rgba(217, 173, 76, 0.1);
+
+  --ur-surface: #172235;
+  --ur-surface-alt: #1d2a3d;
+  --ur-input-bg: #111c2d;
+
+  --ur-text: #f1f5f9;
+  --ur-text-secondary: #b8c5d3;
+  --ur-text-muted: #8fa1b5;
+
+  --ur-border: #2d3b50;
+  --ur-border-light: #253348;
+
+  --ur-success: #75d6a5;
+  --ur-success-bg: rgba(22, 132, 91, 0.16);
+  --ur-success-border: rgba(117, 214, 165, 0.28);
+
+  --ur-danger: #ff9aa4;
+  --ur-danger-bg: rgba(196, 61, 75, 0.13);
+  --ur-danger-border: rgba(255, 154, 164, 0.27);
+
+  --ur-focus: rgba(217, 173, 76, 0.24);
+
+  --ur-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-page-title,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-section-header h2,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-subsection-header h3,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-submission-content h2,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-field > label,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-document-title strong,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-checkbox-wrapper label,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-document-status-summary > strong {
+  color: var(--ur-text);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-card,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-submission-card {
+  border-color: var(--ur-border);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-section-header {
+  border-color: var(--ur-border-light);
+  background: var(--ur-surface-alt);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-section-icon,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-document-icon {
+  border-color: var(--ur-border);
+  background: var(--ur-surface);
+  color: var(--ur-gold-dark);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-back {
+  color: var(--ur-text);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-back:hover {
+  border-color: var(--ur-border);
+  background: var(--ur-surface-alt);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-field input:not([type="checkbox"]),
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-field select,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-field textarea {
+  border-color: var(--ur-border);
+  background: var(--ur-input-bg);
+  color: var(--ur-text);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-field select option {
+  background: var(--ur-surface);
+  color: var(--ur-text);
+}
+
+[data-theme="dark"] .undergraduate-research-page input[type="date"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-field input:disabled,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-field select:disabled,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-field textarea:disabled {
+  background: var(--ur-surface-alt);
+  color: var(--ur-text-muted);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-input-prefix {
+  border-color: var(--ur-border);
+  background: var(--ur-input-bg);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-input-prefix > span {
+  border-color: var(--ur-border);
+  background: var(--ur-surface-alt);
+  color: var(--ur-gold-dark);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-student-row {
+  border-color: var(--ur-border);
+  background: var(--ur-surface-alt);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-student-number {
+  border-color: var(--ur-border);
+  background: var(--ur-surface);
+  color: var(--ur-gold-dark);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-remove-button {
+  border-color: var(--ur-danger-border);
+  background: var(--ur-surface);
+  color: var(--ur-danger);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-remove-button:hover:not(:disabled) {
+  background: var(--ur-danger);
+  color: #172235;
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-add-button,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-upload-button {
+  border-color: var(--ur-border);
+  background: var(--ur-surface);
+  color: var(--ur-text);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-add-button:hover,
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-upload-button:hover {
+  border-color: var(--ur-gold);
+  background: #0b2345;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-empty-inline {
+  border-color: var(--ur-border);
+  background: var(--ur-surface-alt);
+  color: var(--ur-text-secondary);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-document-item {
+  border-color: var(--ur-border);
+  background: var(--ur-surface);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-document-item:hover {
+  background: var(--ur-surface-alt);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-document-note {
+  border-color: var(--ur-border);
+  background: var(--ur-surface-alt);
+  color: var(--ur-text-secondary);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-selected-file {
+  border-color: var(--ur-success-border);
+  background: var(--ur-success-bg);
+  color: var(--ur-success);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-checkbox-wrapper input[type="checkbox"] {
+  accent-color: var(--ur-gold);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-submission-meta {
+  border-color: var(--ur-border);
+  background: var(--ur-surface-alt);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-submission-meta strong {
+  color: var(--ur-gold-dark);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-actions {
+  border-color: var(--ur-border-light);
+  background: var(--ur-surface-alt);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-secondary-button {
+  border-color: var(--ur-border);
+  background: var(--ur-surface);
+  color: var(--ur-text);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-secondary-button:hover:not(:disabled) {
+  border-color: var(--ur-gold);
+  background: var(--ur-surface-alt);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-primary-button {
+  border-color: var(--ur-gold);
+  background: var(--ur-gold);
+  color: #172235;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-primary-button:hover:not(:disabled) {
+  border-color: #f0d58d;
+  background: #f0d58d;
+  color: #172235;
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-message {
+  border-color: var(--ur-success-border);
+  background: var(--ur-success-bg);
+  color: var(--ur-success);
+}
+
+[data-theme="dark"] .undergraduate-research-page .undergraduate-research-error[role="alert"] {
+  border-color: var(--ur-danger-border);
+  background: var(--ur-danger-bg);
+  color: var(--ur-danger);
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .undergraduate-research-page *,
+  .undergraduate-research-page *::before,
+  .undergraduate-research-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

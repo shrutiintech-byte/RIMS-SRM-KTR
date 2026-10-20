@@ -1,0 +1,1062 @@
+
+/* ============================================================
+   SRM RIMS — ADMIN REGISTRATION PAGE
+   File: src/pages/auth/AdminRegister.css
+
+   Scoped to .register-page to prevent affecting the
+   faculty frontend, admin dashboard, or other auth pages.
+============================================================ */
+
+.register-page {
+  --register-navy: #123650;
+  --register-blue: #205f91;
+  --register-blue-hover: #15476d;
+  --register-gold: #edbd53;
+  --register-text: #2d455d;
+  --register-muted: #8295aa;
+  --register-border: #dfe8f1;
+  --register-input-bg: #ffffff;
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(460px, 540px);
+  align-items: center;
+  gap: clamp(36px, 6vw, 100px);
+
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px clamp(28px, 7vw, 112px);
+
+  overflow: hidden;
+  color: var(--register-text);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: #0b2a40;
+}
+
+.register-page,
+.register-page * {
+  box-sizing: border-box;
+}
+
+.register-page button,
+.register-page input,
+.register-page select {
+  font: inherit;
+}
+
+/* ============================================================
+   BACKGROUND IMAGE AND OVERLAY
+============================================================ */
+
+.register-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background-image: url("/images/campus.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.register-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 32, 47, 0.91) 0%,
+      rgba(8, 44, 63, 0.79) 42%,
+      rgba(7, 34, 51, 0.83) 100%
+    );
+}
+
+/* ============================================================
+   LEFT BRANDING PANEL
+============================================================ */
+
+.register-page .auth-brand-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100vh - 64px);
+
+  padding: 0;
+  color: #ffffff;
+}
+
+.register-page .auth-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin: 0 0 42px;
+}
+
+.register-page .auth-brand-mark {
+  display: grid;
+  place-items: center;
+  flex: 0 0 82px;
+
+  width: 82px;
+  height: 82px;
+  padding: 13px;
+
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 23px;
+
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.12);
+}
+
+.register-page .auth-brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.register-page .auth-brand-mark svg {
+  width: 38px;
+  height: 38px;
+  color: var(--register-navy);
+}
+
+.register-page .auth-brand-name {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.register-page .auth-brand-name strong {
+  color: #ffffff;
+  font-size: clamp(14px, 1.15vw, 18px);
+  font-weight: 800;
+  letter-spacing: 0.015em;
+  line-height: 1.5;
+}
+
+.register-page .auth-brand-name span {
+  color: #f4cf79;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.19em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+/* Left title and description */
+
+.register-page .auth-brand-content {
+  width: 100%;
+  max-width: 730px;
+
+  margin: auto 0;
+  padding: 26px 0 42px;
+}
+
+.register-page .auth-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  margin: 0 0 30px;
+
+  color: #f4d18a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.23em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.register-page .auth-eyebrow::before {
+  content: "";
+  display: inline-block;
+  flex: 0 0 38px;
+
+  width: 38px;
+  height: 3px;
+
+  background: var(--register-gold);
+  border-radius: 4px;
+}
+
+.register-page .auth-brand-content h1 {
+  max-width: 720px;
+
+  margin: 0 0 24px;
+
+  color: #ffffff;
+  font-size: clamp(38px, 4.2vw, 66px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.14;
+  overflow-wrap: break-word;
+}
+
+.register-page .auth-brand-content p {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: rgba(242, 248, 255, 0.92);
+  font-size: clamp(15px, 1.25vw, 19px);
+  font-weight: 400;
+  line-height: 1.95;
+}
+
+.register-page .auth-brand-content p::after {
+  content: "";
+  display: block;
+
+  width: 74px;
+  height: 5px;
+  margin-top: 30px;
+
+  background: var(--register-gold);
+  border-radius: 8px;
+}
+
+/* Left footer */
+
+.register-page .auth-brand-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  margin-top: 30px;
+  padding-top: 24px;
+
+  color: rgba(237, 245, 255, 0.83);
+  font-size: 13px;
+  line-height: 1.7;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+/* ============================================================
+   RIGHT REGISTRATION PANEL
+============================================================ */
+
+.register-page .auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 0;
+  max-height: calc(100vh - 48px);
+
+  padding: 0;
+}
+
+/* White card */
+
+.register-page .auth-form-container {
+  width: 100%;
+  max-width: 540px;
+  max-height: calc(100vh - 48px);
+
+  padding: clamp(27px, 3vw, 40px);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: #ffffff;
+  border: 1px solid rgba(225, 234, 243, 0.95);
+  border-radius: 27px;
+
+  box-shadow:
+    0 25px 75px rgba(0, 0, 0, 0.19),
+    0 5px 18px rgba(0, 0, 0, 0.06);
+
+  scrollbar-width: thin;
+  scrollbar-color: #c6d4e0 transparent;
+}
+
+.register-page .auth-form-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.register-page .auth-form-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.register-page .auth-form-container::-webkit-scrollbar-thumb {
+  background: #c6d4e0;
+  border-radius: 10px;
+}
+
+/* ============================================================
+   FORM HEADING
+============================================================ */
+
+.register-page .auth-heading {
+  margin: 0 0 28px;
+}
+
+.register-page .auth-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin: 0 0 18px;
+
+  color: #2469c2;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.register-page .auth-section-label svg {
+  flex-shrink: 0;
+  color: #286ed1;
+}
+
+.register-page .auth-heading h2 {
+  margin: 0 0 12px;
+
+  color: #102b45;
+  font-size: clamp(28px, 2.2vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.22;
+}
+
+.register-page .auth-heading p {
+  margin: 0;
+
+  color: #7c8da2;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* ============================================================
+   REGISTRATION FORM LAYOUT
+============================================================ */
+
+.register-page .auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+
+  width: 100%;
+  margin: 0;
+}
+
+.register-page .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+
+  width: 100%;
+}
+
+.register-page .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.register-page .form-field label {
+  display: block;
+
+  margin: 0;
+
+  color: #30475f;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+.register-page .form-field label:has(+ .input-container) {
+  cursor: pointer;
+}
+
+/* ============================================================
+   INPUTS AND SELECTS
+============================================================ */
+
+.register-page .input-container {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 49px;
+
+  padding: 0 13px;
+
+  color: #718ba5;
+  background: #fbfcfe;
+
+  border: 1px solid #dfe7f0;
+  border-radius: 12px;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.register-page .input-container:focus-within {
+  background: #ffffff;
+  border-color: #4284bd;
+  box-shadow: 0 0 0 4px rgba(48, 116, 174, 0.1);
+}
+
+.register-page .input-container > svg {
+  display: block;
+  flex: 0 0 19px;
+
+  width: 19px;
+  height: 19px;
+
+  color: #7690ab;
+}
+
+.register-page .input-container input,
+.register-page .input-container select {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 47px;
+
+  margin: 0;
+  padding: 0;
+
+  color: #30475f;
+  font-size: 13px;
+  font-weight: 500;
+
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.register-page .input-container input::placeholder {
+  color: #9aabbd;
+  opacity: 1;
+}
+
+.register-page .input-container select {
+  cursor: pointer;
+}
+
+.register-page .input-container input:focus,
+.register-page .input-container select:focus {
+  background: transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.register-page .input-container input:disabled,
+.register-page .input-container select:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* Browser autofill */
+
+.register-page .input-container input:-webkit-autofill,
+.register-page .input-container input:-webkit-autofill:hover,
+.register-page .input-container input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #30475f;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ============================================================
+   PASSWORD VISIBILITY BUTTONS
+============================================================ */
+
+.register-page .input-container .password-toggle,
+.register-page .input-container button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 28px;
+
+  width: 28px;
+  height: 34px;
+  min-height: 0;
+
+  margin: 0;
+  padding: 4px;
+
+  color: #7d94ad;
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  box-shadow: none;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.register-page .input-container .password-toggle:hover,
+.register-page .input-container button:hover {
+  color: #1d6095;
+  background: #edf4fa;
+  transform: none;
+  box-shadow: none;
+}
+
+.register-page .input-container .password-toggle svg,
+.register-page .input-container button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ============================================================
+   FIELD HELPERS
+============================================================ */
+
+.register-page .field-hint {
+  display: block;
+
+  margin-top: 1px;
+
+  color: #8b9caf;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   SUBMIT BUTTON
+============================================================ */
+
+.register-page .primary-auth-button,
+.register-page .auth-submit,
+.register-page .auth-form button[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  min-height: 51px;
+
+  margin: 2px 0 0;
+  padding: 13px 18px;
+
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.5;
+  text-align: center;
+
+  background: linear-gradient(135deg, #225f8c, #123f62);
+  border: 1px solid rgba(17, 65, 100, 0.12);
+  border-radius: 11px;
+
+  box-shadow: 0 6px 16px rgba(27, 83, 125, 0.17);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.register-page .primary-auth-button:hover,
+.register-page .auth-submit:hover,
+.register-page .auth-form button[type="submit"]:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1c527d, #103652);
+  box-shadow: 0 9px 20px rgba(27, 83, 125, 0.23);
+  transform: translateY(-1px);
+}
+
+.register-page .primary-auth-button:active,
+.register-page .auth-submit:active,
+.register-page .auth-form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.register-page .primary-auth-button:disabled,
+.register-page .auth-submit:disabled,
+.register-page .auth-form button[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
+}
+
+/* Loading spinner */
+
+.register-page .button-spinner {
+  display: inline-block;
+  flex: 0 0 16px;
+
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+
+  animation: register-spin 0.7s linear infinite;
+}
+
+@keyframes register-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   ERROR AND STATUS MESSAGES
+============================================================ */
+
+.register-page .auth-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  margin: 0 0 18px;
+  padding: 12px 14px;
+
+  font-size: 12px;
+  line-height: 1.65;
+
+  border-radius: 10px;
+}
+
+.register-page .auth-message svg {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+}
+
+.register-page .auth-error {
+  color: #a72f39;
+  background: #fff2f2;
+  border: 1px solid #f2d2d5;
+}
+
+.register-page .auth-message.auth-success {
+  color: #226b48;
+  background: #effaf3;
+  border: 1px solid #ccebd7;
+}
+
+/* ============================================================
+   SIGN-IN LINK
+============================================================ */
+
+.register-page .switch-auth,
+.register-page .auth-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+
+  margin-top: 22px;
+
+  color: #7c8da0;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.register-page .switch-auth button,
+.register-page .auth-switch button,
+.register-page .switch-button {
+  display: inline;
+  width: auto;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  color: #205f91;
+  font-size: inherit;
+  font-weight: 750;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  cursor: pointer;
+}
+
+.register-page .switch-auth button:hover,
+.register-page .auth-switch button:hover,
+.register-page .switch-button:hover {
+  color: #123f62;
+  background: transparent;
+  text-decoration: underline;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ============================================================
+   SECURITY NOTE
+============================================================ */
+
+.register-page .security-note {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 19px;
+  padding-top: 17px;
+
+  color: #8798a9;
+  font-size: 11px;
+  line-height: 1.65;
+  text-align: center;
+
+  border-top: 1px solid #edf1f5;
+}
+
+.register-page .security-note svg {
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+
+  margin-top: 1px;
+  color: #6889a7;
+}
+
+/* ============================================================
+   LAPTOP AND SMALL DESKTOP
+============================================================ */
+
+@media (max-width: 1200px) {
+  .register-page {
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 500px);
+    gap: 38px;
+    padding-right: 36px;
+    padding-left: 36px;
+  }
+
+  .register-page .auth-brand-content h1 {
+    font-size: clamp(36px, 4.1vw, 51px);
+  }
+
+  .register-page .auth-brand-header {
+    gap: 14px;
+  }
+
+  .register-page .auth-brand-mark {
+    flex-basis: 68px;
+    width: 68px;
+    height: 68px;
+    border-radius: 19px;
+  }
+
+  .register-page .auth-form-container {
+    padding: 29px;
+  }
+}
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 900px) {
+  .register-page {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
+    gap: 25px;
+    padding: 25px;
+  }
+
+  .register-page .auth-brand-name strong {
+    font-size: 13px;
+  }
+
+  .register-page .auth-brand-name span {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .register-page .auth-brand-content h1 {
+    font-size: clamp(32px, 4vw, 43px);
+  }
+
+  .register-page .auth-brand-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .register-page .auth-form-container {
+    padding: 24px;
+    border-radius: 21px;
+  }
+
+  .register-page .form-grid {
+    gap: 14px;
+  }
+}
+
+/* ============================================================
+   MOBILE AND NARROW TABLET
+============================================================ */
+
+@media (max-width: 720px) {
+  .register-page {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+
+    min-height: 100vh;
+    padding: 20px 15px 28px;
+
+    overflow: visible;
+  }
+
+  .register-page::after {
+    background: rgba(7, 37, 54, 0.79);
+  }
+
+  .register-page .auth-brand-panel {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 14px;
+
+    min-height: 0;
+    padding: 0;
+  }
+
+  .register-page .auth-brand-header {
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+  }
+
+  .register-page .auth-brand-mark {
+    flex: 0 0 56px;
+    width: 56px;
+    height: 56px;
+    padding: 8px;
+    border-radius: 15px;
+  }
+
+  .register-page .auth-brand-mark svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .register-page .auth-brand-name {
+    gap: 4px;
+  }
+
+  .register-page .auth-brand-name strong {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .register-page .auth-brand-name span {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+
+  .register-page .auth-brand-content {
+    padding: 8px 0 0;
+    margin: 0;
+  }
+
+  .register-page .auth-eyebrow {
+    gap: 9px;
+    margin-bottom: 14px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+
+  .register-page .auth-eyebrow::before {
+    flex-basis: 25px;
+    width: 25px;
+    height: 2px;
+  }
+
+  .register-page .auth-brand-content h1 {
+    max-width: 540px;
+    margin-bottom: 12px;
+    font-size: clamp(29px, 7.5vw, 40px);
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+  }
+
+  .register-page .auth-brand-content p {
+    max-width: 540px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .register-page .auth-brand-content p::after {
+    width: 50px;
+    height: 4px;
+    margin-top: 17px;
+  }
+
+  .register-page .auth-brand-footer {
+    display: none;
+  }
+
+  .register-page .auth-form-panel {
+    display: block;
+    align-self: auto;
+
+    max-height: none;
+    padding: 0;
+  }
+
+  .register-page .auth-form-container {
+    width: 100%;
+    max-width: none;
+    max-height: none;
+
+    padding: 25px 20px;
+    overflow: visible;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.17);
+  }
+
+  .register-page .auth-heading {
+    margin-bottom: 23px;
+  }
+
+  .register-page .auth-section-label {
+    margin-bottom: 12px;
+    font-size: 10px;
+  }
+
+  .register-page .auth-heading h2 {
+    font-size: 27px;
+  }
+
+  .register-page .auth-heading p {
+    font-size: 13px;
+  }
+
+  .register-page .auth-form {
+    gap: 18px;
+  }
+
+  .register-page .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .register-page .form-field {
+    gap: 8px;
+  }
+
+  .register-page .input-container {
+    min-height: 49px;
+    padding-right: 11px;
+    padding-left: 12px;
+  }
+
+  .register-page .input-container input,
+  .register-page .input-container select {
+    min-height: 47px;
+    font-size: 13px;
+  }
+
+  .register-page .primary-auth-button,
+  .register-page .auth-submit,
+  .register-page .auth-form button[type="submit"] {
+    min-height: 49px;
+    font-size: 12px;
+  }
+
+  .register-page .security-note {
+    font-size: 10px;
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 380px) {
+  .register-page {
+    gap: 19px;
+    padding: 16px 10px 22px;
+  }
+
+  .register-page .auth-brand-mark {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .register-page .auth-brand-name strong {
+    font-size: 11px;
+  }
+
+  .register-page .auth-brand-name span {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  .register-page .auth-brand-content h1 {
+    font-size: 29px;
+  }
+
+  .register-page .auth-form-container {
+    padding: 22px 15px;
+  }
+
+  .register-page .auth-heading h2 {
+    font-size: 25px;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+.register-page button:focus-visible,
+.register-page input:focus-visible,
+.register-page select:focus-visible {
+  outline: 3px solid rgba(63, 137, 196, 0.45);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .register-page *,
+  .register-page *::before,
+  .register-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

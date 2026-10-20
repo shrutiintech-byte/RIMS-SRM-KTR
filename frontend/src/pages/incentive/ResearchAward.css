@@ -1,0 +1,1279 @@
+/* ============================================================
+   RESEARCH AWARD — SHARED NAVY & GOLD DESIGN SYSTEM
+   Matches E-Content, Journal, Patent and Conference pages
+============================================================ */
+
+.research-award-page {
+  --ra-navy: var(--primary-color, #0b2345);
+  --ra-navy-light: #163b69;
+  --ra-gold: var(--accent-color, #d9ad4c);
+  --ra-gold-light: #fcf8ef;
+  --ra-text: var(--text-primary, #102a43);
+  --ra-muted: var(--text-secondary, #60758a);
+  --ra-subtle: #829ab1;
+  --ra-border: var(--border-color, #d9e1ea);
+  --ra-border-light: #e8edf3;
+  --ra-surface: var(--surface-color, #ffffff);
+  --ra-surface-soft: #f8fafc;
+  --ra-success: #347051;
+  --ra-danger: #b54747;
+  --ra-radius: 12px;
+  --ra-control-radius: 8px;
+  --ra-shadow: 0 2px 8px rgba(11, 35, 69, 0.045);
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 4px 0 30px;
+  color: var(--ra-text);
+  font-family: var(
+    --font-family,
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif
+  );
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.research-award-page *,
+.research-award-page *::before,
+.research-award-page *::after {
+  box-sizing: border-box;
+}
+
+.research-award-page button,
+.research-award-page input,
+.research-award-page select,
+.research-award-page textarea {
+  font: inherit;
+}
+
+.research-award-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.research-award-header {
+  margin-bottom: 24px;
+}
+
+.research-award-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  margin-bottom: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ra-muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.research-award-back:hover {
+  color: var(--ra-navy-light);
+  transform: translateX(-2px);
+}
+
+.research-award-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.research-award-eyebrow {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: var(--ra-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.research-award-page-title {
+  margin: 0;
+  color: var(--ra-navy);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.research-award-page-description {
+  max-width: 760px;
+  margin: 8px 0 0;
+  color: var(--ra-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   SUCCESS / STATUS MESSAGE
+============================================================ */
+
+.research-award-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid #cfe3d8;
+  border-radius: var(--ra-control-radius);
+  background: #f3faf6;
+  color: #376b50;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.research-award-message svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--ra-success);
+}
+
+/* ============================================================
+   FORM AND CARDS
+============================================================ */
+
+.research-award-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.research-award-card,
+.research-award-submission-card {
+  min-width: 0;
+  border: 1px solid var(--ra-border);
+  border-radius: var(--ra-radius);
+  background: var(--ra-surface);
+  box-shadow: var(--ra-shadow);
+}
+
+.research-award-card {
+  overflow: hidden;
+}
+
+/* ============================================================
+   SECTION HEADER
+============================================================ */
+
+.research-award-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 70px;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--ra-border-light);
+  border-radius: var(--ra-radius) var(--ra-radius) 0 0;
+  background: var(--ra-surface-soft);
+}
+
+.research-award-section-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5d5ae;
+  border-radius: 9px;
+  background: var(--ra-gold-light);
+  color: var(--ra-navy);
+}
+
+.research-award-section-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.research-award-section-header h2 {
+  margin: 0;
+  color: var(--ra-navy);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.research-award-section-header p {
+  margin: 3px 0 0;
+  color: var(--ra-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* ============================================================
+   FORM BODY AND GRID
+============================================================ */
+
+.research-award-form-body {
+  padding: 22px 20px 24px;
+}
+
+.research-award-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 22px;
+}
+
+.research-award-field {
+  min-width: 0;
+}
+
+.research-award-field-full {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   LABELS
+============================================================ */
+
+.research-award-field > label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--ra-text);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.research-award-field > label span {
+  margin-left: 3px;
+  color: var(--ra-danger);
+}
+
+/* ============================================================
+   INPUTS
+============================================================ */
+
+.research-award-field input,
+.research-award-field select,
+.research-award-field textarea,
+.research-award-co-fields input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--ra-border);
+  border-radius: var(--ra-control-radius);
+  outline: none;
+  background: var(--ra-surface);
+  color: var(--ra-text);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.research-award-field input,
+.research-award-field select,
+.research-award-co-fields input {
+  height: 44px;
+  padding: 0 12px;
+}
+
+.research-award-field select {
+  cursor: pointer;
+}
+
+.research-award-field textarea {
+  min-height: 104px;
+  padding: 11px 12px;
+  resize: vertical;
+}
+
+.research-award-field input::placeholder,
+.research-award-field textarea::placeholder,
+.research-award-co-fields input::placeholder {
+  color: var(--ra-subtle);
+  opacity: 0.9;
+}
+
+.research-award-field input:hover,
+.research-award-field select:hover,
+.research-award-field textarea:hover,
+.research-award-co-fields input:hover {
+  border-color: #b6c5d4;
+}
+
+.research-award-field input:focus,
+.research-award-field select:focus,
+.research-award-field textarea:focus,
+.research-award-co-fields input:focus {
+  border-color: var(--ra-gold);
+  box-shadow: 0 0 0 3px rgba(217, 173, 76, 0.17);
+}
+
+.research-award-field input:disabled,
+.research-award-field select:disabled,
+.research-award-field textarea:disabled,
+.research-award-co-fields input:disabled {
+  background: var(--ra-surface-soft);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.research-award-field small {
+  display: block;
+  margin-top: 6px;
+  color: var(--ra-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* ============================================================
+   VALIDATION
+============================================================ */
+
+.research-award-error,
+.research-award-co-error,
+.research-award-document-error {
+  margin: 6px 0 0;
+  color: var(--ra-danger);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   SUBSECTIONS
+============================================================ */
+
+.research-award-subsection {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ra-border-light);
+}
+
+.research-award-subsection-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.research-award-subsection-header h3 {
+  margin: 0;
+  color: var(--ra-text);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.research-award-subsection-header p {
+  margin: 4px 0 0;
+  color: var(--ra-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* ============================================================
+   ADD BUTTON
+============================================================ */
+
+.research-award-add-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--ra-border);
+  border-radius: var(--ra-control-radius);
+  background: var(--ra-surface);
+  color: var(--ra-navy);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.research-award-add-button:hover {
+  border-color: var(--ra-gold);
+  background: var(--ra-gold-light);
+  color: var(--ra-navy);
+}
+
+/* ============================================================
+   EMPTY STATE
+============================================================ */
+
+.research-award-empty-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 82px;
+  padding: 18px;
+  border: 1px dashed var(--ra-border);
+  border-radius: var(--ra-control-radius);
+  background: var(--ra-surface-soft);
+  color: var(--ra-muted);
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* ============================================================
+   CO-RECIPIENTS
+============================================================ */
+
+.research-award-co-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.research-award-co-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 34px;
+  align-items: start;
+  gap: 13px;
+  padding: 15px;
+  border: 1px solid var(--ra-border-light);
+  border-radius: 9px;
+  background: var(--ra-surface-soft);
+}
+
+.research-award-co-number {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e5d5ae;
+  border-radius: 50%;
+  background: var(--ra-gold-light);
+  color: var(--ra-navy);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.research-award-co-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+}
+
+.research-award-co-error {
+  grid-column: 1 / -1;
+}
+
+/* REMOVE BUTTON */
+
+.research-award-remove-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #ebd0ce;
+  border-radius: 8px;
+  background: #fff8f7;
+  color: var(--ra-danger);
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.research-award-remove-button:hover {
+  border-color: #dba9a4;
+  background: #ffefed;
+}
+
+.research-award-remove-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   CURRENCY INPUT
+============================================================ */
+
+.research-award-input-prefix {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  overflow: hidden;
+  border: 1px solid var(--ra-border);
+  border-radius: var(--ra-control-radius);
+  background: var(--ra-surface);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.research-award-input-prefix:focus-within {
+  border-color: var(--ra-gold);
+  box-shadow: 0 0 0 3px rgba(217, 173, 76, 0.17);
+}
+
+.research-award-input-prefix > span {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  width: 42px;
+  border-right: 1px solid var(--ra-border-light);
+  background: var(--ra-surface-soft);
+  color: var(--ra-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.research-award-input-prefix input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.research-award-input-prefix input:focus {
+  border: 0;
+  box-shadow: none;
+}
+
+/* ============================================================
+   SUPPORTING DOCUMENTS
+============================================================ */
+
+.research-award-document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  margin-top: 22px;
+  border: 1px solid var(--ra-border);
+  border-radius: 10px;
+  background: var(--ra-surface);
+}
+
+.research-award-document-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+  min-height: 90px;
+  padding: 17px;
+  border-bottom: 1px solid var(--ra-border-light);
+  background: var(--ra-surface);
+  transition: background 160ms ease;
+}
+
+.research-award-document-item:last-child {
+  border-bottom: 0;
+}
+
+.research-award-document-item:hover {
+  background: var(--ra-surface-soft);
+}
+
+.research-award-document-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  min-width: 0;
+}
+
+.research-award-document-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5d5ae;
+  border-radius: 9px;
+  background: var(--ra-gold-light);
+  color: var(--ra-navy);
+}
+
+.research-award-document-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.research-award-document-info > div:last-child {
+  min-width: 0;
+}
+
+.research-award-document-info h3 {
+  margin: 1px 0 3px;
+  color: var(--ra-text);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.research-award-document-info h3 span {
+  margin-left: 3px;
+  color: var(--ra-danger);
+}
+
+.research-award-document-info > div:last-child > p {
+  max-width: 760px;
+  margin: 5px 0 0;
+  color: var(--ra-muted);
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* DOCUMENT ACTIONS */
+
+.research-award-document-action {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* UPLOAD BUTTON */
+
+.research-award-upload-button {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 126px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--ra-border);
+  border-radius: var(--ra-control-radius);
+  background: var(--ra-surface);
+  color: var(--ra-navy);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.research-award-upload-button:hover {
+  border-color: var(--ra-gold);
+  background: var(--ra-gold-light);
+}
+
+.research-award-upload-button input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.research-award-upload-button:has(input:disabled) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* SELECTED FILE */
+
+.research-award-selected-file {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 9px;
+  padding: 10px 12px;
+  overflow-wrap: anywhere;
+  border: 1px solid #cfe3d8;
+  border-radius: 8px;
+  background: #f3faf6;
+  color: #376b50;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.research-award-selected-file svg {
+  flex-shrink: 0;
+}
+
+.research-award-selected-file span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.research-award-document-info small {
+  display: block;
+  margin-top: 6px;
+  color: var(--ra-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.research-award-document-error {
+  grid-column: 1 / -1;
+}
+
+/* DOCUMENT NOTE */
+
+.research-award-document-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 13px;
+  color: var(--ra-muted);
+}
+
+.research-award-document-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--ra-subtle);
+}
+
+.research-award-document-note p {
+  margin: 0;
+  color: var(--ra-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   DECLARATION
+============================================================ */
+
+.research-award-declaration {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.research-award-checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--ra-border);
+  border-radius: 9px;
+  background: var(--ra-surface-soft);
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.research-award-checkbox-wrapper:hover {
+  border-color: #d9c28d;
+}
+
+.research-award-checkbox-wrapper input {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  margin: 3px 0 0;
+  accent-color: var(--ra-navy);
+  cursor: pointer;
+}
+
+.research-award-checkbox-wrapper label {
+  min-width: 0;
+  color: var(--ra-text);
+  font-size: 13px;
+  line-height: 1.65;
+  cursor: pointer;
+}
+
+.research-award-checkbox-wrapper:has(input:checked) {
+  border-color: #c9ddd3;
+  background: #f3faf6;
+}
+
+/* ============================================================
+   SUBMISSION CARD
+============================================================ */
+
+.research-award-submission-card {
+  padding: 20px;
+}
+
+.research-award-submission-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--ra-border-light);
+}
+
+.research-award-submission-content h2 {
+  margin: 0;
+  color: var(--ra-navy);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.research-award-submission-content p {
+  max-width: 680px;
+  margin: 6px 0 0;
+  color: var(--ra-muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.research-award-submission-meta {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 7px;
+}
+
+.research-award-submission-meta span {
+  color: var(--ra-muted);
+  font-size: 12px;
+}
+
+.research-award-submission-meta strong {
+  color: var(--ra-navy);
+  font-size: 12px;
+}
+
+.research-award-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+.research-award-secondary-button,
+.research-award-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: var(--ra-control-radius);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.research-award-secondary-button {
+  border-color: var(--ra-border);
+  background: var(--ra-surface);
+  color: var(--ra-navy);
+}
+
+.research-award-secondary-button:hover {
+  border-color: var(--ra-gold);
+  background: var(--ra-gold-light);
+}
+
+.research-award-primary-button {
+  border-color: var(--ra-navy);
+  background: var(--ra-navy);
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(11, 35, 69, 0.12);
+}
+
+.research-award-primary-button:hover {
+  border-color: var(--ra-navy-light);
+  background: var(--ra-navy-light);
+  box-shadow: 0 3px 8px rgba(11, 35, 69, 0.16);
+}
+
+.research-award-secondary-button:disabled,
+.research-award-primary-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.research-award-secondary-button:active,
+.research-award-primary-button:active {
+  transform: translateY(1px);
+}
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+.research-award-page :is(
+  button,
+  input,
+  select,
+  textarea
+):focus-visible {
+  outline: 3px solid rgba(217, 173, 76, 0.4);
+  outline-offset: 2px;
+}
+
+.research-award-page input[type="checkbox"]:focus-visible {
+  outline-offset: 3px;
+}
+
+.research-award-page button:disabled {
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   DARK THEME
+============================================================ */
+
+[data-theme="dark"] .research-award-page {
+  --ra-navy: #e7edf5;
+  --ra-navy-light: #d2deec;
+  --ra-gold: #d9ad4c;
+  --ra-gold-light: #302b22;
+  --ra-text: #f1f5f9;
+  --ra-muted: #b8c5d3;
+  --ra-subtle: #8fa1b5;
+  --ra-border: #2d3b50;
+  --ra-border-light: #253348;
+  --ra-surface: #172235;
+  --ra-surface-soft: #1d2a3d;
+  --ra-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .research-award-section-icon,
+[data-theme="dark"] .research-award-document-icon,
+[data-theme="dark"] .research-award-co-number {
+  border-color: #5c4b2c;
+  background: #302b22;
+  color: #e7c875;
+}
+
+[data-theme="dark"] .research-award-section-header,
+[data-theme="dark"] .research-award-document-item,
+[data-theme="dark"] .research-award-input-prefix > span {
+  background: var(--ra-surface-soft);
+}
+
+[data-theme="dark"] .research-award-co-row {
+  border-color: var(--ra-border);
+  background: var(--ra-surface-soft);
+}
+
+[data-theme="dark"] .research-award-add-button,
+[data-theme="dark"] .research-award-upload-button,
+[data-theme="dark"] .research-award-secondary-button {
+  color: #e7edf5;
+}
+
+[data-theme="dark"] .research-award-add-button:hover,
+[data-theme="dark"] .research-award-upload-button:hover,
+[data-theme="dark"] .research-award-secondary-button:hover {
+  border-color: #8c7138;
+  background: #302b22;
+}
+
+[data-theme="dark"] .research-award-empty-inline {
+  border-color: var(--ra-border);
+  background: var(--ra-surface-soft);
+}
+
+[data-theme="dark"] .research-award-remove-button {
+  border-color: #633d43;
+  background: #35232b;
+  color: #f0a5a5;
+}
+
+[data-theme="dark"] .research-award-remove-button:hover {
+  border-color: #8b4b52;
+  background: #452831;
+}
+
+[data-theme="dark"] .research-award-checkbox-wrapper:has(input:checked) {
+  border-color: #426654;
+  background: #1c332d;
+}
+
+[data-theme="dark"] .research-award-message,
+[data-theme="dark"] .research-award-selected-file {
+  border-color: #315b48;
+  background: #1c332d;
+  color: #a8d5bc;
+}
+
+[data-theme="dark"] .research-award-primary-button {
+  border-color: #d9ad4c;
+  background: #d9ad4c;
+  color: #172235;
+}
+
+[data-theme="dark"] .research-award-primary-button:hover {
+  border-color: #e7c875;
+  background: #e7c875;
+}
+
+[data-theme="dark"] .research-award-field input:focus,
+[data-theme="dark"] .research-award-field select:focus,
+[data-theme="dark"] .research-award-field textarea:focus,
+[data-theme="dark"] .research-award-co-fields input:focus,
+[data-theme="dark"] .research-award-input-prefix:focus-within {
+  border-color: #d9ad4c;
+  box-shadow: 0 0 0 3px rgba(217, 173, 76, 0.15);
+}
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 768px) {
+  .research-award-page {
+    padding: 4px 14px 28px;
+  }
+
+  .research-award-page-title {
+    font-size: 23px;
+  }
+
+  .research-award-form {
+    gap: 16px;
+  }
+
+  .research-award-form-body {
+    padding: 19px 17px 21px;
+  }
+
+  .research-award-co-fields {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .research-award-document-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .research-award-document-action {
+    justify-content: flex-start;
+  }
+
+  .research-award-upload-button {
+    width: fit-content;
+  }
+
+  .research-award-submission-content {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 480px) {
+  .research-award-page {
+    padding: 4px 10px 24px;
+    font-size: 14px;
+  }
+
+  .research-award-header {
+    margin-bottom: 18px;
+  }
+
+  .research-award-page-title {
+    font-size: 21px;
+  }
+
+  .research-award-page-description {
+    font-size: 13px;
+  }
+
+  .research-award-section-header {
+    gap: 10px;
+    min-height: 62px;
+    padding: 12px;
+  }
+
+  .research-award-section-icon {
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+  }
+
+  .research-award-section-header h2 {
+    font-size: 14px;
+  }
+
+  .research-award-section-header p {
+    font-size: 12px;
+  }
+
+  .research-award-form-body {
+    padding: 16px 13px 18px;
+  }
+
+  .research-award-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .research-award-field-full {
+    grid-column: auto;
+  }
+
+  .research-award-field > label {
+    font-size: 13px;
+  }
+
+  .research-award-field input,
+  .research-award-field select,
+  .research-award-field textarea,
+  .research-award-co-fields input {
+    font-size: 14px;
+  }
+
+  .research-award-subsection {
+    margin-top: 18px;
+    padding-top: 16px;
+  }
+
+  .research-award-subsection-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .research-award-add-button {
+    width: 100%;
+  }
+
+  .research-award-co-row {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .research-award-co-number {
+    width: 28px;
+    height: 28px;
+  }
+
+  .research-award-co-fields {
+    grid-column: 1 / -1;
+  }
+
+  .research-award-remove-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .research-award-document-list {
+    margin-top: 16px;
+  }
+
+  .research-award-document-item {
+    gap: 13px;
+    padding: 13px;
+  }
+
+  .research-award-document-info {
+    gap: 10px;
+  }
+
+  .research-award-document-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .research-award-document-action {
+    width: 100%;
+  }
+
+  .research-award-upload-button {
+    width: 100%;
+  }
+
+  .research-award-document-note {
+    margin-top: 12px;
+  }
+
+  .research-award-declaration {
+    padding: 13px;
+  }
+
+  .research-award-checkbox-wrapper {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .research-award-submission-card {
+    padding: 15px;
+  }
+
+  .research-award-submission-content h2 {
+    font-size: 15px;
+  }
+
+  .research-award-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 9px;
+  }
+
+  .research-award-secondary-button,
+  .research-award-primary-button {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .research-award-page *,
+  .research-award-page *::before,
+  .research-award-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

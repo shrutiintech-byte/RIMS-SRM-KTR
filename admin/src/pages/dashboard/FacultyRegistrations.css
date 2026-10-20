@@ -1,0 +1,817 @@
+
+/* =========================================================
+   RIMS ADMIN — FACULTY REGISTRATIONS
+   Clean institutional design | Light + Dark themes
+   Responsive cards | Accessible text and controls
+   ========================================================= */
+
+.admin-registrations-page {
+  --reg-bg: #f3f7fb;
+  --reg-card: #ffffff;
+  --reg-card-soft: #f7fafc;
+  --reg-input: #ffffff;
+
+  --reg-heading: #123252;
+  --reg-text: #29445f;
+  --reg-secondary: #61778d;
+  --reg-muted: #8496a8;
+
+  --reg-primary: #0b3156;
+  --reg-primary-hover: #16466f;
+  --reg-teal: #078f8d;
+  --reg-teal-hover: #067775;
+  --reg-teal-soft: #e4f6f4;
+
+  --reg-border: #dfe8f0;
+  --reg-border-strong: #cbd9e5;
+
+  --reg-green: #18794e;
+  --reg-green-bg: #e8f7ee;
+  --reg-red: #bd3545;
+  --reg-red-hover: #a52b3a;
+  --reg-red-bg: #fff0f1;
+  --reg-amber: #9a620b;
+  --reg-amber-bg: #fff4df;
+
+  --reg-shadow: 0 2px 8px rgba(22, 48, 75, 0.04);
+  --reg-shadow-hover: 0 7px 20px rgba(22, 48, 75, 0.08);
+
+  width: 100%;
+  min-width: 0;
+  color: var(--reg-text);
+  background: transparent;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.admin-registrations-page *,
+.admin-registrations-page *::before,
+.admin-registrations-page *::after {
+  box-sizing: border-box;
+}
+
+.admin-registrations-page button,
+.admin-registrations-page input {
+  font: inherit;
+}
+
+.admin-registrations-page button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.admin-registrations-page button:focus-visible,
+.admin-registrations-page input:focus-visible {
+  outline: 3px solid rgba(7, 143, 141, 0.3);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   DARK THEME
+   Supports the existing data-theme="dark" theme switch.
+   ========================================================= */
+
+:root[data-theme="dark"] .admin-registrations-page,
+[data-theme="dark"] .admin-registrations-page {
+  --reg-bg: #101b2a;
+  --reg-card: #192638;
+  --reg-card-soft: #202f43;
+  --reg-input: #142235;
+
+  --reg-heading: #f2f6fc;
+  --reg-text: #e6edf6;
+  --reg-secondary: #c1cede;
+  --reg-muted: #9eafc2;
+
+  --reg-primary: #c4d9f3;
+  --reg-primary-hover: #e1edff;
+  --reg-teal: #58d4cc;
+  --reg-teal-hover: #7be4dd;
+  --reg-teal-soft: #193c42;
+
+  --reg-border: #304257;
+  --reg-border-strong: #465c73;
+
+  --reg-green: #8ae2b1;
+  --reg-green-bg: #193d30;
+  --reg-red: #ffb0b8;
+  --reg-red-hover: #ffd0d5;
+  --reg-red-bg: #47262e;
+  --reg-amber: #ffd38c;
+  --reg-amber-bg: #43361f;
+
+  --reg-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --reg-shadow-hover: 0 7px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.admin-registrations-page .admin-page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 24px;
+}
+
+.admin-registrations-page .admin-page-heading > div {
+  min-width: 0;
+}
+
+.admin-registrations-page .admin-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: var(--reg-teal);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.admin-registrations-page .admin-page-heading h2 {
+  margin: 0;
+  color: var(--reg-heading);
+  font-size: clamp(23px, 2.2vw, 29px);
+  font-weight: 750;
+  letter-spacing: -0.65px;
+  line-height: 1.3;
+}
+
+.admin-registrations-page .admin-page-heading p {
+  margin: 7px 0 0;
+  color: var(--reg-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   REFRESH BUTTON
+   ========================================================= */
+
+.admin-registrations-page .admin-refresh-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 8px;
+  min-height: 39px;
+  padding: 9px 15px;
+  color: var(--reg-text);
+  background: var(--reg-card);
+  border: 1px solid var(--reg-border-strong);
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.admin-registrations-page .admin-refresh-button:hover:not(:disabled) {
+  color: var(--reg-teal);
+  background: var(--reg-card-soft);
+  border-color: var(--reg-teal);
+}
+
+.admin-registrations-page .admin-refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-registrations-page .admin-spinning {
+  animation: reg-spin 1s linear infinite;
+}
+
+@keyframes reg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   PENDING REGISTRATION SUMMARY
+   ========================================================= */
+
+.admin-registrations-page .admin-registration-summary {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 105px;
+  margin-bottom: 20px;
+  padding: 20px 22px;
+  background: var(--reg-card);
+  border: 1px solid var(--reg-border);
+  border-radius: 10px;
+  box-shadow: var(--reg-shadow);
+}
+
+.admin-registrations-page .admin-registration-summary-icon {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  color: var(--reg-teal);
+  background: var(--reg-teal-soft);
+  border: 1px solid var(--reg-border);
+  border-radius: 10px;
+}
+
+.admin-registrations-page .admin-registration-summary > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.admin-registrations-page .admin-registration-summary span {
+  color: var(--reg-secondary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-registrations-page .admin-registration-summary strong {
+  color: var(--reg-heading);
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.admin-registrations-page .admin-registration-search {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 15px;
+  background: var(--reg-card);
+  border: 1px solid var(--reg-border);
+  border-radius: 10px;
+  box-shadow: var(--reg-shadow);
+}
+
+.admin-registrations-page .admin-registration-search-input {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 11px;
+  min-width: 0;
+  min-height: 42px;
+  padding: 0 13px;
+  color: var(--reg-muted);
+  background: var(--reg-input);
+  border: 1px solid var(--reg-border-strong);
+  border-radius: 7px;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.admin-registrations-page .admin-registration-search-input:focus-within {
+  border-color: var(--reg-teal);
+  box-shadow: 0 0 0 3px rgba(7, 143, 141, 0.12);
+}
+
+.admin-registrations-page .admin-registration-search-input > svg {
+  flex-shrink: 0;
+  color: var(--reg-secondary);
+}
+
+.admin-registrations-page .admin-registration-search-input input {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding: 0;
+  color: var(--reg-text);
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 12px;
+}
+
+.admin-registrations-page .admin-registration-search-input input::placeholder {
+  color: var(--reg-muted);
+  opacity: 1;
+}
+
+.admin-registrations-page .admin-registration-search > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 94px;
+  min-height: 42px;
+  padding: 10px 17px;
+  color: #ffffff;
+  background: #078f8d;
+  border: 1px solid #078f8d;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.admin-registrations-page .admin-registration-search > button:hover:not(:disabled) {
+  background: #067775;
+}
+
+.admin-registrations-page .admin-registration-search > button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   ERROR AND SUCCESS MESSAGES
+   ========================================================= */
+
+.admin-registrations-page .admin-error-message,
+.admin-registrations-page .admin-registration-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-bottom: 17px;
+  padding: 14px 16px;
+  border: 1px solid var(--reg-border);
+  border-radius: 8px;
+}
+
+.admin-registrations-page .admin-error-message {
+  color: var(--reg-red);
+  background: var(--reg-red-bg);
+}
+
+.admin-registrations-page .admin-error-message > svg,
+.admin-registrations-page .admin-registration-success > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.admin-registrations-page .admin-error-message strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--reg-red);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.admin-registrations-page .admin-error-message p {
+  margin: 0;
+  color: var(--reg-text);
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.admin-registrations-page .admin-registration-success {
+  align-items: center;
+  color: var(--reg-green);
+  background: var(--reg-green-bg);
+  font-size: 12px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   REQUESTS SECTION HEADER
+   ========================================================= */
+
+.admin-registrations-page .admin-registration-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 0 0 15px;
+}
+
+.admin-registrations-page .admin-registration-list-header > div {
+  min-width: 0;
+}
+
+.admin-registrations-page .admin-registration-list-header h3 {
+  margin: 0;
+  color: var(--reg-heading);
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.admin-registrations-page .admin-registration-list-header p {
+  margin: 5px 0 0;
+  color: var(--reg-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.admin-registrations-page .admin-registration-list-header > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-height: 28px;
+  padding: 5px 10px;
+  color: var(--reg-secondary);
+  background: var(--reg-card);
+  border: 1px solid var(--reg-border);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   REGISTRATION CARD LIST
+   ========================================================= */
+
+.admin-registrations-page .admin-registration-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.admin-registrations-page .admin-registration-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 19px;
+  background: var(--reg-card);
+  border: 1px solid var(--reg-border);
+  border-radius: 10px;
+  box-shadow: var(--reg-shadow);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.admin-registrations-page .admin-registration-card:hover {
+  border-color: var(--reg-border-strong);
+  box-shadow: var(--reg-shadow-hover);
+}
+
+.admin-registrations-page .admin-registration-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--reg-border);
+}
+
+.admin-registrations-page .admin-registration-avatar {
+  display: grid;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  color: var(--reg-teal);
+  background: var(--reg-teal-soft);
+  border: 1px solid var(--reg-border);
+  border-radius: 10px;
+  font-size: 19px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.admin-registrations-page .admin-registration-person {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-registrations-page .admin-registration-person h3 {
+  margin: 0;
+  color: var(--reg-heading);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.admin-registrations-page .admin-registration-person span {
+  display: block;
+  margin-top: 4px;
+  color: var(--reg-secondary);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.admin-registrations-page .admin-registration-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 5px 9px;
+  color: var(--reg-amber);
+  background: var(--reg-amber-bg);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   FACULTY INFORMATION
+   ========================================================= */
+
+.admin-registrations-page .admin-registration-details {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 17px 0;
+}
+
+.admin-registrations-page .admin-registration-details > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.admin-registrations-page .admin-registration-details > div > svg {
+  flex: 0 0 16px;
+  margin-top: 2px;
+  color: var(--reg-teal);
+}
+
+.admin-registrations-page .admin-registration-details > div > span {
+  min-width: 0;
+  color: var(--reg-text);
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* =========================================================
+   APPROVE / REJECT ACTIONS
+   ========================================================= */
+
+.admin-registrations-page .admin-registration-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--reg-border);
+}
+
+.admin-registrations-page .admin-registration-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 1;
+  min-width: 0;
+  min-height: 39px;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.admin-registrations-page .admin-registration-actions button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-registrations-page .admin-registration-reject {
+  color: var(--reg-red);
+  background: var(--reg-red-bg);
+  border-color: var(--reg-border) !important;
+}
+
+.admin-registrations-page .admin-registration-reject:hover:not(:disabled) {
+  background: var(--reg-red-bg);
+  border-color: var(--reg-red) !important;
+}
+
+.admin-registrations-page .admin-registration-approve {
+  color: #ffffff;
+  background: #078f8d;
+  border-color: #078f8d !important;
+}
+
+.admin-registrations-page .admin-registration-approve:hover:not(:disabled) {
+  background: #067775;
+  border-color: #067775 !important;
+}
+
+/* =========================================================
+   LOADING AND EMPTY STATES
+   ========================================================= */
+
+.admin-registrations-page .admin-registration-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 230px;
+  padding: 30px 20px;
+  color: var(--reg-secondary);
+  background: var(--reg-card);
+  border: 1px dashed var(--reg-border-strong);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.admin-registrations-page .admin-registration-empty > svg {
+  margin-bottom: 12px;
+  color: var(--reg-teal);
+}
+
+.admin-registrations-page .admin-registration-empty h3 {
+  margin: 0;
+  color: var(--reg-heading);
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.admin-registrations-page .admin-registration-empty p {
+  max-width: 390px;
+  margin: 7px 0 0;
+  color: var(--reg-secondary);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.admin-registrations-page .admin-registration-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 22px;
+  padding: 14px;
+  background: var(--reg-card);
+  border: 1px solid var(--reg-border);
+  border-radius: 9px;
+}
+
+.admin-registrations-page .admin-registration-pagination > span {
+  color: var(--reg-text);
+  font-size: 12px;
+  font-weight: 650;
+  text-align: center;
+}
+
+.admin-registrations-page .admin-registration-pagination button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 36px;
+  padding: 8px 12px;
+  color: var(--reg-text);
+  background: var(--reg-card);
+  border: 1px solid var(--reg-border-strong);
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+.admin-registrations-page .admin-registration-pagination button:hover:not(:disabled) {
+  background: var(--reg-card-soft);
+  border-color: var(--reg-teal);
+}
+
+.admin-registrations-page .admin-registration-pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   TABLET RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .admin-registrations-page .admin-registration-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .admin-registrations-page .admin-registration-card {
+    padding: 16px;
+  }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .admin-registrations-page .admin-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+    margin-bottom: 19px;
+  }
+
+  .admin-registrations-page .admin-page-heading h2 {
+    font-size: 24px;
+  }
+
+  .admin-registrations-page .admin-refresh-button {
+    align-self: flex-start;
+  }
+
+  .admin-registrations-page .admin-registration-summary {
+    min-height: 88px;
+    padding: 16px;
+  }
+
+  .admin-registrations-page .admin-registration-search {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .admin-registrations-page .admin-registration-search > button {
+    width: 100%;
+  }
+
+  .admin-registrations-page .admin-registration-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .admin-registrations-page .admin-registration-card {
+    padding: 16px;
+  }
+
+  .admin-registrations-page .admin-registration-list-header {
+    align-items: flex-start;
+  }
+
+  .admin-registrations-page .admin-registration-pagination {
+    justify-content: space-between;
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .admin-registrations-page .admin-registration-pagination button {
+    gap: 2px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .admin-registrations-page .admin-registration-card-top {
+    flex-wrap: wrap;
+  }
+
+  .admin-registrations-page .admin-registration-status {
+    margin-left: auto;
+  }
+
+  .admin-registrations-page .admin-registration-actions {
+    flex-direction: column;
+  }
+
+  .admin-registrations-page .admin-registration-actions button {
+    width: 100%;
+    min-height: 41px;
+  }
+
+  .admin-registrations-page .admin-registration-pagination {
+    flex-wrap: wrap;
+  }
+
+  .admin-registrations-page .admin-registration-pagination > span {
+    order: -1;
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-registrations-page *,
+  .admin-registrations-page *::before,
+  .admin-registrations-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
